@@ -1,28 +1,36 @@
-# -oud-store
-    متجر عود وبخور<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>دار العود | عود وبخور فاخر</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>ترف العود | عود فاخر</title>
 
 <meta name="description"
-content="دار العود - متجر متخصص في أجود أنواع العود والبخور والهدايا الفاخرة">
+content="ترف العود - عود فاخر مختار بعناية، 50 جرام بـ 300 ريال">
 
 <style>
 
+/* =========================
+   الهوية
+========================= */
+
 :root{
---bg:#f7f3ed;
---card:#fff;
---dark:#21150e;
---dark2:#332116;
---gold:#c79a5b;
---gold2:#a9783d;
---text:#281c15;
---muted:#776c64;
---border:#e9dfd3;
---success:#18864b;
+--black:#100b08;
+--dark:#1b100b;
+--brown:#2d1b11;
+--gold:#c89b5b;
+--gold2:#e2bd7b;
+--cream:#f7f1e8;
+--white:#fff;
+--text:#241810;
+--muted:#75675d;
+--border:#e8dccb;
+--green:#159447;
 }
 
 *{
@@ -36,13 +44,15 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:
-Tahoma,
-Arial,
-sans-serif;
-background:var(--bg);
+font-family:Tahoma,Arial,sans-serif;
+background:var(--cream);
 color:var(--text);
-line-height:1.7;
+line-height:1.8;
+}
+
+a{
+text-decoration:none;
+color:inherit;
 }
 
 button,
@@ -52,42 +62,36 @@ textarea{
 font-family:inherit;
 }
 
-button{
-cursor:pointer;
-}
 
-a{
-text-decoration:none;
-color:inherit;
-}
+/* =========================
+   الشريط العلوي
+========================= */
 
-
-/* TOP BAR */
-
-.topbar{
-background:#160d08;
-color:#fff;
+.top{
+background:#080604;
+color:#d8bd91;
 text-align:center;
-font-size:13px;
 padding:7px;
+font-size:12px;
 }
 
 
-/* HEADER */
+/* =========================
+   الهيدر
+========================= */
 
 header{
 position:sticky;
 top:0;
-z-index:999;
-background:rgba(33,21,14,.97);
-color:white;
-border-bottom:1px solid rgba(255,255,255,.08);
+z-index:1000;
+background:rgba(16,11,8,.97);
+border-bottom:1px solid rgba(200,155,91,.25);
 }
 
-.header-inner{
+.header{
 max-width:1250px;
 margin:auto;
-padding:15px 20px;
+padding:14px 20px;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -95,23 +99,32 @@ gap:20px;
 }
 
 .logo{
-font-size:24px;
+font-size:27px;
 font-weight:bold;
-white-space:nowrap;
+color:white;
 }
 
 .logo span{
 color:var(--gold);
 }
 
+.logo small{
+display:block;
+font-size:9px;
+font-weight:normal;
+color:#bda98e;
+letter-spacing:2px;
+text-align:center;
+}
+
 nav{
 display:flex;
-gap:22px;
+gap:25px;
 }
 
 nav a{
-font-size:14px;
 color:#eee;
+font-size:13px;
 transition:.2s;
 }
 
@@ -119,51 +132,33 @@ nav a:hover{
 color:var(--gold);
 }
 
-.header-actions{
-display:flex;
-gap:8px;
-align-items:center;
-}
-
-.icon-btn{
-background:#38261a;
-color:white;
-border:1px solid rgba(255,255,255,.1);
-width:43px;
-height:43px;
-border-radius:50%;
-font-size:18px;
-position:relative;
-}
-
-.badge{
-position:absolute;
-top:-4px;
-right:-4px;
-background:#c13d2d;
-color:white;
-width:19px;
-height:19px;
-font-size:11px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
+.cart-button{
+background:var(--gold);
+border:0;
+border-radius:30px;
+padding:10px 17px;
+font-weight:bold;
+color:#1a100a;
+cursor:pointer;
 }
 
 
-/* HERO */
+/* =========================
+   البطل
+========================= */
 
 .hero{
-min-height:650px;
+
+min-height:690px;
+
 background:
 linear-gradient(
 90deg,
-rgba(22,13,8,.97),
-rgba(22,13,8,.78),
-rgba(22,13,8,.25)
+rgba(8,5,3,.97) 0%,
+rgba(15,9,6,.88) 38%,
+rgba(15,9,6,.35) 100%
 ),
-url("https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1800&q=85")
+url("https://down-id.img.susercontent.com/file/id-11134207-7rbk6-m6wq5ubgw184a7")
 center/cover;
 
 display:flex;
@@ -178,72 +173,70 @@ padding:70px 20px;
 color:white;
 }
 
-.hero-small{
-color:var(--gold);
-font-size:16px;
-margin-bottom:10px;
+.hero-label{
+color:var(--gold2);
+font-size:14px;
+margin-bottom:12px;
 }
 
 .hero h1{
-font-size:55px;
-line-height:1.2;
+font-size:62px;
+line-height:1.15;
 max-width:650px;
 margin-bottom:20px;
 }
 
+.hero h1 span{
+color:var(--gold2);
+}
+
 .hero p{
-max-width:570px;
-font-size:18px;
-color:#eee;
+max-width:560px;
+font-size:17px;
+color:#ddd;
 margin-bottom:30px;
 }
 
+.hero-buttons{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
 .btn{
-border:none;
 padding:13px 25px;
-border-radius:9px;
-font-size:15px;
+border-radius:8px;
+border:1px solid transparent;
 font-weight:bold;
-transition:.2s;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:8px;
+display:inline-block;
+cursor:pointer;
 }
 
 .btn-gold{
 background:var(--gold);
-color:#21150e;
-}
-
-.btn-gold:hover{
-background:#d9b275;
-transform:translateY(-2px);
-}
-
-.btn-dark{
-background:var(--dark);
-color:white;
+color:#160d08;
 }
 
 .btn-outline{
-border:1px solid var(--gold);
-color:var(--gold);
+border-color:var(--gold);
+color:var(--gold2);
 background:transparent;
 }
 
 
-/* FEATURES */
+/* =========================
+   المميزات
+========================= */
 
 .features{
-background:white;
+background:#fff;
 border-bottom:1px solid var(--border);
 }
 
-.features-grid{
-max-width:1250px;
+.features-inner{
+max-width:1200px;
 margin:auto;
-padding:30px 20px;
+padding:28px 20px;
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
@@ -251,177 +244,85 @@ gap:20px;
 
 .feature{
 display:flex;
-gap:13px;
 align-items:center;
+gap:12px;
 }
 
 .feature-icon{
-font-size:28px;
+font-size:27px;
 }
 
 .feature h4{
-font-size:15px;
-}
-
-.feature p{
-font-size:12px;
-color:var(--muted);
-}
-
-
-/* GENERAL */
-
-.container{
-max-width:1250px;
-margin:auto;
-padding:75px 20px;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:40px;
-}
-
-.section-title .eyebrow{
-color:var(--gold2);
-font-weight:bold;
 font-size:14px;
 }
 
-.section-title h2{
-font-size:34px;
-margin:6px 0;
-}
-
-.section-title p{
+.feature p{
+font-size:11px;
 color:var(--muted);
 }
 
 
-/* CATEGORIES */
+/* =========================
+   الأقسام
+========================= */
 
-.categories{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
+.section{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
 }
 
-.category{
-height:190px;
-border-radius:15px;
-overflow:hidden;
-position:relative;
-color:white;
-display:flex;
-align-items:flex-end;
-padding:20px;
-background-size:cover;
-background-position:center;
+.title{
+text-align:center;
+margin-bottom:45px;
 }
 
-.category:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(transparent,rgba(0,0,0,.8));
-}
-
-.category div{
-position:relative;
-z-index:1;
-}
-
-.category h3{
-font-size:20px;
-}
-
-.category p{
-font-size:12px;
-opacity:.9;
-}
-
-
-/* SHOP */
-
-.shop-toolbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-margin-bottom:25px;
-flex-wrap:wrap;
-}
-
-.search{
-flex:1;
-min-width:220px;
-position:relative;
-}
-
-.search input{
-width:100%;
-padding:14px 45px 14px 15px;
-border:1px solid var(--border);
-border-radius:10px;
-background:white;
-outline:none;
-}
-
-.search span{
-position:absolute;
-right:15px;
-top:10px;
-font-size:20px;
-}
-
-.filters{
-display:flex;
-gap:7px;
-flex-wrap:wrap;
-}
-
-.filter{
-border:1px solid var(--border);
-background:white;
-padding:9px 15px;
-border-radius:30px;
+.title .small{
+color:var(--gold2);
 font-size:13px;
+font-weight:bold;
 }
 
-.filter.active,
-.filter:hover{
-background:var(--dark);
-color:white;
+.title h2{
+font-size:38px;
+margin:4px 0;
+}
+
+.title p{
+color:var(--muted);
+font-size:14px;
 }
 
 
-/* PRODUCTS */
+/* =========================
+   المنتجات
+========================= */
 
 .products{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:22px;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .product{
 background:white;
-border-radius:16px;
-overflow:hidden;
 border:1px solid var(--border);
-transition:.25s;
-position:relative;
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
+box-shadow:0 8px 30px rgba(40,20,5,.06);
 }
 
 .product:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+transform:translateY(-7px);
+box-shadow:0 18px 45px rgba(40,20,5,.14);
 }
 
 .product-image{
-height:270px;
+height:330px;
 position:relative;
 overflow:hidden;
-background:#eee;
+background:#ddd;
 }
 
 .product-image img{
@@ -431,263 +332,202 @@ object-fit:cover;
 transition:.5s;
 }
 
-.product:hover .product-image img{
-transform:scale(1.05);
+.product:hover img{
+transform:scale(1.06);
 }
 
-.product-tag{
+.badge{
 position:absolute;
-top:12px;
-right:12px;
-background:#b83b2f;
-color:white;
-padding:4px 9px;
-border-radius:20px;
+top:15px;
+right:15px;
+background:var(--gold);
+color:#1c1009;
+padding:5px 12px;
+border-radius:30px;
 font-size:11px;
-}
-
-.favorite{
-position:absolute;
-top:12px;
-left:12px;
-border:0;
-background:white;
-width:35px;
-height:35px;
-border-radius:50%;
-font-size:18px;
+font-weight:bold;
 }
 
 .product-body{
-padding:17px;
+padding:22px;
 }
 
-.product-category{
-color:var(--gold2);
+.product-type{
 font-size:11px;
+color:var(--gold2);
 font-weight:bold;
 }
 
 .product h3{
-font-size:18px;
+font-size:23px;
 margin:3px 0;
-}
-
-.stars{
-color:#d69d39;
-font-size:13px;
 }
 
 .product-description{
 color:var(--muted);
-font-size:12px;
-height:42px;
-overflow:hidden;
-margin:5px 0;
+font-size:13px;
+min-height:55px;
 }
 
-.price-row{
+.product-bottom{
 display:flex;
-align-items:center;
 justify-content:space-between;
-margin-top:12px;
+align-items:center;
+gap:10px;
+margin-top:18px;
 }
 
-.price{
-font-size:20px;
-font-weight:bold;
+.price strong{
+font-size:24px;
 }
 
-.old-price{
-font-size:12px;
-color:#999;
-text-decoration:line-through;
-margin-right:5px;
+.price small{
+display:block;
+font-size:11px;
+color:var(--muted);
 }
 
-.add-cart{
+.order{
+border:0;
 background:var(--dark);
 color:white;
-border:0;
-padding:10px 14px;
+padding:12px 17px;
 border-radius:8px;
+font-weight:bold;
+cursor:pointer;
 }
 
-.add-cart:hover{
+.order:hover{
 background:var(--gold2);
+color:#1b100b;
 }
 
 
-/* OFFER */
+/* =========================
+   المنتج المميز
+========================= */
 
-.offer{
+.featured{
 background:
-linear-gradient(90deg,rgba(33,21,14,.96),rgba(33,21,14,.78)),
-url("https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1600&q=80")
-center/cover;
+linear-gradient(
+90deg,
+#160d08,
+#2b190e
+);
 color:white;
 }
 
-.offer-inner{
-max-width:1250px;
+.featured-inner{
+max-width:1200px;
 margin:auto;
-padding:65px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:30px;
-}
-
-.offer h2{
-font-size:35px;
-}
-
-.offer p{
-color:#ddd;
-}
-
-.offer-code{
-border:1px dashed var(--gold);
-padding:15px 25px;
-text-align:center;
-border-radius:10px;
-min-width:180px;
-}
-
-.offer-code strong{
-font-size:24px;
-color:var(--gold);
-display:block;
-}
-
-
-/* WHY */
-
-.why{
-background:white;
-}
-
-.why-grid{
+padding:80px 20px;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:45px;
+gap:50px;
 align-items:center;
 }
 
-.why-image{
-height:450px;
+.featured-image{
+height:470px;
 border-radius:20px;
-background:
-url("https://images.unsplash.com/photo-1599443015574-b8318f4d4f18?auto=format&fit=crop&w=1000&q=85")
-center/cover;
+overflow:hidden;
 }
 
-.check-list{
-margin-top:25px;
-display:grid;
-gap:15px;
+.featured-image img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
-.check{
-display:flex;
-gap:10px;
-align-items:flex-start;
+.featured h2{
+font-size:42px;
+margin:8px 0 15px;
 }
 
-.check-icon{
-color:var(--success);
-font-size:20px;
+.featured p{
+color:#d5c9bc;
 }
 
-
-/* DELIVERY */
-
-.delivery{
-background:#f0e9df;
-}
-
-.delivery-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px;
-}
-
-.delivery-card{
-background:white;
-padding:25px;
-border-radius:15px;
-text-align:center;
-border:1px solid var(--border);
-}
-
-.delivery-card .icon{
-font-size:35px;
-margin-bottom:8px;
-}
-
-.delivery-card h3{
-font-size:18px;
-}
-
-.delivery-card p{
-color:var(--muted);
-font-size:13px;
+.featured-price{
+font-size:32px;
+color:var(--gold2);
+font-weight:bold;
+margin:20px 0;
 }
 
 
-/* REVIEWS */
+/* =========================
+   لماذا ترف العود
+========================= */
 
-.reviews{
+.why-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
 }
 
-.review{
+.why{
+background:white;
+padding:28px;
+border-radius:15px;
+border:1px solid var(--border);
+text-align:center;
+}
+
+.why-icon{
+font-size:38px;
+margin-bottom:10px;
+}
+
+.why h3{
+font-size:18px;
+}
+
+.why p{
+font-size:13px;
+color:var(--muted);
+}
+
+
+/* =========================
+   الشحن
+========================= */
+
+.shipping{
+background:#eee5d8;
+}
+
+.shipping-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.ship{
 background:white;
 padding:25px;
 border-radius:15px;
+text-align:center;
 border:1px solid var(--border);
 }
 
-.review-stars{
-color:#d69d39;
+.ship-icon{
+font-size:35px;
 }
 
-.review-text{
-margin:12px 0;
-font-size:14px;
-color:#555;
+.ship h3{
+font-size:17px;
 }
 
-.reviewer{
-font-weight:bold;
-font-size:13px;
-}
-
-
-/* FAQ */
-
-.faq{
-max-width:850px;
-margin:auto;
-}
-
-details{
-background:white;
-border:1px solid var(--border);
-border-radius:10px;
-margin-bottom:10px;
-padding:17px;
-}
-
-summary{
-cursor:pointer;
-font-weight:bold;
+.ship p{
+font-size:12px;
+color:var(--muted);
 }
 
 
-/* CONTACT */
+/* =========================
+   واتساب
+========================= */
 
 .contact{
 background:var(--dark);
@@ -695,81 +535,84 @@ color:white;
 text-align:center;
 }
 
+.contact h2{
+font-size:38px;
+}
+
 .contact p{
-color:#ddd;
+color:#ccc;
 }
 
-.socials{
-display:flex;
-justify-content:center;
-gap:12px;
+.whatsapp-big{
+display:inline-block;
 margin-top:25px;
-flex-wrap:wrap;
-}
-
-.social{
-padding:12px 25px;
-border-radius:30px;
+background:#19a957;
+color:white;
+padding:15px 30px;
+border-radius:40px;
 font-weight:bold;
 }
 
-.whatsapp{
-background:#1fbf62;
-}
 
-.snap{
-background:#f6d000;
-color:#111;
-}
-
-.instagram{
-background:#d62b70;
-}
-
-
-/* FOOTER */
+/* =========================
+   الفوتر
+========================= */
 
 footer{
-background:#140c07;
-color:#bbb;
-}
-
-.footer-grid{
-max-width:1250px;
-margin:auto;
-padding:50px 20px;
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr;
-gap:35px;
-}
-
-footer h3{
-color:white;
-margin-bottom:12px;
-}
-
-footer a{
-display:block;
-font-size:13px;
-margin:7px 0;
-}
-
-.footer-bottom{
-border-top:1px solid rgba(255,255,255,.08);
+background:#090604;
+color:#aaa;
 text-align:center;
-padding:18px;
+padding:35px 20px;
+}
+
+.footer-logo{
+font-size:27px;
+color:white;
+font-weight:bold;
+}
+
+.footer-logo span{
+color:var(--gold);
+}
+
+footer p{
 font-size:12px;
+margin-top:5px;
 }
 
 
-/* MODAL */
+/* =========================
+   زر واتساب العائم
+========================= */
+
+.whatsapp-float{
+position:fixed;
+bottom:22px;
+left:22px;
+width:58px;
+height:58px;
+border-radius:50%;
+background:#19b75b;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+z-index:3000;
+box-shadow:0 5px 25px rgba(0,0,0,.3);
+}
+
+
+/* =========================
+   نافذة الطلب
+========================= */
 
 .modal{
 display:none;
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.65);
-z-index:2000;
+background:rgba(0,0,0,.75);
+z-index:5000;
 align-items:center;
 justify-content:center;
 padding:15px;
@@ -782,18 +625,18 @@ display:flex;
 .modal-box{
 background:white;
 width:100%;
-max-width:620px;
-max-height:92vh;
-overflow:auto;
+max-width:520px;
 border-radius:18px;
 padding:25px;
+max-height:90vh;
+overflow:auto;
 }
 
-.modal-head{
+.modal-header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .close{
@@ -803,65 +646,22 @@ width:35px;
 height:35px;
 border-radius:50%;
 font-size:20px;
+cursor:pointer;
 }
 
-.cart-item{
-display:grid;
-grid-template-columns:60px 1fr auto;
-gap:12px;
-align-items:center;
-padding:12px 0;
-border-bottom:1px solid var(--border);
+.selected-product{
+background:#f5eee4;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
 }
 
-.cart-item img{
-width:60px;
-height:60px;
-object-fit:cover;
-border-radius:8px;
-}
-
-.qty{
-display:flex;
-align-items:center;
-gap:7px;
-margin-top:5px;
-}
-
-.qty button{
-width:25px;
-height:25px;
-border:0;
-background:#eee;
-border-radius:5px;
-}
-
-.remove{
-border:0;
-background:none;
-color:#b33;
-}
-
-.cart-total{
-display:flex;
-justify-content:space-between;
-font-size:21px;
-font-weight:bold;
-margin:20px 0;
-}
-
-.form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
+.selected-product strong{
+font-size:18px;
 }
 
 .form-group{
-margin-bottom:10px;
-}
-
-.form-group.full{
-grid-column:1/-1;
+margin-bottom:12px;
 }
 
 .form-group label{
@@ -881,250 +681,216 @@ outline:none;
 }
 
 .form-group textarea{
-min-height:90px;
-resize:vertical;
+height:80px;
+resize:none;
 }
 
-.checkout{
+.send-order{
 width:100%;
-padding:14px;
+background:#19a957;
+color:white;
 border:0;
-background:var(--success);
-color:white;
-border-radius:9px;
-font-size:16px;
+padding:15px;
+border-radius:8px;
 font-weight:bold;
+font-size:16px;
+cursor:pointer;
 }
 
 
-/* TOAST */
+/* =========================
+   تجاوب الجوال
+========================= */
 
-.toast{
-position:fixed;
-bottom:25px;
-right:25px;
-background:var(--dark);
-color:white;
-padding:14px 20px;
-border-radius:9px;
-z-index:5000;
-transform:translateY(100px);
-opacity:0;
-transition:.3s;
-}
-
-.toast.show{
-transform:translateY(0);
-opacity:1;
-}
-
-
-/* MOBILE */
-
-@media(max-width:1000px){
-
-.products{
-grid-template-columns:repeat(3,1fr);
-}
-
-.categories,
-.delivery-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.features-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.footer-grid{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
-@media(max-width:700px){
-
-.header-inner{
-padding:12px 14px;
-}
-
-.logo{
-font-size:18px;
-}
+@media(max-width:900px){
 
 nav{
 display:none;
 }
 
-.hero{
-min-height:570px;
-}
-
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-font-size:15px;
-}
-
-.container{
-padding:55px 15px;
+.features-inner{
+grid-template-columns:repeat(2,1fr);
 }
 
 .products{
+grid-template-columns:1fr;
+}
+
+.shipping-grid{
 grid-template-columns:repeat(2,1fr);
-gap:12px;
 }
 
-.product-image{
-height:190px;
-}
-
-.product-body{
-padding:12px;
-}
-
-.product h3{
-font-size:15px;
-}
-
-.price{
-font-size:17px;
-}
-
-.add-cart{
-padding:8px 10px;
-font-size:11px;
-}
-
-.categories{
-grid-template-columns:1fr 1fr;
-}
-
-.category{
-height:145px;
-padding:12px;
-}
-
-.features-grid{
-grid-template-columns:1fr 1fr;
-padding:25px 15px;
-}
-
-.feature p{
-font-size:10px;
-}
-
-.offer-inner{
-flex-direction:column;
-text-align:center;
+.featured-inner{
+grid-template-columns:1fr;
 }
 
 .why-grid{
 grid-template-columns:1fr;
 }
 
-.why-image{
-height:300px;
+.hero h1{
+font-size:44px;
 }
 
-.delivery-grid{
+}
+
+@media(max-width:600px){
+
+.header{
+padding:11px 14px;
+}
+
+.logo{
+font-size:21px;
+}
+
+.cart-button{
+padding:8px 12px;
+font-size:12px;
+}
+
+.hero{
+min-height:590px;
+}
+
+.hero h1{
+font-size:39px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.section{
+padding:60px 15px;
+}
+
+.title h2{
+font-size:30px;
+}
+
+.product-image{
+height:280px;
+}
+
+.featured-image{
+height:320px;
+}
+
+.featured h2{
+font-size:31px;
+}
+
+.shipping-grid{
 grid-template-columns:1fr 1fr;
 }
 
-.reviews{
-grid-template-columns:1fr;
+.features-inner{
+padding:22px 14px;
+gap:14px;
 }
 
-.footer-grid{
-grid-template-columns:1fr;
+.feature{
+gap:7px;
 }
 
-.form-grid{
-grid-template-columns:1fr;
-}
-
-.form-group.full{
-grid-column:auto;
+.feature-icon{
+font-size:22px;
 }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 
-<div class="topbar">
-🚚 شحن لجميع مناطق المملكة | 🎁 تغليف هدايا فاخر | 💬 خدمة عملاء
+<!-- أعلى الموقع -->
+
+<div class="top">
+🚚 شحن داخل المملكة &nbsp; | &nbsp;
+🎁 تغليف أنيق &nbsp; | &nbsp;
+💬 الطلب مباشرة عبر واتساب
 </div>
 
+
+<!-- الهيدر -->
 
 <header>
 
-<div class="header-inner">
+<div class="header">
 
-<div class="logo">
-دار <span>العود</span> 🌿
-</div>
+<a href="#home" class="logo">
+ترف <span>العود</span>
+<small>TAرف AL OUD</small>
+</a>
+
 
 <nav>
+
 <a href="#home">الرئيسية</a>
-<a href="#shop">المنتجات</a>
-<a href="#offers">العروض</a>
-<a href="#delivery">الشحن</a>
+
+<a href="#products">المنتجات</a>
+
+<a href="#about">عن المتجر</a>
+
+<a href="#shipping">الشحن</a>
+
 <a href="#contact">تواصل معنا</a>
+
 </nav>
 
-<div class="header-actions">
 
-<button class="icon-btn"
-onclick="document.getElementById('shop').scrollIntoView()">
-⌕
+<button class="cart-button"
+onclick="scrollToProducts()">
+
+تسوق الآن
+
 </button>
-
-<button class="icon-btn" onclick="openCart()">
-🛒
-<span class="badge" id="cartCount">0</span>
-</button>
-
-</div>
 
 </div>
 
 </header>
 
 
-<main id="home">
+<!-- الرئيسية -->
 
-
-<section class="hero">
+<section class="hero" id="home">
 
 <div class="hero-content">
 
-<div class="hero-small">
-عود طبيعي • بخور فاخر • هدايا
+<div class="hero-label">
+ترف العود • اختيارك للفخامة
 </div>
 
 <h1>
-فخامة العود تبدأ من الاختيار الصحيح
+رائحة <span>تبقى</span><br>
+وأثر لا يُنسى
 </h1>
 
 <p>
-تشكيلة مختارة من أجود أنواع العود والبخور بروائح شرقية
-أصيلة تناسب ذوقك ومناسباتك.
+نقدم لك مجموعة مختارة من العود الفاخر
+بوزن 50 جرام، لتعيش تجربة العود الأصيل
+بلمسة فاخرة تليق بذوقك.
 </p>
 
-<div style="display:flex;gap:10px;flex-wrap:wrap">
+<div class="hero-buttons">
 
-<a class="btn btn-gold" href="#shop">
-تسوق الآن 🛒
+<a href="#products"
+class="btn btn-gold">
+
+اكتشف المنتجات
+
 </a>
 
-<a class="btn btn-outline" href="#contact">
+<a href="#contact"
+class="btn btn-outline">
+
 تواصل معنا
+
 </a>
 
 </div>
@@ -1133,41 +899,58 @@ onclick="document.getElementById('shop').scrollIntoView()">
 
 </section>
 
+
+<!-- المميزات -->
 
 <section class="features">
 
-<div class="features-grid">
+<div class="features-inner">
 
 <div class="feature">
+
 <div class="feature-icon">🌿</div>
+
 <div>
-<h4>اختيارات مميزة</h4>
-<p>منتجات مختارة بعناية</p>
-</div>
+<h4>عود مختار</h4>
+<p>اختيارات بعناية</p>
 </div>
 
+</div>
+
+
 <div class="feature">
+
+<div class="feature-icon">⚖️</div>
+
+<div>
+<h4>50 جرام</h4>
+<p>وزن واضح لكل منتج</p>
+</div>
+
+</div>
+
+
+<div class="feature">
+
 <div class="feature-icon">📦</div>
+
 <div>
-<h4>تغليف فاخر</h4>
-<p>مناسب للهدايا</p>
-</div>
+<h4>تغليف أنيق</h4>
+<p>جاهز للإهداء</p>
 </div>
 
+</div>
+
+
 <div class="feature">
+
 <div class="feature-icon">🚚</div>
+
 <div>
-<h4>شحن سريع</h4>
-<p>لجميع مناطق المملكة</p>
-</div>
+<h4>شحن المملكة</h4>
+<p>إلى مختلف المدن</p>
 </div>
 
-<div class="feature">
-<div class="feature-icon">🔒</div>
-<div>
-<h4>طلب آمن</h4>
-<p>تأكيد الطلب عبر الواتساب</p>
-</div>
 </div>
 
 </div>
@@ -1175,165 +958,258 @@ onclick="document.getElementById('shop').scrollIntoView()">
 </section>
 
 
-<section class="container">
+<!-- المنتجات -->
 
-<div class="section-title">
+<section class="section"
+id="products">
 
-<div class="eyebrow">اكتشف تشكيلتنا</div>
+<div class="title">
 
-<h2>تسوق حسب النوع</h2>
-
-<p>اختر نوع العود الذي يناسب ذوقك</p>
-
-</div>
-
-
-<div class="categories">
-
-<a class="category"
-style="background-image:url('https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80')"
-href="#shop">
-
-<div>
-<h3>العود المروكي</h3>
-<p>روائح شرقية فاخرة</p>
-</div>
-
-</a>
-
-
-<a class="category"
-style="background-image:url('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80')"
-href="#shop">
-
-<div>
-<h3>العود الكمبودي</h3>
-<p>رائحة عميقة ومميزة</p>
-</div>
-
-</a>
-
-
-<a class="category"
-style="background-image:url('https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=700&q=80')"
-href="#shop">
-
-<div>
-<h3>العود الأزرق</h3>
-<p>اختيارات خاصة</p>
-</div>
-
-</a>
-
-
-<a class="category"
-style="background-image:url('https://images.unsplash.com/photo-1599443015574-b8318f4d4f18?auto=format&fit=crop&w=700&q=80')"
-href="#shop">
-
-<div>
-<h3>البخور والهدايا</h3>
-<p>للمناسبات والهدايا</p>
-</div>
-
-</a>
-
-</div>
-
-</section>
-
-
-<section id="shop" class="container">
-
-<div class="section-title">
-
-<div class="eyebrow">منتجاتنا</div>
-
-<h2>أجود الاختيارات</h2>
-
-<p>اختر المنتج وأضفه إلى السلة</p>
-
-</div>
-
-
-<div class="shop-toolbar">
-
-<div class="search">
-
-<span>🔍</span>
-
-<input
-id="searchInput"
-type="text"
-placeholder="ابحث عن عود أو بخور..."
-oninput="renderProducts()">
-
-</div>
-
-
-<div class="filters">
-
-<button class="filter active"
-onclick="setCategory('all',this)">
-الكل
-</button>
-
-<button class="filter"
-onclick="setCategory('مروكي',this)">
-مروكي
-</button>
-
-<button class="filter"
-onclick="setCategory('كمبودي',this)">
-كمبودي
-</button>
-
-<button class="filter"
-onclick="setCategory('أزرق',this)">
-أزرق
-</button>
-
-<button class="filter"
-onclick="setCategory('بخور',this)">
-بخور
-</button>
-
-</div>
-
-</div>
-
-
-<div class="products" id="products"></div>
-
-</section>
-
-
-<section id="offers" class="offer">
-
-<div class="offer-inner">
-
-<div>
-
-<div style="color:#c79a5b">
-عرض خاص لفترة محدودة
+<div class="small">
+تشكيلة ترف العود
 </div>
 
 <h2>
-خصم 10% على أول طلب
+اختياراتنا
 </h2>
 
 <p>
-استخدم كود الخصم عند إتمام الطلب.
+ثلاثة أنواع مختارة لعشاق العود
 </p>
 
 </div>
 
-<div class="offer-code">
 
-الكود
+<div class="products">
 
-<strong>FIRST10</strong>
 
-خصم 10%
+<!-- دقة مروكي -->
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="https://down-id.img.susercontent.com/file/id-11134207-7rbk6-m6wq5ubgw184a7"
+alt="دقة مروكي محسن">
+
+<div class="badge">
+مميز
+</div>
+
+</div>
+
+
+<div class="product-body">
+
+<div class="product-type">
+MERAUKE • INDONESIA
+</div>
+
+<h3>
+دقة مروكي محسن
+</h3>
+
+<p class="product-description">
+عود مروكي بطابع غني ومميز، مناسب لعشاق
+الروائح الشرقية العميقة والفاخرة.
+</p>
+
+
+<div class="product-bottom">
+
+<div class="price">
+
+<strong>300</strong> ريال
+
+<small>
+50 جرام
+</small>
+
+</div>
+
+<button class="order"
+onclick="openOrder('دقة مروكي محسن')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- أزرق كلمنتان -->
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="https://media.zid.store/68708c1b-8aac-4704-af31-13fd77f887c5/cebbf2c9-6cdc-47c5-b0cb-ee9928aa5cf3.jpg"
+alt="عود أزرق كلمنتان">
+
+<div class="badge">
+فاخر
+</div>
+
+</div>
+
+
+<div class="product-body">
+
+<div class="product-type">
+KALIMANTAN • INDONESIA
+</div>
+
+<h3>
+أزرق كلمنتان
+</h3>
+
+<p class="product-description">
+قطع عود كلمنتان ذات مظهر طبيعي مميز،
+اختيار أنيق لعشاق العود الإندونيسي.
+</p>
+
+
+<div class="product-bottom">
+
+<div class="price">
+
+<strong>300</strong> ريال
+
+<small>
+50 جرام
+</small>
+
+</div>
+
+<button class="order"
+onclick="openOrder('أزرق كلمنتان')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- سيوفي مروكي -->
+
+<div class="product">
+
+<div class="product-image">
+
+<img
+src="https://miya.odoo.com/web/image/product.image/2204/image_1024/ChatGPT%20Image%20Feb%2012%2C%202026%2C%2002_22_47%20AM.webp?unique=a2ea740"
+alt="سيوفي مروكي">
+
+<div class="badge">
+مختار
+</div>
+
+</div>
+
+
+<div class="product-body">
+
+<div class="product-type">
+MERAUKE • INDONESIA
+</div>
+
+<h3>
+سيوفي مروكي
+</h3>
+
+<p class="product-description">
+عود مروكي بتقطيع سيوفي ومظهر طبيعي،
+مناسب لمن يبحث عن تجربة عود مختلفة.
+</p>
+
+
+<div class="product-bottom">
+
+<div class="price">
+
+<strong>300</strong> ريال
+
+<small>
+50 جرام
+</small>
+
+</div>
+
+<button class="order"
+onclick="openOrder('سيوفي مروكي')">
+
+اطلب الآن
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- المنتج المميز -->
+
+<section class="featured">
+
+<div class="featured-inner">
+
+<div class="featured-image">
+
+<img
+src="https://media.zid.store/68708c1b-8aac-4704-af31-13fd77f887c5/cebbf2c9-6cdc-47c5-b0cb-ee9928aa5cf3.jpg"
+alt="ترف العود">
+
+</div>
+
+
+<div>
+
+<div style="color:#c89b5b">
+اختيار ترف العود
+</div>
+
+<h2>
+أزرق كلمنتان
+</h2>
+
+<p>
+قطعة مختارة لعشاق العود الإندونيسي،
+بتفاصيل طبيعية ومظهر يليق بتجربة فاخرة.
+</p>
+
+<div class="featured-price">
+300 ريال
+</div>
+
+<div style="color:#bbb;font-size:13px;margin-bottom:20px">
+50 جرام
+</div>
+
+<button
+class="btn btn-gold"
+onclick="openOrder('أزرق كلمنتان')">
+
+اطلبه الآن عبر واتساب
+
+</button>
 
 </div>
 
@@ -1342,112 +1218,126 @@ onclick="setCategory('بخور',this)">
 </section>
 
 
-<section class="why">
+<!-- لماذا ترف العود -->
 
-<div class="container">
+<section class="section"
+id="about">
+
+<div class="title">
+
+<div class="small">
+لماذا ترف العود؟
+</div>
+
+<h2>
+الفخامة في التفاصيل
+</h2>
+
+<p>
+تجربة بسيطة، واضحة وفاخرة
+</p>
+
+</div>
+
 
 <div class="why-grid">
 
-<div class="why-image"></div>
 
-<div>
+<div class="why">
 
-<div class="section-title" style="text-align:right;margin-bottom:10px">
-
-<div class="eyebrow">لماذا دار العود؟</div>
-
-<h2>
-نختار الجودة قبل كل شيء
-</h2>
-
+<div class="why-icon">
+🌿
 </div>
 
-<p style="color:#665d57">
-هدفنا أن نقدم لك تجربة شراء سهلة، واضحة وفاخرة،
-من اختيار المنتج حتى وصوله إلى باب منزلك.
+<h3>
+اختيار بعناية
+</h3>
+
+<p>
+نهتم بمظهر المنتج ونختار الأنواع
+التي تناسب محبي العود.
 </p>
 
-<div class="check-list">
-
-<div class="check">
-<div class="check-icon">✓</div>
-<div>
-<strong>منتجات متنوعة</strong>
-<br>
-<span style="font-size:13px;color:#777">
-خيارات متعددة تناسب مختلف الأذواق.
-</span>
-</div>
 </div>
 
-<div class="check">
-<div class="check-icon">✓</div>
-<div>
-<strong>تغليف أنيق</strong>
-<br>
-<span style="font-size:13px;color:#777">
-مناسب للاستخدام الشخصي والهدايا.
-</span>
-</div>
+
+<div class="why">
+
+<div class="why-icon">
+⚖️
 </div>
 
-<div class="check">
-<div class="check-icon">✓</div>
-<div>
-<strong>تواصل مباشر</strong>
-<br>
-<span style="font-size:13px;color:#777">
-تأكيد الطلب ومتابعته عبر الواتساب.
-</span>
-</div>
-</div>
+<h3>
+وزن واضح
+</h3>
 
-<div class="check">
-<div class="check-icon">✓</div>
-<div>
-<strong>خيارات شحن متعددة</strong>
-<br>
-<span style="font-size:13px;color:#777">
-اختيار شركة الشحن المناسبة حسب المدينة.
-</span>
-</div>
-</div>
+<p>
+جميع المنتجات المعروضة هنا
+بوزن 50 جرام.
+</p>
 
 </div>
 
+
+<div class="why">
+
+<div class="why-icon">
+🤝
 </div>
 
+<h3>
+تواصل مباشر
+</h3>
+
+<p>
+بعد اختيار المنتج، يصلك الطلب
+مباشرة إلى واتساب المتجر.
+</p>
+
 </div>
+
 
 </div>
 
 </section>
 
 
-<section id="delivery" class="delivery">
+<!-- الشحن -->
 
-<div class="container">
+<section class="shipping"
+id="shipping">
 
-<div class="section-title">
+<div class="section">
 
-<div class="eyebrow">التوصيل</div>
+<div class="title">
 
-<h2>نوصل طلبك إلى بابك</h2>
+<div class="small">
+التوصيل
+</div>
+
+<h2>
+نوصل طلبك
+</h2>
 
 <p>
-يمكن اختيار شركة الشحن المناسبة عند الطلب.
+يتم اختيار شركة الشحن المناسبة حسب المدينة
 </p>
 
 </div>
 
 
-<div class="delivery-grid">
+<div class="shipping-grid">
 
-<div class="delivery-card">
 
-<div class="icon">📮</div>
+<div class="ship">
 
-<h3>SPL</h3>
+<div class="ship-icon">
+📦
+</div>
+
+<h3>
+SPL
+</h3>
 
 <p>
 البريد السعودي
@@ -1456,11 +1346,15 @@ onclick="setCategory('بخور',this)">
 </div>
 
 
-<div class="delivery-card">
+<div class="ship">
 
-<div class="icon">📦</div>
+<div class="ship-icon">
+🚚
+</div>
 
-<h3>Aramex</h3>
+<h3>
+Aramex
+</h3>
 
 <p>
 أرامكس
@@ -1469,11 +1363,15 @@ onclick="setCategory('بخور',this)">
 </div>
 
 
-<div class="delivery-card">
+<div class="ship">
 
-<div class="icon">🚚</div>
+<div class="ship-icon">
+🚀
+</div>
 
-<h3>SMSA</h3>
+<h3>
+SMSA
+</h3>
 
 <p>
 سمسا
@@ -1482,17 +1380,22 @@ onclick="setCategory('بخور',this)">
 </div>
 
 
-<div class="delivery-card">
+<div class="ship">
 
-<div class="icon">⚡</div>
+<div class="ship-icon">
+📍
+</div>
 
-<h3>شحن آخر</h3>
+<h3>
+حسب المدينة
+</h3>
 
 <p>
-حسب المدينة والطلب
+يتم التنسيق عند الطلب
 </p>
 
 </div>
+
 
 </div>
 
@@ -1501,200 +1404,36 @@ onclick="setCategory('بخور',this)">
 </section>
 
 
-<section class="container">
+<!-- التواصل -->
 
-<div class="section-title">
+<section class="contact"
+id="contact">
 
-<div class="eyebrow">آراء العملاء</div>
+<div class="section">
 
-<h2>ماذا يقول عملاؤنا؟</h2>
+<div class="title"
+style="color:white">
 
-</div>
-
-
-<div class="reviews">
-
-<div class="review">
-
-<div class="review-stars">★★★★★</div>
-
-<div class="review-text">
-"الرائحة ممتازة والتغليف مرتب جدًا."
-</div>
-
-<div class="reviewer">
-محمد — الرياض
-</div>
-
-</div>
-
-
-<div class="review">
-
-<div class="review-stars">★★★★★</div>
-
-<div class="review-text">
-"طلبت عود هدية ووصلني بشكل ممتاز."
-</div>
-
-<div class="reviewer">
-عبدالله — جدة
-</div>
-
-</div>
-
-
-<div class="review">
-
-<div class="review-stars">★★★★★</div>
-
-<div class="review-text">
-"تجربة جميلة وسرعة في الرد والتواصل."
-</div>
-
-<div class="reviewer">
-سعد — الدمام
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="container">
-
-<div class="section-title">
-
-<div class="eyebrow">الأسئلة الشائعة</div>
-
-<h2>أسئلة العملاء</h2>
-
-</div>
-
-
-<div class="faq">
-
-<details>
-
-<summary>
-كيف أطلب؟
-</summary>
-
-<p>
-اختر المنتجات وأضفها للسلة ثم اكتب بياناتك واضغط
-"إرسال الطلب عبر واتساب".
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-هل يوجد شحن لجميع مناطق السعودية؟
-</summary>
-
-<p>
-نعم، يتم تحديد شركة الشحن المناسبة حسب المدينة والطلب.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-كم مدة التوصيل؟
-</summary>
-
-<p>
-مدة التوصيل تختلف حسب المدينة وشركة الشحن، ويتم تأكيدها عند الطلب.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-هل يمكن تجهيز الطلب كهدية؟
-</summary>
-
-<p>
-نعم، يمكن طلب التغليف كهدية والتنسيق مع خدمة العملاء.
-</p>
-
-</details>
-
-
-<details>
-
-<summary>
-كيف أتواصل معكم؟
-</summary>
-
-<p>
-يمكن التواصل معنا عبر الواتساب أو سناب شات.
-</p>
-
-</details>
-
-</div>
-
-</section>
-
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<div class="section-title">
-
-<div class="eyebrow">
+<div class="small">
 خدمة العملاء
 </div>
 
 <h2>
-نحن بخدمتك
+جاهزين لطلبك
 </h2>
 
 <p>
-للطلب والاستفسار تواصل معنا مباشرة.
+اختر المنتج واضغط اطلب الآن
+وسيتم تحويلك مباشرة إلى واتساب ترف العود.
 </p>
 
-</div>
-
-
-<div class="socials">
 
 <a
-class="social whatsapp"
-href="https://wa.me/966500000000"
+class="whatsapp-big"
+href="https://wa.me/966539400955"
 target="_blank">
 
-💬 واتساب
-
-</a>
-
-
-<a
-class="social snap"
-href="https://www.snapchat.com/"
-target="_blank">
-
-👻 سناب شات
-
-</a>
-
-
-<a
-class="social instagram"
-href="https://www.instagram.com/"
-target="_blank">
-
-📸 إنستغرام
+💬 تواصل عبر واتساب
 
 </a>
 
@@ -1705,120 +1444,84 @@ target="_blank">
 </section>
 
 
-</main>
-
+<!-- الفوتر -->
 
 <footer>
 
-<div class="footer-grid">
+<div class="footer-logo">
+ترف <span>العود</span>
+</div>
 
-<div>
-
-<h3>دار العود 🌿</h3>
-
-<p style="font-size:13px">
-متجر متخصص في العود والبخور والهدايا الفاخرة.
-نسعى لتقديم تجربة مميزة من أول زيارة حتى استلام الطلب.
+<p>
+عود فاخر • اختيار بعناية • تجربة تليق بك
 </p>
 
-</div>
-
-
-<div>
-
-<h3>روابط</h3>
-
-<a href="#home">الرئيسية</a>
-
-<a href="#shop">المنتجات</a>
-
-<a href="#offers">العروض</a>
-
-<a href="#delivery">الشحن</a>
-
-</div>
-
-
-<div>
-
-<h3>خدمة العملاء</h3>
-
-<a href="#contact">تواصل معنا</a>
-
-<a href="#contact">الواتساب</a>
-
-<a href="#contact">سناب شات</a>
-
-</div>
-
-
-<div>
-
-<h3>معلومات</h3>
-
-<a href="#">سياسة الخصوصية</a>
-
-<a href="#">الشروط والأحكام</a>
-
-<a href="#">سياسة الاستبدال</a>
-
-</div>
-
-</div>
-
-
-<div class="footer-bottom">
-
-© 2026 دار العود — جميع الحقوق محفوظة
-
-</div>
+<p>
+© 2026 ترف العود — جميع الحقوق محفوظة
+</p>
 
 </footer>
 
 
-<!-- CART MODAL -->
+<!-- زر واتساب عائم -->
 
-<div class="modal" id="cartModal">
+<a
+class="whatsapp-float"
+href="https://wa.me/966539400955"
+target="_blank">
+
+💬
+
+</a>
+
+
+<!-- نافذة الطلب -->
+
+<div
+class="modal"
+id="orderModal">
 
 <div class="modal-box">
 
-<div class="modal-head">
 
-<h2>🛒 سلة المشتريات</h2>
+<div class="modal-header">
 
-<button class="close" onclick="closeCart()">
+<h2>
+إتمام الطلب
+</h2>
+
+<button
+class="close"
+onclick="closeOrder()">
+
 ×
+
 </button>
 
 </div>
 
 
-<div id="cartItems"></div>
+<div class="selected-product">
 
+<div style="font-size:11px;color:#a9783d">
+المنتج المختار
+</div>
 
-<div class="cart-total">
+<strong id="selectedProduct">
+</strong>
 
-<span>الإجمالي</span>
-
-<span>
-<span id="cartTotal">0</span>
- ريال
-</span>
+<div>
+50 جرام — 300 ريال
+</div>
 
 </div>
 
 
-<h3 style="margin-bottom:15px">
-بيانات العميل
-</h3>
-
-
-<div class="form-grid">
-
-
 <div class="form-group">
 
-<label>الاسم *</label>
+<label>
+الاسم
+</label>
 
 <input
 id="customerName"
@@ -1829,7 +1532,9 @@ placeholder="اكتب اسمك">
 
 <div class="form-group">
 
-<label>رقم الجوال *</label>
+<label>
+رقم الجوال
+</label>
 
 <input
 id="customerPhone"
@@ -1840,7 +1545,9 @@ placeholder="05xxxxxxxx">
 
 <div class="form-group">
 
-<label>المدينة *</label>
+<label>
+المدينة
+</label>
 
 <input
 id="customerCity"
@@ -1851,622 +1558,183 @@ placeholder="مثال: الرياض">
 
 <div class="form-group">
 
-<label>شركة الشحن</label>
+<label>
+العنوان
+</label>
 
-<select id="shipping">
+<textarea
+id="customerAddress"
+placeholder="الحي، الشارع، رقم المبنى...">
+</textarea>
 
-<option>SPL</option>
+</div>
 
-<option>Aramex</option>
 
-<option>SMSA</option>
+<div class="form-group">
 
-<option>حسب المتاح</option>
+<label>
+شركة الشحن المفضلة
+</label>
+
+<select id="shippingCompany">
+
+<option>
+SPL - البريد السعودي
+</option>
+
+<option>
+Aramex - أرامكس
+</option>
+
+<option>
+SMSA - سمسا
+</option>
+
+<option>
+حسب المتاح
+</option>
 
 </select>
 
 </div>
 
 
-<div class="form-group full">
+<div class="form-group">
 
-<label>العنوان</label>
-
-<textarea
-id="customerAddress"
-placeholder="الحي، الشارع، رقم المبنى..."></textarea>
-
-</div>
-
-
-<div class="form-group full">
-
-<label>ملاحظات الطلب</label>
+<label>
+ملاحظات
+</label>
 
 <textarea
-id="orderNotes"
-placeholder="أي ملاحظات إضافية"></textarea>
-
-</div>
-
-
-<div class="form-group full">
-
-<label>كوبون الخصم</label>
-
-<input
-id="coupon"
-placeholder="مثال: FIRST10">
-
-</div>
-
-</div>
-
-
-<button class="checkout" onclick="sendOrder()">
-
-📲 إرسال الطلب عبر واتساب
-
-</button>
-
-
-</div>
-
-</div>
-
-
-<div class="toast" id="toast">
-تمت إضافة المنتج إلى السلة ✓
-</div>
-
-
-<script>
-
-
-/* ==============================
-   بيانات المنتجات
-============================== */
-
-const products = [
-
-{
-id:1,
-name:"عود مروكي فاخر",
-category:"مروكي",
-price:350,
-oldPrice:420,
-rating:5,
-tag:"الأكثر مبيعًا",
-image:"https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
-description:"عود مروكي فاخر برائحة شرقية مميزة وثبات جميل."
-},
-
-{
-id:2,
-name:"عود كمبودي فاخر",
-category:"كمبودي",
-price:500,
-oldPrice:590,
-rating:5,
-tag:"مميز",
-image:"https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85",
-description:"رائحة عميقة وفاخرة لمحبي العود الكمبودي."
-},
-
-{
-id:3,
-name:"دقة مروكي",
-category:"مروكي",
-price:450,
-oldPrice:520,
-rating:5,
-tag:"",
-image:"https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=900&q=85",
-description:"اختيار فاخر لمحبي الروائح الشرقية الأصيلة."
-},
-
-{
-id:4,
-name:"مروكي سيوفي",
-category:"مروكي",
-price:600,
-oldPrice:700,
-rating:5,
-tag:"فاخر",
-image:"https://images.unsplash.com/photo-1599443015574-b8318f4d4f18?auto=format&fit=crop&w=900&q=85",
-description:"عود مميز بطابع قوي ومناسب للمناسبات."
-},
-
-{
-id:5,
-name:"أزرق مالينو",
-category:"أزرق",
-price:750,
-oldPrice:850,
-rating:5,
-tag:"جديد",
-image:"https://images.unsplash.com/photo-1612196808214-b7e239e5f6f4?auto=format&fit=crop&w=900&q=85",
-description:"اختيار فاخر لعشاق العود الأزرق."
-},
-
-{
-id:6,
-name:"عود أزرق BM",
-category:"أزرق",
-price:550,
-oldPrice:650,
-rating:4,
-tag:"",
-image:"https://images.unsplash.com/photo-1605651202774-7d573fd31a50?auto=format&fit=crop&w=900&q=85",
-description:"رائحة مميزة مناسبة للاستخدام اليومي والمناسبات."
-},
-
-{
-id:7,
-name:"بخور فاخر",
-category:"بخور",
-price:180,
-oldPrice:220,
-rating:5,
-tag:"عرض",
-image:"https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
-description:"بخور شرقي فاخر برائحة دافئة وثابتة."
-},
-
-{
-id:8,
-name:"خلطة العود الملكية",
-category:"بخور",
-price:250,
-oldPrice:300,
-rating:5,
-tag:"مميز",
-image:"https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=900&q=85",
-description:"خلطة خاصة لمحبي الروائح الفخمة."
-},
-
-{
-id:9,
-name:"كمبودي AB",
-category:"كمبودي",
-price:680,
-oldPrice:760,
-rating:5,
-tag:"",
-image:"https://images.unsplash.com/photo-1599443015574-b8318f4d4f18?auto=format&fit=crop&w=900&q=85",
-description:"عود كمبودي مختار بعناية."
-},
-
-{
-id:10,
-name:"مروكي أصفر",
-category:"مروكي",
-price:390,
-oldPrice:450,
-rating:4,
-tag:"",
-image:"https://images.unsplash.com/photo-1605651202774-7d573fd31a50?auto=format&fit=crop&w=900&q=85",
-description:"اختيار مميز بسعر مناسب."
-},
-
-{
-id:11,
-name:"بوكس هدية فاخر",
-category:"بخور",
-price:299,
-oldPrice:350,
-rating:5,
-tag:"هدية",
-image:"https://images.unsplash.com/photo-1615485500704-8e990f9900f7?auto=format&fit=crop&w=900&q=85",
-description:"بوكس أنيق مناسب للإهداء."
-},
-
-{
-id:12,
-name:"عود فاخر VIP",
-category:"أزرق",
-price:950,
-oldPrice:1100,
-rating:5,
-tag:"VIP",
-image:"https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=900&q=85",
-description:"اختيار فاخر لمحبي الجودة العالية."
-}
-
-];
-
-
-let cart = [];
-
-let currentCategory = "all";
-
-
-/* ==============================
-   عرض المنتجات
-============================== */
-
-function renderProducts(){
-
-const container =
-document.getElementById("products");
-
-const search =
-document.getElementById("searchInput")
-.value
-.trim()
-.toLowerCase();
-
-
-const filtered = products.filter(product=>{
-
-const categoryMatch =
-currentCategory === "all" ||
-product.category === currentCategory;
-
-const searchMatch =
-product.name.toLowerCase().includes(search) ||
-product.category.toLowerCase().includes(search);
-
-return categoryMatch && searchMatch;
-
-});
-
-
-container.innerHTML = filtered.map(product=>`
-
-<div class="product">
-
-<div class="product-image">
-
-<img
-src="${product.image}"
-alt="${product.name}"
-loading="lazy">
-
-${product.tag ?
-`<div class="product-tag">${product.tag}</div>`
-:""}
-
-<button class="favorite"
-onclick="toggleFavorite(this)">
-♡
-</button>
-
-</div>
-
-
-<div class="product-body">
-
-<div class="product-category">
-${product.category}
-</div>
-
-<h3>
-${product.name}
-</h3>
-
-<div class="stars">
-${"★".repeat(product.rating)}
-${"☆".repeat(5-product.rating)}
-</div>
-
-<div class="product-description">
-${product.description}
-</div>
-
-
-<div class="price-row">
-
-<div>
-
-<span class="price">
-${product.price}
- ريال
-</span>
-
-${product.oldPrice ?
-`<span class="old-price">
-${product.oldPrice}
-</span>`
-:""}
-
-</div>
-
-
-<button class="add-cart"
-onclick="addToCart(${product.id})">
-
-🛒 أضف
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-`).join("");
-
-
-if(filtered.length===0){
-
-container.innerHTML=`
-<div style="grid-column:1/-1;text-align:center;padding:50px">
-لا توجد منتجات مطابقة للبحث.
-</div>
-`;
-
-}
-
-}
-
-
-/* ==============================
-   الفلاتر
-============================== */
-
-function setCategory(category,button){
-
-currentCategory=category;
-
-document
-.querySelectorAll(".filter")
-.forEach(btn=>btn.classList.remove("active"));
-
-button.classList.add("active");
-
-renderProducts();
-
-}
-
-
-/* ==============================
-   السلة
-============================== */
-
-function addToCart(id){
-
-const product =
-products.find(p=>p.id===id);
-
-const existing =
-cart.find(item=>item.id===id);
-
-
-if(existing){
-
-existing.qty++;
-
-}else{
-
-cart.push({
-...product,
-qty:1
-});
-
-}
-
-updateCart();
-
-showToast();
-
-}
-
-
-function updateCart(){
-
-const count =
-cart.reduce((sum,item)=>sum+item.qty,0);
-
-document.getElementById("cartCount").innerText=count;
-
-
-const items =
-document.getElementById("cartItems");
-
-
-if(cart.length===0){
-
-items.innerHTML=`
-<div style="text-align:center;padding:40px;color:#777">
-السلة فارغة 🛒
-</div>
-`;
-
-document.getElementById("cartTotal").innerText="0";
-
-return;
-
-}
-
-
-items.innerHTML=cart.map(item=>`
-
-<div class="cart-item">
-
-<img
-src="${item.image}"
-alt="${item.name}">
-
-<div>
-
-<strong>${item.name}</strong>
-
-<div style="font-size:13px">
-${item.price} ريال
-</div>
-
-<div class="qty">
-
-<button onclick="changeQty(${item.id},-1)">
-−
-</button>
-
-<span>${item.qty}</span>
-
-<button onclick="changeQty(${item.id},1)">
-+
-</button>
-
-</div>
+id="notes"
+placeholder="أي ملاحظات على الطلب...">
+</textarea>
 
 </div>
 
 
 <button
-class="remove"
-onclick="removeItem(${item.id})">
+class="send-order"
+onclick="sendOrder()">
 
-حذف
+📲 إرسال الطلب مباشرة عبر واتساب
 
 </button>
 
+
 </div>
 
-`).join("");
+</div>
 
 
-let total =
-cart.reduce(
-(sum,item)=>sum+(item.price*item.qty),
-0
-);
+<script>
 
-document.getElementById("cartTotal").innerText=total;
+/* =========================
+   رقم واتساب المتجر
+========================= */
 
-}
-
-
-function changeQty(id,amount){
-
-const item =
-cart.find(item=>item.id===id);
-
-if(!item) return;
-
-item.qty += amount;
-
-if(item.qty<=0){
-
-removeItem(id);
-
-return;
-
-}
-
-updateCart();
-
-}
+const STORE_WHATSAPP =
+"966539400955";
 
 
-function removeItem(id){
-
-cart =
-cart.filter(item=>item.id!==id);
-
-updateCart();
-
-}
+let selectedProduct = "";
 
 
-function openCart(){
+/* =========================
+   فتح الطلب
+========================= */
+
+function openOrder(product){
+
+selectedProduct = product;
 
 document
-.getElementById("cartModal")
+.getElementById("selectedProduct")
+.innerText = product;
+
+document
+.getElementById("orderModal")
 .classList.add("show");
 
-updateCart();
-
 }
 
 
-function closeCart(){
+/* =========================
+   إغلاق الطلب
+========================= */
+
+function closeOrder(){
 
 document
-.getElementById("cartModal")
+.getElementById("orderModal")
 .classList.remove("show");
 
 }
 
 
-/* ==============================
-   الخصم
-============================== */
-
-function calculateTotal(){
-
-let total =
-cart.reduce(
-(sum,item)=>sum+(item.price*item.qty),
-0
-);
-
-const coupon =
-document.getElementById("coupon")
-.value
-.trim()
-.toUpperCase();
-
-if(coupon==="FIRST10"){
-
-total = total * .90;
-
-}
-
-return Math.round(total);
-
-}
-
-
-/* ==============================
+/* =========================
    إرسال الطلب
-============================== */
+========================= */
 
 function sendOrder(){
 
-if(cart.length===0){
+const name =
+document
+.getElementById("customerName")
+.value
+.trim();
 
-alert("السلة فارغة");
+const phone =
+document
+.getElementById("customerPhone")
+.value
+.trim();
+
+const city =
+document
+.getElementById("customerCity")
+.value
+.trim();
+
+const address =
+document
+.getElementById("customerAddress")
+.value
+.trim();
+
+const shipping =
+document
+.getElementById("shippingCompany")
+.value;
+
+const notes =
+document
+.getElementById("notes")
+.value
+.trim();
+
+
+if(!name){
+
+alert("اكتب الاسم أولاً");
 
 return;
 
 }
 
 
-const name =
-document.getElementById("customerName")
-.value.trim();
+if(!phone){
 
-const phone =
-document.getElementById("customerPhone")
-.value.trim();
+alert("اكتب رقم الجوال");
 
-const city =
-document.getElementById("customerCity")
-.value.trim();
+return;
 
-const shipping =
-document.getElementById("shipping")
-.value;
-
-const address =
-document.getElementById("customerAddress")
-.value.trim();
-
-const notes =
-document.getElementById("orderNotes")
-.value.trim();
-
-const coupon =
-document.getElementById("coupon")
-.value.trim()
-.toUpperCase();
+}
 
 
-if(!name || !phone || !city){
+if(!city){
 
-alert("فضلاً أكمل الاسم والجوال والمدينة.");
+alert("اكتب المدينة");
 
 return;
 
@@ -2474,166 +1742,107 @@ return;
 
 
 let message =
-"طلب جديد من متجر دار العود 🌿\n\n";
 
+"السلام عليكم، أريد الطلب من متجر ترف العود 🌿\n\n"+
 
-message +=
-"👤 الاسم: "+name+"\n";
+"المنتج: "+
+selectedProduct+
+"\n"+
 
-message +=
-"📱 الجوال: "+phone+"\n";
+"الوزن: 50 جرام\n"+
 
-message +=
-"📍 المدينة: "+city+"\n";
+"السعر: 300 ريال\n\n"+
 
-message +=
-"🚚 الشحن: "+shipping+"\n";
+"بيانات العميل:\n"+
 
-message +=
-"🏠 العنوان: "+(address || "سيتم تحديده لاحقًا")+"\n\n";
+"الاسم: "+
+name+
+"\n"+
 
+"الجوال: "+
+phone+
+"\n"+
 
-message +=
-"🛒 المنتجات:\n";
+"المدينة: "+
+city+
+"\n"+
 
+"العنوان: "+
+(address || "سيتم تحديده")+
+"\n"+
 
-cart.forEach(item=>{
-
-message +=
-"• "+
-item.name+
-" × "+
-item.qty+
-" = "+
-(item.price*item.qty)+
-" ريال\n";
-
-});
-
-
-const subtotal =
-cart.reduce(
-(sum,item)=>sum+(item.price*item.qty),
-0
-);
-
-
-const total =
-calculateTotal();
-
-
-message +=
-"\nالمجموع قبل الخصم: "+
-subtotal+
-" ريال\n";
-
-
-if(coupon==="FIRST10"){
-
-message +=
-"🎁 الخصم: 10%\n";
-
-}
-
-
-message +=
-"💰 الإجمالي: "+
-total+
-" ريال\n";
+"شركة الشحن: "+
+shipping+
+"\n";
 
 
 if(notes){
 
 message +=
-"\n📝 ملاحظات:\n"+
+
+"\nملاحظات:\n"+
 notes;
 
 }
 
 
-/*
-غيّر الرقم هنا إلى رقم واتساب المتجر
-*/
+message +=
 
-const whatsapp =
-"966500000000";
-
+"\n\nأرغب بتأكيد الطلب ومعرفة تكلفة الشحن.";
 
 const url =
+
 "https://wa.me/"+
-whatsapp+
+STORE_WHATSAPP+
 "?text="+
 encodeURIComponent(message);
 
 
-window.open(url,"_blank");
+window.open(
+url,
+"_blank"
+);
 
 }
 
 
-/* ==============================
-   مفضلة
-============================== */
+/* =========================
+   النزول للمنتجات
+========================= */
 
-function toggleFavorite(button){
-
-if(button.innerText==="♡"){
-
-button.innerText="♥";
-
-}else{
-
-button.innerText="♡";
-
-}
-
-}
-
-
-/* ==============================
-   إشعار
-============================== */
-
-function showToast(){
-
-const toast =
-document.getElementById("toast");
-
-toast.classList.add("show");
-
-setTimeout(()=>{
-
-toast.classList.remove("show");
-
-},1800);
-
-}
-
-
-/* ==============================
-   تشغيل
-============================== */
-
-renderProducts();
-
-updateCart();
-
-
-/* إغلاق النافذة عند الضغط خارجها */
+function scrollToProducts(){
 
 document
-.getElementById("cartModal")
-.addEventListener("click",function(e){
+.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
+});
 
-if(e.target===this){
+}
 
-closeCart();
+
+/* =========================
+   إغلاق النافذة خارجها
+========================= */
+
+document
+.getElementById("orderModal")
+.addEventListener(
+"click",
+function(event){
+
+if(event.target===this){
+
+closeOrder();
 
 }
 
 });
 
+
 </script>
 
+
 </body>
+
 </html>

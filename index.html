@@ -1,3849 +1,1376 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ترف العود | لأن العود ترف</title>
+<title>جلاغ العود | أصالة نجد ونفائس العود</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================================================
-   TARAF ALOUD — PREMIUM IDENTITY
-   الأحمر الغامق + البني + الأوف وايت
-===================================================== */
-
 :root{
-  --red:#641d24;
-  --red-dark:#46151a;
-  --red-light:#8a3038;
 
-  --brown:#3b2921;
-  --brown-light:#65483a;
+--sand:#EFE6D8;
+--sand2:#F8F3EB;
 
-  --cream:#f4eee5;
-  --cream-light:#fbf8f3;
-  --cream-dark:#e8ddcf;
+--wood:#5A3E2B;
+--wood-dark:#2F1F15;
 
-  --gold:#b6945a;
-  --gold-light:#d9c18d;
+--najd:#7D6244;
+--olive:#6B7153;
 
-  --text:#30241e;
-  --muted:#75685e;
+--text:#2B211B;
+--muted:#7A6C60;
 
-  --border:#ded2c3;
+--line:#DDCEBF;
 
-  --shadow:0 20px 60px rgba(55,35,25,.13);
+--shadow:0 20px 60px rgba(0,0,0,.12);
+
 }
 
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:Cairo,sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  line-height:1.8;
-}
 
-button,
-input,
-textarea,
-select{
-  font-family:inherit;
-}
+font-family:Cairo,sans-serif;
 
-button{
-  cursor:pointer;
+background:var(--sand);
+
+color:var(--text);
+
+overflow-x:hidden;
+
 }
 
 a{
-  color:inherit;
-  text-decoration:none;
+text-decoration:none;
+color:inherit;
 }
 
-
-/* =====================================================
-   WELCOME POPUP
-===================================================== */
-
-.welcome-overlay{
-  position:fixed;
-  inset:0;
-  z-index:2000;
-
-  background:rgba(35,20,15,.78);
-  backdrop-filter:blur(10px);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:18px;
-
-  opacity:0;
-  visibility:hidden;
-
-  transition:.35s;
+img{
+max-width:100%;
+display:block;
 }
 
-.welcome-overlay.show{
-  opacity:1;
-  visibility:visible;
+.section{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:90px 20px;
+
 }
 
-.welcome-box{
-  width:min(520px,100%);
-  background:var(--cream-light);
+/* زخارف نجدية */
 
-  border-radius:30px;
-  overflow:hidden;
+.najdi-pattern{
 
-  box-shadow:0 35px 100px rgba(0,0,0,.35);
+position:absolute;
 
-  text-align:center;
+inset:0;
 
-  transform:translateY(20px) scale(.97);
-  transition:.4s;
+opacity:.06;
+
+background-image:
+
+linear-gradient(45deg,#000 25%,transparent 25%),
+
+linear-gradient(-45deg,#000 25%,transparent 25%),
+
+linear-gradient(45deg,transparent 75%,#000 75%),
+
+linear-gradient(-45deg,transparent 75%,#000 75%);
+
+background-size:60px 60px;
+
+background-position:
+0 0,
+0 30px,
+30px -30px,
+-30px 0px;
+
 }
 
-.welcome-overlay.show .welcome-box{
-  transform:translateY(0) scale(1);
-}
-
-.welcome-top{
-  background:
-    radial-gradient(circle at 30% 20%,rgba(255,255,255,.08),transparent 25%),
-    linear-gradient(135deg,var(--red-dark),var(--red));
-  color:white;
-  padding:38px 25px 32px;
-}
-
-.welcome-logo{
-  width:65px;
-  height:65px;
-
-  margin:0 auto 15px;
-
-  display:grid;
-  place-items:center;
-
-  border:1px solid rgba(255,255,255,.3);
-  border-radius:50%;
-
-  color:var(--gold-light);
-
-  font-family:Georgia,serif;
-  font-size:32px;
-}
-
-.welcome-top small{
-  color:var(--gold-light);
-  font-weight:800;
-  letter-spacing:2px;
-}
-
-.welcome-top h2{
-  font-size:34px;
-  margin:7px 0;
-}
-
-.welcome-top p{
-  color:#f2e4d8;
-  font-size:14px;
-}
-
-.welcome-body{
-  padding:27px;
-}
-
-.welcome-message{
-  color:var(--brown);
-  font-weight:700;
-  font-size:15px;
-}
-
-.welcome-offer{
-  margin:20px 0;
-  padding:18px;
-
-  background:var(--cream);
-  border:1px solid var(--border);
-  border-radius:20px;
-}
-
-.welcome-offer .discount{
-  display:inline-block;
-
-  background:var(--red);
-  color:white;
-
-  padding:4px 12px;
-  border-radius:30px;
-
-  font-size:11px;
-  font-weight:900;
-}
-
-.welcome-offer strong{
-  display:block;
-  color:var(--red);
-  font-size:25px;
-  margin:5px 0;
-}
-
-.welcome-offer span{
-  color:var(--muted);
-  font-size:12px;
-}
-
-.welcome-actions{
-  display:grid;
-  gap:10px;
-}
-
-.welcome-main{
-  border:0;
-  background:var(--red);
-  color:white;
-  padding:14px;
-  border-radius:14px;
-  font-weight:900;
-}
-
-.welcome-main:hover{
-  background:var(--red-dark);
-}
-
-.welcome-close{
-  border:1px solid var(--border);
-  background:white;
-  color:var(--brown);
-  padding:12px;
-  border-radius:14px;
-  font-weight:700;
-}
-
-
-/* =====================================================
-   TOP BAR
-===================================================== */
+/* Top Bar */
 
 .topbar{
-  background:var(--brown);
-  color:#f4e8da;
 
-  text-align:center;
+background:var(--wood-dark);
 
-  padding:7px 15px;
+color:white;
 
-  font-size:11px;
-  font-weight:600;
+padding:10px;
+
+text-align:center;
+
+font-size:13px;
+
+font-weight:700;
+
 }
 
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* NAVBAR */
 
 nav{
-  position:sticky;
-  top:0;
-  z-index:500;
 
-  height:76px;
+position:sticky;
 
-  background:rgba(244,238,229,.95);
-  backdrop-filter:blur(18px);
+top:0;
 
-  border-bottom:1px solid rgba(59,41,33,.1);
+z-index:1000;
+
+background:rgba(248,243,235,.96);
+
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid var(--line);
+
 }
 
 .nav{
-  height:100%;
-  max-width:1280px;
 
-  margin:auto;
-  padding:0 20px;
+max-width:1300px;
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+margin:auto;
 
-  gap:20px;
+height:82px;
+
+padding:0 20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
 }
 
-.brand-icon{
-  width:44px;
-  height:44px;
+.logo-icon{
 
-  display:grid;
-  place-items:center;
+width:55px;
+height:55px;
 
-  border-radius:50%;
+border-radius:50%;
 
-  background:var(--red);
-  color:var(--gold-light);
+background:var(--wood);
 
-  font-family:Georgia,serif;
-  font-size:23px;
+color:white;
 
-  box-shadow:0 8px 25px rgba(100,29,36,.2);
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:28px;
+
+font-weight:900;
+
 }
 
-.brand-name{
-  color:var(--brown);
-  font-size:19px;
-  font-weight:900;
+.logo-text h2{
+
+font-size:24px;
+
+color:var(--wood-dark);
+
 }
 
-.brand-sub{
-  display:block;
-  color:var(--muted);
-  font-size:8px;
-  line-height:1;
+.logo-text span{
+
+font-size:12px;
+
+color:var(--muted);
+
 }
 
 .nav-links{
-  display:flex;
-  align-items:center;
-  gap:25px;
 
-  color:var(--brown);
+display:flex;
 
-  font-size:13px;
-  font-weight:700;
-}
+gap:25px;
 
-.nav-links a{
-  transition:.2s;
+font-weight:700;
+
 }
 
 .nav-links a:hover{
-  color:var(--red);
+
+color:var(--wood);
+
 }
 
-.cart-btn{
-  border:0;
-
-  background:var(--red);
-  color:white;
-
-  border-radius:30px;
-
-  padding:9px 14px;
-
-  display:flex;
-  align-items:center;
-  gap:7px;
-
-  font-weight:900;
-}
-
-.cart-count{
-  width:22px;
-  height:22px;
-
-  border-radius:50%;
-
-  display:grid;
-  place-items:center;
-
-  background:var(--gold-light);
-  color:var(--red);
-
-  font-size:10px;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
+/* HERO */
 
 .hero{
-  position:relative;
 
-  min-height:650px;
+position:relative;
 
-  overflow:hidden;
+min-height:90vh;
 
-  background:
-    radial-gradient(circle at 75% 25%,rgba(182,148,90,.16),transparent 25%),
-    linear-gradient(120deg,#321e19,#5b242a 48%,#32191b);
-}
+background:
 
-.hero::before{
-  content:"";
+linear-gradient(rgba(32,20,15,.68),rgba(32,20,15,.68)),
 
-  position:absolute;
-  inset:0;
+url('https://images.unsplash.com/photo-1515442261605-65987783cb6a?q=80&w=1600');
 
-  background:
-    radial-gradient(circle at 70% 60%,rgba(255,255,255,.06),transparent 28%),
-    radial-gradient(circle at 15% 20%,rgba(217,193,141,.08),transparent 25%);
-}
+background-size:cover;
 
-.hero-decoration{
-  position:absolute;
+background-position:center;
 
-  width:520px;
-  height:520px;
+display:flex;
 
-  border:1px solid rgba(217,193,141,.16);
-  border-radius:50%;
+align-items:center;
 
-  right:-130px;
-  top:-100px;
-}
+overflow:hidden;
 
-.hero-decoration::before{
-  content:"";
-
-  position:absolute;
-  inset:55px;
-
-  border:1px solid rgba(217,193,141,.11);
-  border-radius:50%;
 }
 
 .hero-content{
-  position:relative;
-  z-index:2;
 
-  max-width:1280px;
-  min-height:650px;
+position:relative;
 
-  margin:auto;
-  padding:80px 22px;
+z-index:2;
 
-  display:flex;
-  align-items:center;
+max-width:1300px;
+
+margin:auto;
+
+padding:40px 20px;
+
+width:100%;
+
 }
 
-.hero-copy{
-  max-width:650px;
-}
+.hero-badge{
 
-.kicker{
-  color:var(--gold-light);
+display:inline-block;
 
-  font-size:11px;
-  font-weight:900;
+background:rgba(255,255,255,.15);
 
-  letter-spacing:2px;
+backdrop-filter:blur(10px);
+
+padding:8px 18px;
+
+border-radius:50px;
+
+color:white;
+
+font-size:13px;
+
+margin-bottom:20px;
+
 }
 
 .hero h1{
-  color:white;
 
-  font-size:clamp(55px,9vw,95px);
+font-size:clamp(45px,9vw,100px);
 
-  line-height:1;
+line-height:1.1;
 
-  font-weight:900;
+color:white;
 
-  margin-top:10px;
-}
+margin-bottom:15px;
 
-.hero-title{
-  color:var(--gold-light);
-
-  font-family:"Playfair Display",Georgia,serif;
-
-  font-size:clamp(42px,6vw,70px);
-
-  line-height:1;
-
-  margin-top:8px;
 }
 
 .hero p{
-  color:#eadbd0;
 
-  margin:25px 0;
+max-width:700px;
 
-  font-size:16px;
+font-size:18px;
+
+line-height:2;
+
+color:#eee;
+
 }
 
 .hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+
+margin-top:30px;
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
 }
 
 .btn{
-  border:0;
 
-  padding:13px 22px;
+padding:15px 30px;
 
-  border-radius:30px;
+border-radius:50px;
 
-  font-weight:900;
+font-weight:800;
 
-  transition:.25s;
-}
+transition:.3s;
 
-.btn:hover{
-  transform:translateY(-3px);
 }
 
 .btn-main{
-  background:var(--gold-light);
-  color:var(--brown);
+
+background:white;
+
+color:var(--wood-dark);
+
 }
 
 .btn-outline{
-  background:transparent;
-  color:white;
 
-  border:1px solid rgba(255,255,255,.35);
-}
-
-
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-.section{
-  max-width:1280px;
-
-  margin:85px auto;
-
-  padding:0 20px;
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-
-  gap:25px;
-
-  margin-bottom:30px;
-}
-
-.section-title{
-  color:var(--brown);
-
-  font-size:40px;
-
-  line-height:1.2;
-
-  margin-top:4px;
-}
-
-.section-description{
-  max-width:520px;
-
-  color:var(--muted);
-
-  font-size:13px;
-}
-
-
-/* =====================================================
-   OFFER
-===================================================== */
-
-.offer{
-  position:relative;
-
-  overflow:hidden;
-
-  border-radius:30px;
-
-  background:
-    radial-gradient(circle at 90% 20%,rgba(217,193,141,.14),transparent 25%),
-    linear-gradient(135deg,var(--red-dark),var(--red));
-
-  color:white;
-
-  box-shadow:var(--shadow);
-}
-
-.offer::after{
-  content:"افتتاح";
-
-  position:absolute;
-
-  left:-25px;
-  bottom:-80px;
-
-  font-family:Georgia,serif;
-
-  font-size:190px;
-
-  color:rgba(255,255,255,.035);
-}
-
-.offer-inner{
-  position:relative;
-  z-index:2;
-
-  padding:45px;
-
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-
-  gap:30px;
-
-  align-items:center;
-}
-
-.offer-label{
-  display:inline-block;
-
-  background:var(--gold-light);
-  color:var(--brown);
-
-  padding:5px 13px;
-
-  border-radius:30px;
-
-  font-size:10px;
-  font-weight:900;
-}
-
-.offer h2{
-  font-size:40px;
-
-  line-height:1.3;
-
-  margin:12px 0;
-}
-
-.offer p{
-  color:#ecdcd1;
-
-  font-size:14px;
-}
-
-.offer-items{
-  display:flex;
-  gap:10px;
-
-  margin:22px 0;
-
-  flex-wrap:wrap;
-}
-
-.offer-item{
-  background:rgba(255,255,255,.09);
-
-  border:1px solid rgba(255,255,255,.14);
-
-  padding:10px 15px;
-
-  border-radius:13px;
-
-  font-size:12px;
-  font-weight:800;
-}
-
-.offer-price{
-  display:flex;
-  align-items:end;
-  gap:12px;
-
-  margin-top:12px;
-}
-
-.old-price{
-  color:#d7bdb2;
-
-  text-decoration:line-through;
-
-  font-size:16px;
-}
-
-.new-price{
-  color:var(--gold-light);
-
-  font-size:43px;
-
-  font-weight:900;
-
-  line-height:1;
-}
-
-.discount-box{
-  background:rgba(255,255,255,.08);
-
-  border:1px solid rgba(217,193,141,.3);
-
-  border-radius:24px;
-
-  padding:28px;
-
-  text-align:center;
-}
-
-.discount-circle{
-  width:125px;
-  height:125px;
-
-  margin:auto;
-
-  border-radius:50%;
-
-  display:grid;
-  place-items:center;
-
-  border:2px solid var(--gold-light);
-
-  color:var(--gold-light);
-
-  font-size:30px;
-  font-weight:900;
-}
-
-.discount-box p{
-  margin-top:13px;
-
-  color:white;
-
-  font-weight:800;
-}
-
-
-/* =====================================================
-   PRODUCTS — 2 x 2
-===================================================== */
-
-.products{
-  display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  gap:20px;
-}
-
-.product{
-  position:relative;
-
-  background:var(--cream-light);
-
-  border:1px solid var(--border);
-
-  border-radius:23px;
-
-  overflow:hidden;
-
-  box-shadow:0 8px 28px rgba(60,40,25,.06);
-
-  transition:.3s;
-}
-
-.product:hover{
-  transform:translateY(-5px);
-
-  box-shadow:var(--shadow);
-}
-
-.product-image{
-  height:250px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  background:
-    radial-gradient(circle at 50% 30%,rgba(217,193,141,.15),transparent 30%),
-    linear-gradient(135deg,#68483a,#2b1c18);
-}
-
-.product-image svg{
-  width:100%;
-  height:100%;
-}
-
-.product-badge{
-  position:absolute;
-
-  top:13px;
-  right:13px;
-
-  background:var(--red);
-
-  color:white;
-
-  padding:5px 10px;
-
-  border-radius:20px;
-
-  font-size:9px;
-
-  font-weight:900;
-}
-
-.product-body{
-  padding:18px;
-}
-
-.product-origin{
-  color:var(--gold);
-
-  font-size:10px;
-
-  font-weight:900;
-}
-
-.product h3{
-  color:var(--brown);
-
-  font-size:19px;
-
-  margin:2px 0;
-}
-
-.product-use{
-  color:var(--muted);
-
-  font-size:11px;
-
-  min-height:43px;
-}
-
-.product-bottom{
-  margin-top:15px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:10px;
-}
-
-.price{
-  color:var(--red);
-
-  font-size:18px;
-
-  font-weight:900;
-}
-
-.price small{
-  display:block;
-
-  color:var(--muted);
-
-  font-size:9px;
-
-  font-weight:500;
-}
-
-.add-btn{
-  border:0;
-
-  background:var(--brown);
-  color:white;
-
-  border-radius:11px;
-
-  padding:9px 12px;
-
-  font-size:10px;
-
-  font-weight:900;
-}
-
-.add-btn:hover{
-  background:var(--red);
-}
-
-
-/* =====================================================
-   STORY
-===================================================== */
-
-.story{
-  position:relative;
-
-  overflow:hidden;
-
-  min-height:420px;
-
-  border-radius:30px;
-
-  background:
-    linear-gradient(115deg,rgba(47,39,27,.9),rgba(71,79,48,.78)),
-    #4c5938;
-
-  color:white;
-
-  box-shadow:var(--shadow);
-}
-
-.story-art{
-  position:absolute;
-  inset:0;
-
-  opacity:.65;
-}
-
-.story-art svg{
-  width:100%;
-  height:100%;
-}
-
-.story-content{
-  position:relative;
-  z-index:2;
-
-  max-width:600px;
-
-  padding:60px;
-}
-
-.story h2{
-  font-size:42px;
-
-  line-height:1.3;
-
-  margin:10px 0 15px;
-}
-
-.story p{
-  color:#eee5d8;
-
-  font-size:14px;
-}
-
-
-/* =====================================================
-   WHY TARAF
-===================================================== */
-
-.features{
-  display:grid;
-
-  grid-template-columns:repeat(4,1fr);
-
-  gap:15px;
-}
-
-.feature{
-  padding:24px;
-
-  background:rgba(255,255,255,.45);
-
-  border:1px solid var(--border);
-
-  border-radius:20px;
-}
-
-.feature-number{
-  color:var(--gold);
-
-  font-family:Georgia,serif;
-
-  font-size:31px;
-}
-
-.feature h3{
-  color:var(--brown);
-
-  font-size:16px;
-
-  margin:3px 0;
-}
-
-.feature p{
-  color:var(--muted);
-
-  font-size:11px;
-}
-
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about{
-  background:var(--brown);
-
-  color:white;
-
-  border-radius:30px;
-
-  padding:55px;
-
-  overflow:hidden;
-
-  position:relative;
-}
-
-.about::after{
-  content:"ترف";
-
-  position:absolute;
-
-  left:-20px;
-  bottom:-95px;
-
-  color:rgba(255,255,255,.035);
-
-  font-family:Georgia,serif;
-
-  font-size:210px;
-}
-
-.about h2{
-  font-size:40px;
-
-  margin:5px 0 12px;
-}
-
-.about p{
-  position:relative;
-  z-index:2;
-
-  max-width:850px;
-
-  color:#e7d9cb;
-
-  font-size:14px;
-}
-
-
-/* =====================================================
-   PRODUCT MODAL
-===================================================== */
-
-.modal{
-  position:fixed;
-  inset:0;
-
-  z-index:1500;
-
-  background:rgba(30,19,15,.75);
-
-  backdrop-filter:blur(8px);
+border:2px solid white;
 
-  display:none;
+color:white;
 
-  align-items:center;
-  justify-content:center;
-
-  padding:18px;
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modal-box{
-  width:min(900px,100%);
-
-  max-height:92vh;
-
-  overflow:auto;
-
-  background:var(--cream-light);
-
-  border-radius:28px;
-
-  box-shadow:0 35px 100px rgba(0,0,0,.35);
-
-  position:relative;
-}
-
-.close{
-  position:absolute;
-
-  top:13px;
-  left:13px;
-
-  z-index:10;
-
-  width:38px;
-  height:38px;
-
-  border:0;
-
-  background:white;
-
-  color:var(--brown);
-
-  border-radius:50%;
-
-  font-size:20px;
-}
-
-.product-modal{
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-}
-
-.modal-art{
-  min-height:500px;
-
-  background:#40291f;
-}
-
-.modal-art svg{
-  width:100%;
-  height:100%;
-}
-
-.modal-info{
-  padding:42px;
-}
-
-.modal-origin{
-  color:var(--gold);
-
-  font-size:11px;
-  font-weight:900;
-}
-
-.modal-info h2{
-  color:var(--brown);
-
-  font-size:35px;
-
-  line-height:1.25;
-
-  margin:5px 0 12px;
-}
-
-.modal-info p{
-  color:var(--muted);
-
-  font-size:13px;
-
-  margin-bottom:20px;
-}
-
-.detail{
-  display:flex;
-  justify-content:space-between;
-
-  border-top:1px solid var(--border);
-
-  padding:10px 0;
-
-  font-size:12px;
-}
-
-.detail strong{
-  color:var(--brown);
-}
-
-.modal-add{
-  width:100%;
-
-  border:0;
-
-  background:var(--red);
-
-  color:white;
-
-  padding:14px;
-
-  border-radius:13px;
-
-  font-weight:900;
-}
-
-
-/* =====================================================
-   CART
-===================================================== */
-
-.overlay{
-  position:fixed;
-  inset:0;
-
-  z-index:900;
-
-  background:rgba(0,0,0,.3);
-
-  display:none;
-}
-
-.overlay.show{
-  display:block;
-}
-
-.cart{
-  position:fixed;
-
-  z-index:1000;
-
-  top:0;
-  left:-450px;
-
-  width:min(430px,94vw);
-
-  height:100vh;
-
-  background:var(--cream-light);
-
-  box-shadow:20px 0 70px rgba(0,0,0,.2);
-
-  transition:.35s;
-
-  display:flex;
-  flex-direction:column;
-}
-
-.cart.open{
-  left:0;
-}
-
-.cart-head{
-  padding:20px;
-
-  border-bottom:1px solid var(--border);
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.cart-head h2{
-  color:var(--brown);
-
-  font-size:20px;
-}
-
-.cart-items{
-  flex:1;
-
-  overflow:auto;
-
-  padding:18px;
-}
-
-.empty{
-  text-align:center;
-
-  color:var(--muted);
-
-  padding:80px 20px;
-}
-
-.cart-item{
-  display:flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  padding:13px 0;
-
-  border-bottom:1px solid var(--border);
-}
-
-.cart-art{
-  width:62px;
-  height:62px;
-
-  flex:none;
-
-  border-radius:12px;
-
-  overflow:hidden;
-
-  background:#3d291f;
-}
-
-.cart-art svg{
-  width:100%;
-  height:100%;
-}
-
-.cart-info{
-  flex:1;
-}
-
-.cart-info h4{
-  color:var(--brown);
-
-  font-size:13px;
-}
-
-.cart-info small{
-  color:var(--muted);
-
-  font-size:9px;
-}
-
-.quantity{
-  display:flex;
-
-  align-items:center;
-
-  gap:6px;
-
-  margin-top:5px;
 }
 
-.quantity button{
-  width:24px;
-  height:24px;
+.btn:hover{
 
-  border:1px solid var(--border);
+transform:translateY(-3px);
 
-  background:white;
-
-  border-radius:6px;
-}
-
-.cart-footer{
-  padding:18px;
-
-  border-top:1px solid var(--border);
-}
-
-.total{
-  display:flex;
-
-  justify-content:space-between;
-
-  font-size:19px;
-
-  font-weight:900;
-
-  margin-bottom:12px;
-}
-
-.checkout-btn{
-  width:100%;
-
-  border:0;
-
-  background:var(--red);
-
-  color:white;
-
-  padding:14px;
-
-  border-radius:13px;
-
-  font-weight:900;
-}
-
-
-/* =====================================================
-   CHECKOUT
-===================================================== */
-
-.checkout-content{
-  padding:38px;
-}
-
-.checkout-content h2{
-  color:var(--brown);
-
-  font-size:32px;
-}
-
-.summary{
-  background:var(--cream);
-
-  border:1px solid var(--border);
-
-  border-radius:15px;
-
-  padding:17px;
-
-  margin:17px 0;
-}
-
-.field{
-  margin-bottom:12px;
 }
 
-.field label{
-  display:block;
+/* هوية جلاغ */
 
-  color:var(--brown);
+.identity{
 
-  font-size:11px;
+background:white;
 
-  font-weight:900;
+border-radius:35px;
 
-  margin-bottom:4px;
-}
-
-.field input,
-.field textarea{
-  width:100%;
+padding:60px;
 
-  border:1px solid var(--border);
+position:relative;
 
-  background:white;
+overflow:hidden;
 
-  border-radius:10px;
+box-shadow:var(--shadow);
 
-  padding:11px;
-
-  outline:none;
-}
+border:1px solid var(--line);
 
-.field textarea{
-  min-height:80px;
 }
 
-.whatsapp{
-  width:100%;
+.identity h2{
 
-  border:0;
+font-size:50px;
 
-  background:#218b49;
+margin-bottom:20px;
 
-  color:white;
+color:var(--wood-dark);
 
-  padding:14px;
-
-  border-radius:13px;
-
-  font-weight:900;
 }
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
 
-footer{
-  background:#2f211b;
-
-  color:white;
-
-  text-align:center;
-
-  padding:45px 20px;
-}
+.identity p{
 
-footer h2{
-  color:var(--gold-light);
+font-size:18px;
 
-  font-family:"Playfair Display",serif;
+line-height:2.3;
 
-  font-size:30px;
-}
+max-width:1000px;
 
-footer p{
-  color:#d8c9bb;
+position:relative;
 
-  font-size:12px;
+z-index:2;
 
-  margin-top:4px;
 }
-
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-.toast{
-  position:fixed;
-
-  z-index:3000;
-
-  right:20px;
-  bottom:20px;
-
-  background:var(--red);
 
-  color:white;
+@media(max-width:768px){
 
-  padding:12px 17px;
-
-  border-radius:13px;
-
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
-
-  font-size:11px;
-
-  font-weight:800;
-
-  animation:toastIn .3s ease;
+.nav-links{
+display:none;
 }
 
-@keyframes toastIn{
-  from{
-    transform:translateY(15px);
-    opacity:0;
-  }
-
-  to{
-    transform:translateY(0);
-    opacity:1;
-  }
+.hero p{
+font-size:15px;
 }
-
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:900px){
 
-  .nav-links{
-    display:none;
-  }
-
-  .offer-inner{
-    grid-template-columns:1fr;
-  }
-
-  .features{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .product-modal{
-    grid-template-columns:1fr;
-  }
-
-  .modal-art{
-    min-height:330px;
-    height:330px;
-  }
+.identity{
+padding:35px 25px;
 }
-
-
-@media(max-width:600px){
-
-  nav{
-    height:68px;
-  }
-
-  .brand-name{
-    font-size:16px;
-  }
-
-  .brand-icon{
-    width:40px;
-    height:40px;
-  }
-
-  .hero{
-    min-height:590px;
-  }
-
-  .hero-content{
-    min-height:590px;
-
-    padding:60px 20px;
-  }
-
-  .hero h1{
-    font-size:57px;
-  }
-
-  .hero-title{
-    font-size:43px;
-  }
-
-  .hero p{
-    font-size:14px;
-  }
-
-  .section{
-    margin:65px auto;
-  }
-
-  .section-head{
-    display:block;
-  }
-
-  .section-title{
-    font-size:31px;
-  }
-
-  /* المنتجات 2 × 2 على الجوال */
-
-  .products{
-    grid-template-columns:repeat(2,1fr);
-
-    gap:11px;
-  }
-
-  .product{
-    border-radius:17px;
-  }
-
-  .product-image{
-    height:155px;
-  }
-
-  .product-body{
-    padding:12px;
-  }
-
-  .product-origin{
-    font-size:8px;
-  }
-
-  .product h3{
-    font-size:14px;
-  }
-
-  .product-use{
-    font-size:9px;
-
-    min-height:38px;
-
-    line-height:1.6;
-  }
-
-  .product-bottom{
-    display:block;
 
-    margin-top:8px;
-  }
-
-  .price{
-    font-size:15px;
-
-    margin-bottom:7px;
-  }
-
-  .add-btn{
-    width:100%;
-
-    padding:8px 5px;
-
-    font-size:9px;
-  }
-
-  .offer-inner{
-    padding:27px 20px;
-  }
-
-  .offer h2{
-    font-size:29px;
-  }
-
-  .new-price{
-    font-size:37px;
-  }
-
-  .discount-circle{
-    width:105px;
-    height:105px;
-
-    font-size:26px;
-  }
-
-  .story-content{
-    padding:40px 25px;
-  }
-
-  .story h2{
-    font-size:32px;
-  }
-
-  .features{
-    grid-template-columns:repeat(2,1fr);
-
-    gap:10px;
-  }
-
-  .feature{
-    padding:17px;
-  }
-
-  .feature-number{
-    font-size:25px;
-  }
-
-  .feature h3{
-    font-size:13px;
-  }
-
-  .feature p{
-    font-size:9px;
-  }
-
-  .about{
-    padding:38px 25px;
-  }
-
-  .about h2{
-    font-size:32px;
-  }
-
-  .checkout-content{
-    padding:27px 20px;
-  }
-
-  .welcome-top h2{
-    font-size:29px;
-  }
-
+.identity h2{
+font-size:35px;
 }
-
-
-/* =====================================================
-   VERY SMALL PHONES
-===================================================== */
-
-@media(max-width:370px){
-
-  .products{
-    gap:8px;
-  }
-
-  .product-image{
-    height:140px;
-  }
-
-  .product-body{
-    padding:9px;
-  }
-
-  .product h3{
-    font-size:13px;
-  }
-
-  .product-use{
-    font-size:8px;
-  }
 
 }
 
 </style>
-</head>
 
+</head>
 
 <body>
 
-
-<!-- =====================================================
-     WELCOME
-===================================================== -->
-
-<div class="welcome-overlay" id="welcome">
-
-  <div class="welcome-box">
-
-    <div class="welcome-top">
-
-      <div class="welcome-logo">ت</div>
-
-      <small>TARAF ALOUD</small>
-
-      <h2>يامرحبا في ترف العود</h2>
-
-      <p>
-        لأن العود ترف 🤍
-      </p>
-
-    </div>
-
-    <div class="welcome-body">
-
-      <div class="welcome-message">
-
-        يامرحبا ترحيبة كلها أطياب<br>
-        أحلى من العنبر وأزكى من العود 🤍
-
-      </div>
-
-      <div class="welcome-offer">
-
-        <span class="discount">
-          عرض افتتاح المتجر
-        </span>
-
-        <strong>
-          50 جم + 50 جم + 50 جم
-        </strong>
-
-        <span>
-          سابقاً 610 ر.س — الآن 300 ر.س
-          <br>
-          <b style="color:#641d24">
-            خصم 51%
-          </b>
-        </span>
-
-      </div>
-
-      <div class="welcome-actions">
-
-        <button
-          class="welcome-main"
-          onclick="goOffer()"
-        >
-          اكتشف عرض الافتتاح
-        </button>
-
-        <button
-          class="welcome-close"
-          onclick="closeWelcome()"
-        >
-          دخول المتجر
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
-
 <div class="topbar">
-  ✦ عرض افتتاح ترف العود — 3 × 50 جم بـ 300 ر.س فقط ✦
+
+🚚 الأسعار غير شاملة التوصيل — داخل الرياض توصيل سريع وخارج الرياض عبر شركات الشحن
+
 </div>
-
-
-<!-- =====================================================
-     NAV
-===================================================== -->
 
 <nav>
 
-  <div class="nav">
+<div class="nav">
 
-    <a href="#home" class="brand">
+<div class="logo">
 
-      <div class="brand-icon">
-        ت
-      </div>
+<div class="logo-icon">
+ج
+</div>
 
-      <div>
+<div class="logo-text">
 
-        <div class="brand-name">
-          ترف العود
-        </div>
+<h2>جلاغ العود</h2>
 
-        <span class="brand-sub">
-          لأن العود ترف
-        </span>
+<span>من أصل الشجرة تبدأ الحكاية</span>
 
-      </div>
+</div>
 
-    </a>
+</div>
 
+<div class="nav-links">
 
-    <div class="nav-links">
+<a href="#home">الرئيسية</a>
 
-      <a href="#home">
-        الرئيسية
-      </a>
+<a href="#about">عن جلاغ</a>
 
-      <a href="#products">
-        الأعواد
-      </a>
+<a href="#offer">العرض</a>
 
-      <a href="#offer">
-        العروض
-      </a>
+<a href="#products">المنتجات</a>
 
-      <a href="#story">
-        حكاية العود
-      </a>
+<a href="#story">رحلة العود</a>
 
-      <a href="#about">
-        عن ترف العود
-      </a>
+</div>
 
-    </div>
-
-
-    <button
-      class="cart-btn"
-      onclick="openCart()"
-    >
-
-      🛒 السلة
-
-      <span
-        class="cart-count"
-        id="cartCount"
-      >
-        0
-      </span>
-
-    </button>
-
-  </div>
+</div>
 
 </nav>
 
+<section class="hero" id="home">
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<div class="najdi-pattern"></div>
 
-<section
-  class="hero"
-  id="home"
->
+<div class="hero-content">
 
-  <div class="hero-decoration"></div>
+<div class="hero-badge">
 
-  <div class="hero-content">
+🇸🇦 هوية نجدية أصيلة
 
-    <div class="hero-copy">
+</div>
 
-      <div class="kicker">
-        T A R A F &nbsp; A L O U D
-      </div>
+<h1>
 
-      <h1>
-        لأن العود
-      </h1>
+جلاغ العود
 
-      <div class="hero-title">
-        ترف.
-      </div>
+</h1>
 
-      <p>
-        يامرحبا ترحيبة كلها أطياب<br>
-        أحلى من العنبر وأزكى من العود 🤍
-      </p>
+<p>
 
-      <div class="hero-buttons">
+يامرحبا ترحيبة كلها أطياب،
+أحلى من العنبر وأزكى من العود.
 
-        <a
-          href="#offer"
-          class="btn btn-main"
-        >
-          عرض الافتتاح
-        </a>
+مختارات فاخرة من غابات إندونيسيا
+مختارة بعناية لعشاق العود الطبيعي.
 
-        <a
-          href="#products"
-          class="btn btn-outline"
-        >
-          اكتشف المنتجات
-        </a>
+</p>
 
-      </div>
+<div class="hero-buttons">
 
-    </div>
+<a href="#offer" class="btn btn-main">
 
-  </div>
+العرض الحالي
+
+</a>
+
+<a href="#products" class="btn btn-outline">
+
+تصفح المنتجات
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="about">
+
+<div class="identity">
+
+<div class="najdi-pattern"></div>
+
+<h2>
+
+ما معنى جلاغ؟
+
+</h2>
+
+<p>
+
+جلاغ كلمة نجدية أصيلة ارتبطت بموروث أهل نجد وتعني القشرة الخارجية للشجرة.
+
+ومن هذا المعنى استوحينا اسم
+<strong>جلاغ العود</strong>
+
+ليحمل هويتنا السعودية الأصيلة ويجمع بين جذور الماضي وفخامة الحاضر.
+
+🇸🇦 اللهم احفظ المملكة العربية السعودية وأدم عليها الأمن والخير والبركة.
+
+</p>
+
+</div>
+
+</section>
+<!-- =========================
+العرض الرئيسي
+========================= -->
+
+<section class="section" id="offer">
+
+<div class="offer-box">
+
+<div class="offer-left">
+
+<span class="offer-badge">
+
+عرض محدود
+
+</span>
+
+<h2>
+
+اشتر أوقيتين والثالثة مجاناً
+
+</h2>
+
+<p>
+
+أوقية أزرق كلمنتان +
+أوقية مروكي سيوفي
+
+ومعها هدية مجانية
+
+أوقية دقة مروكي
+
+</p>
+
+<div class="offer-price">
+
+<span class="old">
+
+340 ر.س
+
+</span>
+
+<span class="new">
+
+299 ر.س
+
+</span>
+
+<span class="save">
+
+خصم 12%
+
+</span>
+
+</div>
+
+<button class="offer-btn">
+
+اطلب العرض الآن
+
+</button>
+
+</div>
+
+<div class="offer-right">
+
+<img src="images/offer.jpg">
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     OFFER
-===================================================== -->
+<!-- =========================
+المنتجات
+========================= -->
 
-<section
-  class="section"
-  id="offer"
->
+<section class="section" id="products">
 
-  <div class="offer">
+<div class="section-title">
 
-    <div class="offer-inner">
+<h2>
 
-      <div>
+مختارات جلاغ العود
 
-        <span class="offer-label">
-          حصري بمناسبة افتتاح المتجر
-        </span>
+</h2>
 
-        <h2>
-          ثلاث مختارات من العود...
-          <br>
-          بسعر ما يتفوّت.
-        </h2>
+<p>
 
-        <p>
-          اختر 50 جم من كل نوع ضمن باقة الافتتاح
-          واستمتع بالسعر الحصري لفترة الافتتاح.
-        </p>
+أربع مختارات بعناية من غابات إندونيسيا.
 
-        <div class="offer-items">
+لكل منتج شخصيته ورائحته الخاصة.
 
-          <div class="offer-item">
-            50 جم
-          </div>
+</p>
 
-          <div class="offer-item">
-            50 جم
-          </div>
+</div>
 
-          <div class="offer-item">
-            50 جم
-          </div>
-
-        </div>
-
-        <div class="offer-price">
-
-          <span class="old-price">
-            610 ر.س
-          </span>
-
-          <span class="new-price">
-            300 ر.س
-          </span>
-
-        </div>
-
-        <div style="margin-top:10px;color:#e5cf9c;font-weight:900;font-size:12px;">
-          وفر 310 ر.س — خصم 51%
-        </div>
-
-        <button
-          class="btn btn-main"
-          style="margin-top:20px;"
-          onclick="addOfferToCart()"
-        >
-          أضف باقة الافتتاح للسلة
-        </button>
-
-      </div>
+<div class="products-grid">
 
 
-      <div class="discount-box">
+<!-- المنتج 1 -->
 
-        <div class="discount-circle">
-          51%
-        </div>
+<div class="product-card">
 
-        <p>
-          خصم الافتتاح
-        </p>
+<img src="images/moroki.jpg">
 
-        <small style="color:#d9c8bb;">
-          610 ر.س
-          <br>
-          ↓
-          <br>
-          300 ر.س
-        </small>
+<div class="product-body">
 
-      </div>
+<h3>
 
-    </div>
+عود دقة مروكي
 
-  </div>
+</h3>
+
+<p>
+
+دقة مروكي مختارة لمحبي العود الأصيل.
+
+رائحة أنيقة تناسب الاستخدام اليومي والمنزل.
+
+</p>
+
+<ul>
+
+<li>الاستخدام : يومي - منزل</li>
+
+<li>المصدر : غابات إندونيسيا 🌳</li>
+
+<li>الوزن : أوقية 28 جرام</li>
+
+</ul>
+
+<div class="price-box">
+
+<span class="old-price">
+
+130 ر.س
+
+</span>
+
+<span class="new-price">
+
+100 ر.س
+
+</span>
+
+<span class="discount">
+
+خصم 23%
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- المنتج 2 -->
+
+<div class="product-card">
+
+<img src="images/seyoufi.jpg">
+
+<div class="product-body">
+
+<h3>
+
+عود مروكي سيوفي
+
+</h3>
+
+<p>
+
+طابع واضح وحضور قوي وأنيق.
+
+مناسب للمجالس والاستخدام اليومي.
+
+</p>
+
+<ul>
+
+<li>الاستخدام : مجالس - يومي</li>
+
+<li>المصدر : غابات إندونيسيا 🌳</li>
+
+<li>الوزن : أوقية 28 جرام</li>
+
+</ul>
+
+<div class="price-box">
+
+<span class="old-price">
+
+160 ر.س
+
+</span>
+
+<span class="new-price">
+
+130 ر.س
+
+</span>
+
+<span class="discount">
+
+خصم 19%
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- المنتج 3 -->
+
+<div class="product-card">
+
+<img src="images/blue.jpg">
+
+<div class="product-body">
+
+<h3>
+
+عود أزرق كلمنتان
+
+</h3>
+
+<p>
+
+طابع فاخر ورسمي لمحبي الرائحة القوية الفخمة.
+
+</p>
+
+<ul>
+
+<li>الاستخدام : مناسبات - يومي</li>
+
+<li>المصدر : غابات إندونيسيا 🌳</li>
+
+<li>الوزن : أوقية 28 جرام</li>
+
+</ul>
+
+<div class="price-box">
+
+<span class="old-price">
+
+180 ر.س
+
+</span>
+
+<span class="new-price">
+
+150 ر.س
+
+</span>
+
+<span class="discount">
+
+خصم 17%
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- المنتج 4 -->
+
+<div class="product-card">
+
+<img src="images/dosari.jpg">
+
+<div class="product-body">
+
+<h3>
+
+معمول دوسري
+
+</h3>
+
+<p>
+
+رائحة تراثية دافئة للمجالس والبيت.
+
+</p>
+
+<ul>
+
+<li>الاستخدام : منزل - مجالس</li>
+
+<li>الوزن : 250 جرام</li>
+
+</ul>
+
+<div class="price-box">
+
+<span class="new-price">
+
+40 ر.س
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
+<!-- =========================
+رحلة العود
+========================= -->
 
-<section
-  class="section"
-  id="products"
->
+<section class="section" id="story">
 
-  <div class="section-head">
+<div class="story-box">
 
-    <div>
+<div class="story-image">
 
-      <div class="kicker">
-        THE COLLECTION
-      </div>
+<img src="images/farmers.jpg">
 
-      <h2 class="section-title">
-        مختارات ترف العود
-      </h2>
+</div>
 
-    </div>
+<div class="story-content">
 
-    <p class="section-description">
-      أربع مختارات بعناية، كل منتج له شخصيته ورائحته.
-      اضغط على المنتج لمعرفة التفاصيل وإضافته للسلة.
-    </p>
+<h2>
 
-  </div>
+من شجرة العود...
+تبدأ الحكاية
 
+</h2>
 
-  <div
-    class="products"
-    id="productsGrid"
-  ></div>
+<p>
 
-</section>
+رحلة العود ليست أياماً ولا أشهراً.
 
+في كثير من الحالات تمكث الشجرة ما بين
+7 إلى 20 سنة حتى تتكون المادة العطرية الطبيعية داخلها.
 
-<!-- =====================================================
-     STORY
-===================================================== -->
+ثم تبدأ مراحل الفرز والتجفيف والاختيار بعناية،
+حتى يصل إليك العود بجودة تليق بذائقتك.
 
-<section
-  class="section"
-  id="story"
->
+</p>
 
-  <div class="story">
+</div>
 
-    <div class="story-art">
-
-      <svg
-        viewBox="0 0 1400 600"
-        preserveAspectRatio="xMidYMid slice"
-      >
-
-        <defs>
-
-          <linearGradient
-            id="forest"
-            x1="0"
-            y1="0"
-            x2="0"
-            y2="1"
-          >
-
-            <stop
-              offset="0"
-              stop-color="#8d9564"
-            />
-
-            <stop
-              offset=".6"
-              stop-color="#59643d"
-            />
-
-            <stop
-              offset="1"
-              stop-color="#303923"
-            />
-
-          </linearGradient>
-
-        </defs>
-
-        <rect
-          width="1400"
-          height="600"
-          fill="url(#forest)"
-        />
-
-        <path
-          d="M0 370
-          C250 250 420 360 620 270
-          C850 170 1030 340 1200 235
-          C1300 180 1360 230 1400 205
-          L1400 600
-          L0 600Z"
-          fill="#4b5737"
-        />
-
-        <g fill="#263b29">
-
-          <path
-            d="M200 500
-            C150 400 190 310 245 250
-            C235 340 300 350 275 420
-            C330 350 380 380 390 315
-            C400 420 340 480 270 510Z"
-          />
-
-          <path
-            d="M1050 500
-            C1000 400 1035 310 1080 250
-            C1075 340 1130 360 1110 420
-            C1160 350 1210 380 1215 315
-            C1230 420 1170 480 1110 510Z"
-          />
-
-        </g>
-
-        <g stroke="#59402b" stroke-width="26">
-
-          <path d="M245 500 L245 310"/>
-          <path d="M1080 500 L1080 315"/>
-
-        </g>
-
-        <g fill="#9c7446">
-
-          <rect
-            x="580"
-            y="460"
-            width="95"
-            height="65"
-            rx="4"
-          />
-
-          <rect
-            x="760"
-            y="470"
-            width="95"
-            height="65"
-            rx="4"
-          />
-
-        </g>
-
-      </svg>
-
-    </div>
-
-
-    <div class="story-content">
-
-      <div class="kicker">
-        FROM THE OUD TREE
-      </div>
-
-      <h2>
-        من شجرة العود...
-        <br>
-        تبدأ الحكاية.
-      </h2>
-
-      <p>
-        من قلب الطبيعة تبدأ رحلة العود،
-        ومن أجود المختارات نصنع تجربة تليق
-        بمحبي الروائح الأصيلة والمجالس الفاخرة.
-      </p>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     FEATURES
-===================================================== -->
+<!-- =========================
+ضمان جلاغ
+========================= -->
 
 <section class="section">
 
-  <div class="section-head">
+<div class="guarantee">
 
-    <div>
+<h2>
 
-      <div class="kicker">
-        TARAF EXPERIENCE
-      </div>
+ضمان جلاغ الذهبي
 
-      <h2 class="section-title">
-        ليه ترف العود؟
-      </h2>
+</h2>
 
-    </div>
+<p>
 
-  </div>
+يوجد كسرة عود هدية خارجية للتجربة.
 
+إذا لم تناسبك جودة العود نقبل الاسترجاع خلال يوم من وصول الشحنة.
 
-  <div class="features">
+ملاحظة:
+عند فتح المنتج الأساسي لا يمكن استرجاعه.
 
-    <div class="feature">
+</p>
 
-      <div class="feature-number">
-        01
-      </div>
-
-      <h3>
-        مختارات بعناية
-      </h3>
-
-      <p>
-        نهتم بالاختيار قبل أن يصل المنتج إليك.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-number">
-        02
-      </div>
-
-      <h3>
-        وصف واضح
-      </h3>
-
-      <p>
-        تعرف المنتج واستخدامه قبل اتخاذ قرار الشراء.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-number">
-        03
-      </div>
-
-      <h3>
-        طلب مباشر
-      </h3>
-
-      <p>
-        أضف للسلة وأرسل طلبك مباشرة عبر واتساب.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-number">
-        04
-      </div>
-
-      <h3>
-        تجربة ترف
-      </h3>
-
-      <p>
-        لأن المنتج الفاخر يستحق تجربة تليق به.
-      </p>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
+.offer-box{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+
+background:white;
+padding:50px;
+border-radius:35px;
+box-shadow:var(--shadow);
+
+}
+
+.offer-badge{
+
+background:var(--olive);
+color:white;
+
+padding:8px 18px;
+
+border-radius:50px;
+
+}
+
+.offer-price{
+
+margin-top:20px;
+
+display:flex;
+gap:15px;
+align-items:center;
+
+}
+
+.old{
+
+text-decoration:line-through;
+color:#999;
+
+}
+
+.new{
+
+font-size:45px;
+font-weight:900;
+color:var(--wood-dark);
+
+}
+
+.save{
+
+background:#dfe8d8;
+padding:8px 14px;
+border-radius:50px;
+
+}
+
+.offer-btn{
+
+margin-top:20px;
+
+background:var(--wood-dark);
+
+color:white;
+
+border:none;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+font-weight:800;
+
+}
+
+.products-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+.product-card{
+
+background:white;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.product-body{
+
+padding:25px;
+
+}
+
+.price-box{
+
+margin-top:20px;
+
+display:flex;
+gap:10px;
+align-items:center;
+flex-wrap:wrap;
+
+}
+
+.discount{
+
+background:#efe6d8;
+
+padding:5px 12px;
+
+border-radius:30px;
+
+}
+
+.story-box{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:40px;
+
+align-items:center;
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:var(--shadow);
+
+}
+
+.guarantee{
+
+background:var(--wood-dark);
+
+color:white;
+
+padding:50px;
+
+border-radius:35px;
+
+text-align:center;
+
+}
+
+@media(max-width:900px){
+
+.offer-box,
+.story-box{
+
+grid-template-columns:1fr;
+
+}
+
+.products-grid{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}<!-- =========================
+زر خدمة العملاء
+========================= -->
+
+<a href="https://wa.me/966539400955"
+class="whatsapp-float"
+target="_blank">
+
+خدمة العملاء
+
+</a>
 
 
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-  class="section"
-  id="about"
->
-
-  <div class="about">
-
-    <div class="kicker">
-      THE HOUSE OF TARAF
-    </div>
-
-    <h2>
-      ترف العود
-    </h2>
-
-    <p>
-      لأن العود ليس مجرد رائحة؛
-      هو حضور وذوق وذكرى.
-      في ترف العود نبحث عن المختارات التي
-      تستحق أن تكون جزءاً من مجلسك وبيتك ومناسباتك.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- =========================
+الفوتر
+========================= -->
 
 <footer>
 
-  <h2>
-    ترف العود
-  </h2>
+<div class="footer-pattern"></div>
 
-  <p>
-    يامرحبا ترحيبة كلها أطياب
-  </p>
+<div class="footer-content">
 
-  <p>
-    أحلى من العنبر وأزكى من العود 🤍
-  </p>
+<h2>
 
-  <p style="margin-top:15px;font-size:10px;">
-    © 2026 ترف العود
-  </p>
+جلاغ العود
+
+</h2>
+
+<p>
+
+جلاغ كلمة نجدية أصيلة استوحينا منها هويتنا.
+
+من أصل الشجرة تبدأ الحكاية.
+
+</p>
+
+<div class="footer-links">
+
+<a href="#home">الرئيسية</a>
+
+<a href="#offer">العروض</a>
+
+<a href="#products">المنتجات</a>
+
+<a href="#story">رحلة العود</a>
+
+</div>
+
+<div class="copyright">
+
+© 2026 جلاغ العود
+
+</div>
+
+</div>
 
 </footer>
 
 
-<!-- =====================================================
-     PRODUCT MODAL
-===================================================== -->
+<style>
 
-<div
-  class="modal"
-  id="productModal"
->
+/* =====================
+واتساب
+===================== */
 
-  <div class="modal-box">
+.whatsapp-float{
 
-    <button
-      class="close"
-      onclick="closeProduct()"
-    >
-      ×
-    </button>
+position:fixed;
 
-    <div class="product-modal">
+bottom:20px;
 
-      <div
-        class="modal-art"
-        id="modalArt"
-      ></div>
+right:20px;
 
-      <div class="modal-info">
+background:#355E3B;
 
-        <div
-          class="modal-origin"
-          id="modalOrigin"
-        ></div>
+color:white;
 
-        <h2 id="modalName"></h2>
+padding:15px 24px;
 
-        <p id="modalDescription"></p>
+border-radius:50px;
 
-        <div class="detail">
+font-weight:800;
 
-          <span>
-            الاستخدام
-          </span>
+z-index:9999;
 
-          <strong id="modalUse"></strong>
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 
-        </div>
+transition:.3s;
 
-        <div class="detail">
+}
 
-          <span>
-            المصدر
-          </span>
+.whatsapp-float:hover{
 
-          <strong id="modalFrom"></strong>
-
-        </div>
-
-        <div class="detail">
-
-          <span>
-            الوزن
-          </span>
-
-          <strong id="modalWeight"></strong>
-
-        </div>
-
-        <div class="detail">
-
-          <span>
-            السعر
-          </span>
-
-          <strong id="modalPrice"></strong>
-
-        </div>
-
-        <button
-          class="modal-add"
-          onclick="addModalProduct()"
-          style="margin-top:20px;"
-        >
-          أضف إلى السلة
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =====================================================
-     CART
-===================================================== -->
-
-<div
-  class="overlay"
-  id="overlay"
-  onclick="closeCart()"
-></div>
-
-
-<aside
-  class="cart"
-  id="cart"
->
-
-  <div class="cart-head">
-
-    <h2>
-      سلة ترف العود
-    </h2>
-
-    <button
-      class="close"
-      onclick="closeCart()"
-    >
-      ×
-    </button>
-
-  </div>
-
-
-  <div
-    class="cart-items"
-    id="cartItems"
-  ></div>
-
-
-  <div class="cart-footer">
-
-    <div class="total">
-
-      <span>
-        الإجمالي
-      </span>
-
-      <span id="total">
-        0 ر.س
-      </span>
-
-    </div>
-
-    <button
-      class="checkout-btn"
-      onclick="checkout()"
-    >
-      إتمام الطلب
-    </button>
-
-  </div>
-
-</aside>
-
-
-<!-- =====================================================
-     CHECKOUT
-===================================================== -->
-
-<div
-  class="modal"
-  id="checkoutModal"
->
-
-  <div class="modal-box">
-
-    <button
-      class="close"
-      onclick="closeCheckout()"
-    >
-      ×
-    </button>
-
-    <div class="checkout-content">
-
-      <h2>
-        إتمام الطلب
-      </h2>
-
-      <div
-        class="summary"
-        id="summary"
-      ></div>
-
-
-      <div class="field">
-
-        <label>
-          الاسم
-        </label>
-
-        <input
-          id="customerName"
-          placeholder="اكتب اسمك"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label>
-          المدينة والحي
-        </label>
-
-        <input
-          id="customerLocation"
-          placeholder="مثال: الرياض — شمال الرياض"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label>
-          ملاحظة للطلب
-        </label>
-
-        <textarea
-          id="customerNote"
-          placeholder="أي ملاحظة إضافية..."
-        ></textarea>
-
-      </div>
-
-
-      <button
-        class="whatsapp"
-        onclick="sendWhatsApp()"
-      >
-        إرسال الطلب عبر واتساب
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<script>
-
-/* =====================================================
-   رقم الجوال
-   0539400955
-===================================================== */
-
-const WHATSAPP_NUMBER = "966539400955";
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
-const products = [
-
-  {
-    id:"moroki",
-
-    name:"دقة مروكي",
-
-    origin:"عود مروكي",
-
-    from:"إندونيسيا",
-
-    weight:"50 جرام",
-
-    price:160,
-
-    use:"للاستعمال اليومي",
-
-    description:
-    "دقة مروكي مختارة لمحبي العود الأصيل. رائحة أنيقة تناسب الاستخدام اليومي والمجالس.",
-
-    type:"moroki"
-  },
-
-
-  {
-    id:"seyoufi",
-
-    name:"مروكي سيوفي",
-
-    origin:"عود مروكي سيوفي",
-
-    from:"إندونيسيا",
-
-    weight:"125 جرام",
-
-    price:190,
-
-    use:"للمناسبات واليومي",
-
-    description:
-    "مروكي سيوفي بطابع واضح وحضور قوي وأنيق، مناسب للمناسبات وللاستخدام اليومي.",
-
-    type:"seyoufi"
-  },
-
-
-  {
-    id:"kalimantan",
-
-    name:"أزرق كلمنتان",
-
-    origin:"عود كلمنتان",
-
-    from:"إندونيسيا — كلمنتان",
-
-    weight:"125 جرام",
-
-    price:260,
-
-    use:"للمناسبات والمجالس",
-
-    description:
-    "عود كلمنتان بطابع فاخر ورسمي، مناسب للمجالس والمناسبات ومحبي الرائحة القوية.",
-
-    type:"kalimantan"
-  },
-
-
-  {
-    id:"dosari",
-
-    name:"معمول دوسري",
-
-    origin:"معمول دوسري",
-
-    from:"السعودية",
-
-    weight:"250 جرام",
-
-    price:45,
-
-    use:"للبيت والمجالس",
-
-    description:
-    "معمول دوسري مناسب للبيت والمجالس والاستخدام اليومي، برائحة شرقية دافئة.",
-
-    type:"dosari"
-  }
-
-];
-
-
-/* =====================================================
-   OFFER
-===================================================== */
-
-const openingOffer = {
-
-  id:"opening-offer",
-
-  name:"باقة افتتاح ترف العود",
-
-  weight:"50 جم + 50 جم + 50 جم",
-
-  price:300,
-
-  oldPrice:610,
-
-  type:"offer"
-
-};
-
-
-/* =====================================================
-   PRODUCT ART
-===================================================== */
-
-function productArt(type){
-
-  if(type==="moroki"){
-
-    return `
-
-    <svg viewBox="0 0 500 400">
-
-      <defs>
-
-        <linearGradient
-          id="morokiBg"
-          x1="0"
-          y1="0"
-          x2="1"
-          y2="1"
-        >
-
-          <stop stop-color="#76533d"/>
-          <stop offset=".55" stop-color="#432c21"/>
-          <stop offset="1" stop-color="#211714"/>
-
-        </linearGradient>
-
-      </defs>
-
-      <rect
-        width="500"
-        height="400"
-        fill="url(#morokiBg)"
-      />
-
-      <ellipse
-        cx="250"
-        cy="310"
-        rx="160"
-        ry="42"
-        fill="#17110e"
-      />
-
-      <g fill="#80512f">
-
-        <path
-          d="M90 290 Q175 215 260 280
-          Q330 325 410 250
-          Q370 350 275 325
-          Q175 305 90 290Z"
-        />
-
-        <path
-          d="M130 245 Q205 185 280 250
-          Q330 290 375 220
-          Q345 300 260 290
-          Q185 270 130 245Z"
-        />
-
-      </g>
-
-      <g
-        stroke="#c08a51"
-        stroke-width="7"
-        opacity=".7"
-      >
-
-        <path d="M115 285 Q200 250 295 300"/>
-        <path d="M150 240 Q230 220 315 265"/>
-
-      </g>
-
-    </svg>
-
-    `;
-  }
-
-
-  if(type==="seyoufi"){
-
-    return `
-
-    <svg viewBox="0 0 500 400">
-
-      <defs>
-
-        <linearGradient
-          id="seyoufiBg"
-          x1="0"
-          y1="0"
-          x2="1"
-          y2="1"
-        >
-
-          <stop stop-color="#805d45"/>
-          <stop offset=".5" stop-color="#4c3125"/>
-          <stop offset="1" stop-color="#241914"/>
-
-        </linearGradient>
-
-      </defs>
-
-      <rect
-        width="500"
-        height="400"
-        fill="url(#seyoufiBg)"
-      />
-
-      <path
-        d="M0 325 Q150 250 270 320
-        Q390 385 500 275
-        L500 400 L0 400Z"
-        fill="#2b1d17"
-      />
-
-      <g fill="#87572f">
-
-        <path
-          d="M70 295 Q160 200 240 285
-          Q310 350 420 230
-          Q380 355 275 340
-          Q170 320 70 295Z"
-        />
-
-        <path
-          d="M105 250 Q180 180 260 245
-          Q320 300 395 205
-          Q360 305 275 300
-          Q185 280 105 250Z"
-        />
-
-      </g>
-
-      <g
-        stroke="#c69458"
-        stroke-width="6"
-        opacity=".7"
-      >
-
-        <path d="M105 290 Q190 250 285 310"/>
-        <path d="M135 245 Q220 215 300 270"/>
-
-      </g>
-
-    </svg>
-
-    `;
-  }
-
-
-  if(type==="kalimantan"){
-
-    return `
-
-    <svg viewBox="0 0 500 400">
-
-      <defs>
-
-        <linearGradient
-          id="kalBg"
-          x1="0"
-          y1="0"
-          x2="1"
-          y2="1"
-        >
-
-          <stop stop-color="#687550"/>
-          <stop offset=".55" stop-color="#35452e"/>
-          <stop offset="1" stop-color="#201c16"/>
-
-        </linearGradient>
-
-      </defs>
-
-      <rect
-        width="500"
-        height="400"
-        fill="url(#kalBg)"
-      />
-
-      <g
-        fill="#1e3122"
-        opacity=".9"
-      >
-
-        <ellipse
-          cx="95"
-          cy="90"
-          rx="90"
-          ry="25"
-          transform="rotate(30 95 90)"
-        />
-
-        <ellipse
-          cx="210"
-          cy="65"
-          rx="105"
-          ry="27"
-          transform="rotate(-20 210 65)"
-        />
-
-        <ellipse
-          cx="335"
-          cy="100"
-          rx="100"
-          ry="30"
-          transform="rotate(20 335 100)"
-        />
-
-        <ellipse
-          cx="425"
-          cy="65"
-          rx="75"
-          ry="22"
-          transform="rotate(-30 425 65)"
-        />
-
-      </g>
-
-      <path
-        d="M80 315 Q165 240 245 290
-        Q325 340 420 245
-        Q380 355 285 340
-        Q165 330 80 315Z"
-        fill="#76502f"
-      />
-
-      <path
-        d="M115 310 Q210 270 305 320"
-        fill="none"
-        stroke="#c19b60"
-        stroke-width="7"
-      />
-
-    </svg>
-
-    `;
-  }
-
-
-  return `
-
-  <svg viewBox="0 0 500 400">
-
-    <defs>
-
-      <linearGradient
-        id="dosariBg"
-        x1="0"
-        y1="0"
-        x2="1"
-        y2="1"
-      >
-
-        <stop stop-color="#8c6b4e"/>
-        <stop offset=".6" stop-color="#5a3d2a"/>
-        <stop offset="1" stop-color="#281b15"/>
-
-      </linearGradient>
-
-    </defs>
-
-    <rect
-      width="500"
-      height="400"
-      fill="url(#dosariBg)"
-    />
-
-    <ellipse
-      cx="250"
-      cy="290"
-      rx="160"
-      ry="65"
-      fill="#513422"
-    />
-
-    <circle
-      cx="190"
-      cy="275"
-      r="58"
-      fill="#a67c52"
-    />
-
-    <circle
-      cx="300"
-      cy="275"
-      r="58"
-      fill="#906540"
-    />
-
-    <path
-      d="M130 250 Q250 190 370 250"
-      fill="none"
-      stroke="#d1a56d"
-      stroke-width="8"
-    />
-
-  </svg>
-
-  `;
+transform:translateY(-3px);
 
 }
 
 
-/* =====================================================
-   CART
-===================================================== */
+/* =====================
+Footer
+===================== */
 
-let cart = [];
+footer{
 
-let selectedProduct = null;
+background:#241710;
 
+color:white;
 
-function renderProducts(){
+padding:90px 20px;
 
-  const grid =
-    document.getElementById("productsGrid");
+position:relative;
 
-  grid.innerHTML = products.map(p => `
+overflow:hidden;
 
-    <article class="product">
-
-      <div
-        class="product-image"
-        onclick="openProduct('${p.id}')"
-      >
-
-        ${productArt(p.type)}
-
-        <span class="product-badge">
-          تفاصيل المنتج
-        </span>
-
-      </div>
-
-      <div class="product-body">
-
-        <div class="product-origin">
-          ${p.origin}
-        </div>
-
-        <h3>
-          ${p.name}
-        </h3>
-
-        <div class="product-use">
-          ${p.use}
-        </div>
-
-        <div class="product-bottom">
-
-          <div class="price">
-
-            ${p.price} ر.س
-
-            <small>
-              ${p.weight}
-            </small>
-
-          </div>
-
-          <button
-            class="add-btn"
-            onclick="addToCart('${p.id}')"
-          >
-            + للسلة
-          </button>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  `).join("");
+margin-top:100px;
 
 }
 
+.footer-pattern{
 
-/* =====================================================
-   PRODUCT MODAL
-===================================================== */
+position:absolute;
 
-function openProduct(id){
+inset:0;
 
-  selectedProduct =
-    products.find(p => p.id === id);
+opacity:.05;
 
-  if(!selectedProduct) return;
+background-image:
 
-  document.getElementById("modalArt").innerHTML =
-    productArt(selectedProduct.type);
+linear-gradient(45deg,#fff 25%,transparent 25%),
 
-  document.getElementById("modalOrigin").textContent =
-    selectedProduct.origin;
+linear-gradient(-45deg,#fff 25%,transparent 25%),
 
-  document.getElementById("modalName").textContent =
-    selectedProduct.name;
+linear-gradient(45deg,transparent 75%,#fff 75%),
 
-  document.getElementById("modalDescription").textContent =
-    selectedProduct.description;
+linear-gradient(-45deg,transparent 75%,#fff 75%);
 
-  document.getElementById("modalUse").textContent =
-    selectedProduct.use;
-
-  document.getElementById("modalFrom").textContent =
-    selectedProduct.from;
-
-  document.getElementById("modalWeight").textContent =
-    selectedProduct.weight;
-
-  document.getElementById("modalPrice").textContent =
-    selectedProduct.price + " ر.س";
-
-  document
-    .getElementById("productModal")
-    .classList.add("show");
+background-size:70px 70px;
 
 }
 
+.footer-content{
 
-function closeProduct(){
+position:relative;
 
-  document
-    .getElementById("productModal")
-    .classList.remove("show");
+z-index:2;
 
-  selectedProduct = null;
+max-width:1200px;
 
-}
+margin:auto;
 
-
-function addModalProduct(){
-
-  if(!selectedProduct) return;
-
-  addToCart(selectedProduct.id);
-
-  closeProduct();
-
-  openCart();
+text-align:center;
 
 }
 
+.footer-content h2{
 
-/* =====================================================
-   ADD PRODUCT
-===================================================== */
+font-size:48px;
 
-function addToCart(id){
-
-  const product =
-    products.find(p => p.id === id);
-
-  if(!product) return;
-
-  const existing =
-    cart.find(item => item.id === id);
-
-  if(existing){
-
-    existing.qty++;
-
-  }else{
-
-    cart.push({
-
-      ...product,
-
-      qty:1,
-
-      offer:false
-
-    });
-
-  }
-
-  saveCart();
-
-  renderCart();
-
-  toast(
-    "تمت إضافة " +
-    product.name +
-    " للسلة 🤍"
-  );
+margin-bottom:15px;
 
 }
 
+.footer-content p{
 
-/* =====================================================
-   ADD OFFER
-===================================================== */
+max-width:700px;
 
-function addOfferToCart(){
+margin:auto;
 
-  const existing =
-    cart.find(item => item.id === openingOffer.id);
+line-height:2;
 
-  if(existing){
-
-    existing.qty++;
-
-  }else{
-
-    cart.push({
-
-      ...openingOffer,
-
-      qty:1,
-
-      offer:true
-
-    });
-
-  }
-
-  saveCart();
-
-  renderCart();
-
-  toast(
-    "تمت إضافة باقة الافتتاح للسلة 🔥"
-  );
-
-  openCart();
+color:#d6c7ba;
 
 }
 
+.footer-links{
 
-/* =====================================================
-   QUANTITY
-===================================================== */
+display:flex;
 
-function changeQuantity(id,amount){
+justify-content:center;
 
-  const item =
-    cart.find(x => x.id === id);
+gap:25px;
 
-  if(!item) return;
+margin-top:30px;
 
-  item.qty += amount;
-
-  if(item.qty <= 0){
-
-    cart =
-      cart.filter(x => x.id !== id);
-
-  }
-
-  saveCart();
-
-  renderCart();
+flex-wrap:wrap;
 
 }
 
+.footer-links a{
 
-/* =====================================================
-   CART RENDER
-===================================================== */
+color:white;
 
-function renderCart(){
-
-  const container =
-    document.getElementById("cartItems");
-
-  const count =
-    cart.reduce(
-      (sum,item) => sum + item.qty,
-      0
-    );
-
-  const total =
-    cart.reduce(
-      (sum,item) =>
-        sum + item.price * item.qty,
-      0
-    );
-
-  document.getElementById("cartCount")
-    .textContent = count;
-
-  document.getElementById("total")
-    .textContent = total + " ر.س";
-
-
-  if(cart.length === 0){
-
-    container.innerHTML = `
-
-      <div class="empty">
-
-        السلة فارغة 🤍
-
-        <br>
-
-        اختر من مختارات ترف العود.
-
-      </div>
-
-    `;
-
-    return;
-
-  }
-
-
-  container.innerHTML =
-    cart.map(item => `
-
-      <div class="cart-item">
-
-        <div class="cart-art">
-
-          ${
-            item.offer
-            ? `
-              <div style="
-                height:100%;
-                display:grid;
-                place-items:center;
-                background:#641d24;
-                color:#e5cf9c;
-                font-size:20px;
-                font-weight:900;
-              ">
-                51%
-              </div>
-            `
-            :
-            productArt(item.type)
-          }
-
-        </div>
-
-
-        <div class="cart-info">
-
-          <h4>
-            ${item.name}
-          </h4>
-
-          <small>
-            ${item.weight} • ${item.price} ر.س
-          </small>
-
-
-          <div class="quantity">
-
-            <button
-              onclick="changeQuantity('${item.id}',-1)"
-            >
-              −
-            </button>
-
-            <strong>
-              ${item.qty}
-            </strong>
-
-            <button
-              onclick="changeQuantity('${item.id}',1)"
-            >
-              +
-            </button>
-
-          </div>
-
-        </div>
-
-
-        <strong>
-          ${item.price * item.qty} ر.س
-        </strong>
-
-      </div>
-
-    `).join("");
+font-weight:700;
 
 }
 
+.copyright{
 
-/* =====================================================
-   OPEN / CLOSE CART
-===================================================== */
+margin-top:35px;
 
-function openCart(){
+color:#9c8f83;
 
-  document
-    .getElementById("cart")
-    .classList.add("open");
-
-  document
-    .getElementById("overlay")
-    .classList.add("show");
+font-size:14px;
 
 }
 
+/* =====================
+Animations
+===================== */
 
-function closeCart(){
+.product-card,
+.offer-box,
+.story-box,
+.identity,
+.guarantee{
 
-  document
-    .getElementById("cart")
-    .classList.remove("open");
-
-  document
-    .getElementById("overlay")
-    .classList.remove("show");
-
-}
-
-
-/* =====================================================
-   CHECKOUT
-===================================================== */
-
-function checkout(){
-
-  if(cart.length === 0){
-
-    alert("السلة فارغة.");
-
-    return;
-
-  }
-
-  closeCart();
-
-  const total =
-    cart.reduce(
-      (sum,item) =>
-        sum + item.price * item.qty,
-      0
-    );
-
-
-  document.getElementById("summary")
-    .innerHTML = `
-
-      ${cart.map(item => `
-
-        <div style="
-          display:flex;
-          justify-content:space-between;
-          gap:10px;
-          margin-bottom:8px;
-          font-size:12px;
-        ">
-
-          <span>
-            ${item.name} × ${item.qty}
-          </span>
-
-          <strong>
-            ${item.price * item.qty} ر.س
-          </strong>
-
-        </div>
-
-      `).join("")}
-
-
-      <hr style="
-        border:0;
-        border-top:1px solid var(--border);
-        margin:13px 0;
-      ">
-
-
-      <div style="
-        display:flex;
-        justify-content:space-between;
-        font-size:19px;
-        font-weight:900;
-      ">
-
-        <span>
-          الإجمالي
-        </span>
-
-        <span>
-          ${total} ر.س
-        </span>
-
-      </div>
-
-    `;
-
-
-  document
-    .getElementById("checkoutModal")
-    .classList.add("show");
+transition:.35s;
 
 }
 
+.product-card:hover,
+.offer-box:hover,
+.story-box:hover{
 
-function closeCheckout(){
-
-  document
-    .getElementById("checkoutModal")
-    .classList.remove("show");
-
-}
-
-
-/* =====================================================
-   WHATSAPP
-===================================================== */
-
-function sendWhatsApp(){
-
-  const name =
-    document
-      .getElementById("customerName")
-      .value
-      .trim();
-
-
-  const location =
-    document
-      .getElementById("customerLocation")
-      .value
-      .trim();
-
-
-  const note =
-    document
-      .getElementById("customerNote")
-      .value
-      .trim();
-
-
-  if(!name){
-
-    alert("اكتب اسمك.");
-
-    return;
-
-  }
-
-
-  if(!location){
-
-    alert("اكتب المدينة والحي.");
-
-    return;
-
-  }
-
-
-  const total =
-    cart.reduce(
-      (sum,item) =>
-        sum + item.price * item.qty,
-      0
-    );
-
-
-  let message =
-`السلام عليكم ورحمة الله وبركاته 🤍
-
-أرغب بالطلب من متجر ترف العود:
-
-`;
-
-
-  cart.forEach((item,index) => {
-
-    message +=
-`${index + 1}. ${item.name}
-الوزن: ${item.weight}
-الكمية: ${item.qty}
-السعر: ${item.price * item.qty} ر.س
-
-`;
-
-  });
-
-
-  message +=
-`الإجمالي: ${total} ر.س
-
-الاسم: ${name}
-المدينة والحي: ${location}`;
-
-
-  if(note){
-
-    message +=
-`
-
-ملاحظة:
-${note}`;
-
-  }
-
-
-  message +=
-`
-
-لأن العود ترف.
-ترف العود 🤍`;
-
-
-  window.open(
-    "https://wa.me/" +
-    WHATSAPP_NUMBER +
-    "?text=" +
-    encodeURIComponent(message),
-    "_blank"
-  );
+transform:translateY(-6px);
 
 }
 
+/* =====================
+جوال
+===================== */
 
-/* =====================================================
-   STORAGE
-===================================================== */
+@media(max-width:768px){
 
-function saveCart(){
+.footer-content h2{
 
-  localStorage.setItem(
-    "tarafAloudCart",
-    JSON.stringify(cart)
-  );
+font-size:35px;
 
 }
 
+.whatsapp-float{
 
-function loadCart(){
+right:15px;
 
-  try{
+bottom:15px;
 
-    const saved =
-      localStorage.getItem(
-        "tarafAloudCart"
-      );
+padding:13px 18px;
 
-    if(saved){
-
-      cart = JSON.parse(saved);
-
-    }
-
-  }catch(error){
-
-    cart = [];
-
-  }
+font-size:14px;
 
 }
 
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-function toast(text){
-
-  const element =
-    document.createElement("div");
-
-  element.className = "toast";
-
-  element.textContent = text;
-
-  document.body.appendChild(element);
-
-
-  setTimeout(() => {
-
-    element.style.opacity = "0";
-
-    element.style.transform =
-      "translateY(10px)";
-
-    setTimeout(
-      () => element.remove(),
-      300
-    );
-
-  },1800);
-
 }
 
-
-/* =====================================================
-   WELCOME
-===================================================== */
-
-function closeWelcome(){
-
-  const welcome =
-    document.getElementById("welcome");
-
-  welcome.classList.remove("show");
-
-  sessionStorage.setItem(
-    "tarafWelcomeShown",
-    "yes"
-  );
-
-}
-
-
-function goOffer(){
-
-  closeWelcome();
-
-  setTimeout(() => {
-
-    document
-      .getElementById("offer")
-      .scrollIntoView({
-        behavior:"smooth"
-      });
-
-  },150);
-
-}
-
-
-/* =====================================================
-   INIT
-===================================================== */
-
-loadCart();
-
-renderProducts();
-
-renderCart();
-
-
-/* =====================================================
-   SHOW WELCOME
-===================================================== */
-
-window.addEventListener("load",() => {
-
-  const alreadyShown =
-    sessionStorage.getItem(
-      "tarafWelcomeShown"
-    );
-
-  if(!alreadyShown){
-
-    setTimeout(() => {
-
-      document
-        .getElementById("welcome")
-        .classList.add("show");
-
-    },700);
-
-  }
-
-});
-
-
-/* =====================================================
-   CLOSE MODALS BY BACKGROUND
-===================================================== */
-
-document
-  .getElementById("productModal")
-  .addEventListener("click",event => {
-
-    if(
-      event.target === event.currentTarget
-    ){
-
-      closeProduct();
-
-    }
-
-  });
-
-
-document
-  .getElementById("checkoutModal")
-  .addEventListener("click",event => {
-
-    if(
-      event.target === event.currentTarget
-    ){
-
-      closeCheckout();
-
-    }
-
-  });
-
-</script>
+</style>
 
 </body>
 </html>

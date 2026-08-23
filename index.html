@@ -82,7 +82,7 @@ max-width:1400px;
 
 margin:auto;
 
-padding:16px 30px;
+padding:8px 30px;
 
 display:flex;
 
@@ -104,9 +104,9 @@ gap:15px;
 
 .logo-area img{
 
-width:80px;
+width:120px;
 
-height:80px;
+height:120px;
 
 object-fit:contain;
 
@@ -230,24 +230,44 @@ margin-bottom:20px;
 }
 
 .hero p{
-
 font-size:24px;
-
 line-height:2;
-
 margin-bottom:35px;
+animation:welcomeFade 5s ease forwards;
+}
+
+@keyframes welcomeFade{
+
+0%{
+opacity:1;
+}
+
+70%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+visibility:hidden;
+}
 
 }
 
 .buttons{
 
+position:absolute;
+
+bottom:35px;
+
+left:40px;
+
+right:40px;
+
 display:flex;
 
-justify-content:center;
+justify-content:space-between;
 
-gap:15px;
-
-flex-wrap:wrap;
+align-items:center;
 
 }
 
@@ -257,7 +277,7 @@ background:var(--jamr);
 
 color:white;
 
-padding:18px 34px;
+padding:12px 24px;
 
 border-radius:14px;
 
@@ -281,7 +301,7 @@ background:var(--oud);
 
 color:white;
 
-padding:18px 34px;
+padding:12px 24px;
 
 border-radius:14px;
 
@@ -432,7 +452,7 @@ max-width:260px;
 
 <div class="top-pattern">
 
-<img src="342A87DA-4B8D-400A-A3C7-5105ECBF07E6.png">
+<img src="DDE88921-6661-4FF8-AB49-97B33A30342D.png">
 
 </div>
 

@@ -8,18 +8,21 @@
 
 <title>جلاغ العود | لأن العود ترف</title>
 
+<meta name="description" content="جلاغ العود - مختارات فاخرة من العود الطبيعي والمحسن من غابات إندونيسيا">
+
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
 
---primary:#6b1f27;
---gold:#b89254;
---dark:#2b1c18;
---cream:#f3ecdf;
---cream2:#efe5d4;
---white:#fff;
+--ivory:#F8F3EA;
+--white:#FFFFFF;
+--gold:#C8A15A;
+--gold-light:#E4C88D;
+--burgundy:#6E1D27;
+--dark:#1F1A17;
+--shadow:0 15px 40px rgba(0,0,0,.08);
 
 }
 
@@ -32,163 +35,178 @@ scroll-behavior:smooth;
 }
 
 body{
-background:var(--cream);
+background:var(--ivory);
 color:var(--dark);
 overflow-x:hidden;
 }
 
-img{
-max-width:100%;
-display:block;
+/* زخارف نجدية */
+
+.najdi-top{
+
+height:18px;
+
+background:
+repeating-linear-gradient(
+45deg,
+var(--gold) 0px,
+var(--gold) 18px,
+transparent 18px,
+transparent 36px
+);
+
+opacity:.9;
 }
 
-a{
-text-decoration:none;
-color:inherit;
+.najdi-line{
+
+height:10px;
+
+background:
+repeating-linear-gradient(
+90deg,
+var(--burgundy) 0,
+var(--burgundy) 40px,
+transparent 40px,
+transparent 80px
+);
+
+opacity:.15;
 }
 
-.topbar{
+/* شريط التوصيل */
 
-background:var(--primary);
+.shipping-bar{
+
+background:var(--burgundy);
+
 color:white;
 
-padding:12px;
+padding:14px;
 
 text-align:center;
 
-font-size:13px;
+font-size:15px;
+
 font-weight:700;
 
 }
 
-nav{
+/* الهيدر */
 
-position:sticky;
-top:0;
+header{
 
-z-index:9999;
+background:white;
 
-background:rgba(255,255,255,.95);
+padding:25px;
 
-backdrop-filter:blur(10px);
-
-box-shadow:0 4px 25px rgba(0,0,0,.08);
+box-shadow:0 2px 20px rgba(0,0,0,.05);
 
 }
 
-.nav-container{
+.header-container{
 
-max-width:1300px;
+max-width:1200px;
 
 margin:auto;
 
-padding:14px 20px;
-
 display:flex;
 
-justify-content:space-between;
-
 align-items:center;
+
+justify-content:center;
+
+gap:25px;
 
 }
 
 .logo{
 
-display:flex;
-align-items:center;
-gap:12px;
+width:110px;
+
+height:110px;
+
+object-fit:contain;
 
 }
 
-.logo img{
+.brand-title{
 
-width:70px;
-height:70px;
-
-object-fit:cover;
-
-border-radius:50%;
-
-border:3px solid var(--gold);
-
-}
-
-.logo-text h1{
-
-font-size:24px;
-
-color:var(--primary);
+font-size:52px;
 
 font-weight:900;
 
+color:var(--burgundy);
+
+line-height:1;
+
 }
 
-.logo-text span{
+.brand-sub{
 
-font-size:13px;
+font-size:24px;
 
 color:#777;
 
-}
-
-.nav-links{
-
-display:flex;
-gap:20px;
-
-font-weight:800;
+margin-top:10px;
 
 }
 
-.nav-links a:hover{
-
-color:var(--primary);
-
-}
+/* الافتتاحية */
 
 .hero{
 
-min-height:90vh;
+min-height:85vh;
 
-background:
-linear-gradient(rgba(20,10,8,.55),rgba(20,10,8,.55)),
-url('IMG_1751.jpeg');
-
-background-size:cover;
-background-position:center;
+position:relative;
 
 display:flex;
 
 align-items:center;
+
 justify-content:center;
 
 text-align:center;
 
-color:white;
+padding:50px 20px;
 
-padding:20px;
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+
+url('hero-oud.jpg');
+
+background-size:cover;
+
+background-position:center;
 
 }
 
 .hero-content{
 
-max-width:850px;
+max-width:900px;
+
+color:white;
 
 }
 
-.hero h2{
+.hero-tag{
 
-font-size:22px;
+color:var(--gold-light);
 
-color:#e6c88b;
+font-size:28px;
 
-margin-bottom:10px;
+font-weight:700;
+
+margin-bottom:15px;
 
 }
 
 .hero h1{
 
-font-size:75px;
+font-size:85px;
 
 font-weight:900;
 
@@ -198,15 +216,15 @@ margin-bottom:15px;
 
 .hero p{
 
-font-size:22px;
+font-size:32px;
 
 line-height:2;
+
+margin-bottom:35px;
 
 }
 
 .hero-buttons{
-
-margin-top:35px;
 
 display:flex;
 
@@ -220,17 +238,25 @@ flex-wrap:wrap;
 
 .btn{
 
-padding:15px 30px;
+padding:18px 38px;
 
-border-radius:50px;
+border:none;
 
-font-weight:900;
+border-radius:999px;
 
-display:inline-block;
+cursor:pointer;
+
+font-size:20px;
+
+font-weight:800;
+
+transition:.3s;
+
+text-decoration:none;
 
 }
 
-.btn-primary{
+.btn-gold{
 
 background:var(--gold);
 
@@ -238,144 +264,64 @@ color:white;
 
 }
 
-.btn-secondary{
+.btn-white{
 
 background:white;
 
-color:var(--primary);
+color:var(--burgundy);
 
 }
 
-.section{
+.btn:hover{
 
-max-width:1300px;
-
-margin:auto;
-
-padding:90px 20px;
+transform:translateY(-4px);
 
 }
 
-.title{
+@media(max-width:768px){
 
-text-align:center;
+.brand-title{
 
-margin-bottom:50px;
-
-}
-
-.title h2{
-
-font-size:45px;
-
-color:var(--primary);
-
-margin-bottom:10px;
+font-size:38px;
 
 }
 
-.title p{
+.brand-sub{
 
-color:#666;
-
-}
-
-.identity{
-
-background:white;
-
-border-radius:35px;
-
-padding:60px;
-
-box-shadow:0 10px 35px rgba(0,0,0,.05);
-
-position:relative;
-
-overflow:hidden;
+font-size:18px;
 
 }
 
-.identity::before{
+.logo{
 
-content:"";
+width:85px;
 
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:8px;
-
-background:linear-gradient(
-90deg,
-var(--primary),
-var(--gold),
-var(--primary)
-);
+height:85px;
 
 }
-
-.identity h2{
-
-text-align:center;
-
-font-size:40px;
-
-margin-bottom:25px;
-
-color:var(--primary);
-
-}
-
-.identity p{
-
-font-size:19px;
-
-line-height:2.4;
-
-text-align:center;
-
-}
-
-.najd-pattern{
-
-height:80px;
-
-background:
-repeating-linear-gradient(
-45deg,
-#b89254,
-#b89254 10px,
-#6b1f27 10px,
-#6b1f27 20px
-);
-
-opacity:.08;
-
-margin-top:40px;
-
-border-radius:20px;
-
-}
-
-@media(max-width:900px){
 
 .hero h1{
+
 font-size:52px;
+
 }
 
 .hero p{
-font-size:18px;
+
+font-size:22px;
+
 }
 
-.identity{
-padding:35px 25px;
+.hero-tag{
+
+font-size:22px;
+
 }
 
-.nav-links{
-display:none;
+.btn{
+
+width:100%;
+
 }
 
 }
@@ -386,58 +332,47 @@ display:none;
 
 <body>
 
-<div class="topbar">
+<div class="najdi-top"></div>
 
-🚚 الأسعار غير شاملة التوصيل | داخل الرياض توصيل فوري | خارج الرياض عبر شركات الشحن
+<div class="shipping-bar">
 
-</div>
-
-<nav>
-
-<div class="nav-container">
-
-<div class="logo">
-
-<img src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png">
-
-<div class="logo-text">
-
-<h1>جلاغ العود</h1>
-
-<span>لأن العود ترف</span>
+🚚 توصيل داخل الرياض فوري | خارج الرياض عبر شركات الشحن
 
 </div>
 
-</div>
+<header>
 
-<div class="nav-links">
+<div class="header-container">
 
-<a href="#offer">العرض</a>
-<a href="#products">المنتجات</a>
-<a href="#story">الحكاية</a>
-<a href="#contact">تواصل معنا</a>
+<img src="logo.png" class="logo">
+
+<div>
+
+<h2 class="brand-title">جلاغ العود</h2>
+
+<p class="brand-sub">لأن العود ترف</p>
 
 </div>
 
 </div>
 
-</nav>
+</header>
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h2>
-مختارات فاخرة من غابات إندونيسيا
-</h2>
+<div class="hero-tag">
 
-<h1>
-جلاغ العود
-</h1>
+مختارات فاخرة من غابات إندونيسيا
+
+</div>
+
+<h1>جلاغ العود</h1>
 
 <p>
 
-يامرحبا ترحيبة كلها أطياب<br>
+يا مرحبا ترحيبة كلها أطياب<br>
 
 أحلى من العنبر وأزكى من العود 🤍
 
@@ -445,13 +380,13 @@ display:none;
 
 <div class="hero-buttons">
 
-<a href="#offer" class="btn btn-primary">
+<a href="#offer" class="btn btn-gold">
 
 عرض الافتتاح
 
 </a>
 
-<a href="#products" class="btn btn-secondary">
+<a href="#products" class="btn btn-white">
 
 تصفح المنتجات
 
@@ -463,136 +398,50 @@ display:none;
 
 </section>
 
-<section class="section">
+<div class="najdi-line"></div> 
+  <div class="najdi-line"></div> 
+  <section id="offer" style="padding:80px 20px;">
 
-<div class="identity">
+<div style="max-width:1200px;margin:auto;">
 
-<h2>
-ما معنى جلاغ؟
-</h2>
+<div style="text-align:center;margin-bottom:40px;">
 
-<p>
+<span style="
+background:#6E1D27;
+color:white;
+padding:10px 25px;
+border-radius:999px;
+font-weight:800;
+">
 
-جلاغ كلمة نجدية أصيلة من موروث أهل المملكة العربية السعودية 🇸🇦
-
-<br><br>
-
-( اللهم احفظ هذا البلد )
-
-<br><br>
-
-وتعني جلاغ القشرة الخارجية للشجرة، ومنها استوحينا اسم جلاغ العود ارتباطاً بأصلنا وثقافتنا العريقة وجذورنا الممتدة.
-
-</p>
-
-<div class="najd-pattern"></div>
-
-</div>
-
-</section> 
-  <!-- =========================
-     العرض الخاص
-========================= -->
-
-<section class="section" id="offer">
-
-<div class="title">
-
-<h2>
-عرض الافتتاح 🎁
-</h2>
-
-<p>
-لفترة محدودة فقط
-</p>
-
-</div>
-
-<div class="offer-box">
-
-<div class="offer-image">
-
-<img src="IMG_1763.jpeg">
-
-</div>
-
-<div class="offer-content">
-
-<span class="offer-tag">
-
-وفر الآن 41 ريال
+🔥 عرض لفترة محدودة
 
 </span>
 
-<h2>
+<h2 style="
+font-size:55px;
+color:#6E1D27;
+margin-top:25px;
+font-weight:900;
+">
 
 اشتر أوقيتين والثالثة مجاناً
 
 </h2>
 
-<p>
+<p style="
+font-size:22px;
+color:#666;
+margin-top:15px;
+">
 
-أوقية أزرق كلمنتان
-
-<br><br>
-
-+
-
-<br><br>
-
-أوقية مروكي سيوفي
-
-<br><br>
-
-🎁 هدية مجانية
-
-<br>
-
-أوقية دقة مروكي
+وفر 141 ريال + خصم 32%
 
 </p>
 
-<div class="price-area">
-
-<span class="old-price">
-
-340 ر.س
-
-</span>
-
-<span class="new-price">
-
-299 ر.س
-
-</span>
-
 </div>
 
-<div class="discount-box">
-
-خصم 12%
-
-</div>
-
-<a href="#products" class="offer-btn">
-
-اطلب الآن
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-.offer-box{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
+<div style="
 
 background:white;
 
@@ -600,71 +449,440 @@ border-radius:35px;
 
 overflow:hidden;
 
-box-shadow:0 15px 40px rgba(0,0,0,.08);
+box-shadow:0 20px 60px rgba(0,0,0,.08);
 
-}
+display:grid;
 
-.offer-image img{
+grid-template-columns:1.2fr 1fr;
+
+align-items:center;
+
+">
+
+<div>
+
+<img
+src="IMG_1763.jpeg"
+style="
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+">
+
+</div>
+
+<div style="padding:50px;">
+
+<h3 style="
+font-size:42px;
+color:#6E1D27;
+margin-bottom:25px;
+">
+
+باقة جلاغ المميزة
+
+</h3>
+
+<div style="
+font-size:22px;
+line-height:2.2;
+margin-bottom:25px;
+">
+
+✨ أوقية أزرق كلمنتان
+
+<br>
+
+✨ أوقية مروكي سيوفي
+
+<br>
+
+🎁 أوقية دقة مروكي مجاناً
+
+</div>
+
+<div style="margin-bottom:25px;">
+
+<div style="
+font-size:28px;
+text-decoration:line-through;
+color:#999;
+">
+
+440 ر.س
+
+</div>
+
+<div style="
+font-size:70px;
+font-weight:900;
+color:#6E1D27;
+line-height:1;
+">
+
+299 ر.س
+
+</div>
+
+</div>
+
+<button
+
+onclick="addOfferToCart()"
+
+style="
 
 width:100%;
 
-height:100%;
+padding:20px;
+
+border:none;
+
+background:#C8A15A;
+
+color:white;
+
+font-size:22px;
+
+font-weight:900;
+
+border-radius:18px;
+
+cursor:pointer;
+
+">
+
+🛒 أضف العرض للسلة
+
+</button>
+
+<p style="
+margin-top:15px;
+color:#777;
+font-size:15px;
+">
+
+الأسعار غير شاملة التوصيل
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="najdi-line"></div>
+
+<style>
+
+@media(max-width:900px){
+
+#offer h2{
+
+font-size:38px !important;
+
+}
+
+#offer > div > div:nth-child(2){
+
+grid-template-columns:1fr !important;
+
+}
+
+}
+
+</style>
+
+<script>
+
+function addOfferToCart(){
+
+alert("سيتم ربط العرض بالسلة في الجزء الخامس");
+
+}
+
+</script> 
+  <section id="products" style="padding:80px 20px;">
+
+<div style="max-width:1250px;margin:auto;">
+
+<div style="text-align:center;margin-bottom:50px;">
+
+<h2 style="
+font-size:55px;
+font-weight:900;
+color:#6E1D27;
+">
+
+مختارات جلاغ العود
+
+</h2>
+
+<p style="
+font-size:22px;
+color:#666;
+margin-top:15px;
+">
+
+ثلاث مختارات بعناية من غابات إندونيسيا 🌳
+
+</p>
+
+</div>
+
+<div class="products-grid-new">
+
+<!-- دقة مروكي -->
+
+<div class="product-new">
+
+<img src="IMG_1765.jpeg">
+
+<div class="product-body">
+
+<span class="discount-badge">
+خصم 23%
+</span>
+
+<h3>عود دقة مروكي</h3>
+
+<div class="product-type">
+طبيعي محسن
+</div>
+
+<div class="price-area">
+
+<span class="old-price">
+130 ر.س
+</span>
+
+<span class="new-price">
+100 ر.س
+</span>
+
+</div>
+
+<div class="buttons-3">
+
+<button onclick="openProduct(0)">
+التفاصيل
+</button>
+
+<button onclick="addProductCart(0)">
+السلة
+</button>
+
+<button onclick="orderWhatsApp(0)">
+واتساب
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- مروكي سيوفي -->
+
+<div class="product-new">
+
+<img src="IMG_1766.jpeg">
+
+<div class="product-body">
+
+<span class="discount-badge">
+خصم 19%
+</span>
+
+<h3>عود مروكي سيوفي</h3>
+
+<div class="product-type">
+طبيعي محسن
+</div>
+
+<div class="price-area">
+
+<span class="old-price">
+160 ر.س
+</span>
+
+<span class="new-price">
+130 ر.س
+</span>
+
+</div>
+
+<div class="buttons-3">
+
+<button onclick="openProduct(1)">
+التفاصيل
+</button>
+
+<button onclick="addProductCart(1)">
+السلة
+</button>
+
+<button onclick="orderWhatsApp(1)">
+واتساب
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- أزرق كلمنتان -->
+
+<div class="product-new">
+
+<img src="IMG_1764.jpeg">
+
+<div class="product-body">
+
+<span class="discount-badge">
+خصم 17%
+</span>
+
+<h3>عود أزرق كلمنتان</h3>
+
+<div class="product-type">
+طبيعي محسن
+</div>
+
+<div class="price-area">
+
+<span class="old-price">
+180 ر.س
+</span>
+
+<span class="new-price">
+150 ر.س
+</span>
+
+</div>
+
+<div class="buttons-3">
+
+<button onclick="openProduct(2)">
+التفاصيل
+</button>
+
+<button onclick="addProductCart(2)">
+السلة
+</button>
+
+<button onclick="orderWhatsApp(2)">
+واتساب
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="najdi-line"></div>
+
+<style>
+
+.products-grid-new{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+
+}
+
+.product-new{
+
+background:white;
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.product-new:hover{
+
+transform:translateY(-6px);
+
+}
+
+.product-new img{
+
+width:100%;
+
+height:340px;
 
 object-fit:cover;
 
 }
 
-.offer-content{
+.product-body{
 
-padding:50px;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
+padding:25px;
 
 }
 
-.offer-tag{
+.discount-badge{
 
-background:#e7d2a4;
+background:#6E1D27;
 
-color:#6b1f27;
+color:white;
 
-padding:8px 15px;
+padding:8px 14px;
 
-border-radius:30px;
+border-radius:999px;
 
-font-weight:900;
+font-size:13px;
 
-width:max-content;
-
-margin-bottom:20px;
+font-weight:800;
 
 }
 
-.offer-content h2{
+.product-body h3{
 
-font-size:42px;
+margin-top:15px;
 
-color:#6b1f27;
+font-size:28px;
 
-margin-bottom:20px;
+color:#6E1D27;
 
 }
 
-.offer-content p{
+.product-type{
 
-line-height:2.2;
+margin-top:10px;
 
-font-size:18px;
+color:#777;
+
+font-size:16px;
 
 }
 
 .price-area{
 
-margin-top:25px;
+margin-top:20px;
 
 display:flex;
 
@@ -678,55 +896,88 @@ gap:15px;
 
 text-decoration:line-through;
 
-font-size:24px;
+color:#999;
 
-color:#888;
+font-size:18px;
 
 }
 
 .new-price{
 
-font-size:52px;
+font-size:34px;
 
 font-weight:900;
 
-color:#6b1f27;
+color:#6E1D27;
 
 }
 
-.discount-box{
+.buttons-3{
 
-margin-top:15px;
+display:grid;
 
-font-weight:900;
+grid-template-columns:
+repeat(3,1fr);
 
-color:#b89254;
+gap:10px;
+
+margin-top:20px;
 
 }
 
-.offer-btn{
+.buttons-3 button{
 
-margin-top:25px;
+border:none;
 
-background:#6b1f27;
+padding:14px;
+
+border-radius:14px;
+
+font-weight:800;
+
+cursor:pointer;
+
+background:#C8A15A;
 
 color:white;
 
-padding:15px;
+}
 
-border-radius:15px;
+.buttons-3 button:nth-child(2){
 
-font-weight:900;
+background:#6E1D27;
 
-text-align:center;
+}
+
+.buttons-3 button:nth-child(3){
+
+background:#25D366;
 
 }
 
 @media(max-width:900px){
 
-.offer-box{
+.products-grid-new{
 
-grid-template-columns:1fr;
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.products-grid-new{
+
+grid-template-columns:
+1fr;
+
+}
+
+.product-new img{
+
+height:260px;
 
 }
 
@@ -734,211 +985,95 @@ grid-template-columns:1fr;
 
 </style>
 
-<!-- =========================
-     المنتجات
-========================= -->
+<script>
 
-<section class="section" id="products">
+function addProductCart(id){
 
-<div class="title">
+showToast("تمت إضافة المنتج للسلة ✓");
+
+}
+
+function orderWhatsApp(id){
+
+window.open(
+"https://wa.me/966539400955",
+"_blank"
+);
+
+}
+
+function showToast(text){
+
+let toast =
+document.createElement("div");
+
+toast.innerHTML=text;
+
+toast.style.cssText=`
+
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:#6E1D27;
+color:white;
+padding:14px 25px;
+border-radius:50px;
+font-weight:800;
+z-index:99999;
+
+`;
+
+document.body.appendChild(toast);
+
+setTimeout(()=>{
+
+toast.remove();
+
+},2000);
+
+}
+
+</script> 
+  <section id="guarantee" style="padding:80px 20px;">
+
+<div style="max-width:1200px;margin:auto;">
+
+<div class="gold-guarantee">
+
+<div class="gold-icon">
+
+🏆
+
+</div>
 
 <h2>
 
-مختارات جلاغ العود
+الضمان الذهبي
 
 </h2>
 
 <p>
 
-ثلاث مختارات بعناية من غابات إندونيسيا 🌳
+منتجنا سوف يكسر السوق بالجودة أولاً والسعر ثانياً
 
 </p>
 
-</div>
+<div class="gold-features">
 
-<div class="products-grid">
+<div>✓ جودة مطابقة للوصف</div>
 
-<!-- المنتج 1 -->
+<div>✓ كسرة عود للتجربة قبل فتح المنتج</div>
 
-<div class="product-card">
+<div>✓ خدمة عملاء مباشرة</div>
 
-<img src="IMG_1765.jpeg">
-
-<div class="product-content">
-
-<span class="product-discount">
-
-خصم 23%
-
-</span>
-
-<h3>
-
-عود دقة مروكي
-
-</h3>
-
-<p>
-
-رائحة أنيقة لمحبي العود الأصيل
-
-</p>
-
-<div class="price-box">
-
-<span class="old">
-
-130 ر.س
-
-</span>
-
-<span class="new">
-
-100 ر.س
-
-</span>
+<div>✓ استرجاع خلال يوم من الاستلام</div>
 
 </div>
 
-<div class="product-buttons">
+<div class="gold-note">
 
-<button onclick="openProduct(0)">
-
-التفاصيل
-
-</button>
-
-<button onclick="quickAdd(0)">
-
-السلة مباشرة
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- المنتج 2 -->
-
-<div class="product-card">
-
-<img src="IMG_1766.jpeg">
-
-<div class="product-content">
-
-<span class="product-discount">
-
-خصم 19%
-
-</span>
-
-<h3>
-
-عود مروكي سيوفي
-
-</h3>
-
-<p>
-
-حضور قوي وأنيق للمجالس والاستخدام اليومي
-
-</p>
-
-<div class="price-box">
-
-<span class="old">
-
-160 ر.س
-
-</span>
-
-<span class="new">
-
-130 ر.س
-
-</span>
-
-</div>
-
-<div class="product-buttons">
-
-<button onclick="openProduct(1)">
-
-التفاصيل
-
-</button>
-
-<button onclick="quickAdd(1)">
-
-السلة مباشرة
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- المنتج 3 -->
-
-<div class="product-card">
-
-<img src="IMG_1764.jpeg">
-
-<div class="product-content">
-
-<span class="product-discount">
-
-خصم 17%
-
-</span>
-
-<h3>
-
-عود أزرق كلمنتان
-
-</h3>
-
-<p>
-
-فخامة ورسمية لمحبي الروائح القوية
-
-</p>
-
-<div class="price-box">
-
-<span class="old">
-
-180 ر.س
-
-</span>
-
-<span class="new">
-
-150 ر.س
-
-</span>
-
-</div>
-
-<div class="product-buttons">
-
-<button onclick="openProduct(2)">
-
-التفاصيل
-
-</button>
-
-<button onclick="quickAdd(2)">
-
-السلة مباشرة
-
-</button>
-
-</div>
+⚠️ عند فتح المنتج لا يمكن استرجاعه
 
 </div>
 
@@ -948,208 +1083,11 @@ grid-template-columns:1fr;
 
 </section>
 
-<style>
+<div class="najdi-line"></div>
 
-.products-grid{
+<section id="story" style="padding:80px 20px;">
 
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:25px;
-
-}
-
-.product-card{
-
-background:white;
-
-border-radius:30px;
-
-overflow:hidden;
-
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-
-transition:.3s;
-
-}
-
-.product-card:hover{
-
-transform:translateY(-5px);
-
-}
-
-.product-card img{
-
-width:100%;
-
-height:320px;
-
-object-fit:cover;
-
-}
-
-.product-content{
-
-padding:25px;
-
-}
-
-.product-discount{
-
-background:#6b1f27;
-
-color:white;
-
-padding:6px 12px;
-
-border-radius:20px;
-
-font-size:12px;
-
-font-weight:900;
-
-}
-
-.product-content h3{
-
-margin-top:15px;
-
-font-size:25px;
-
-color:#6b1f27;
-
-}
-
-.product-content p{
-
-margin-top:10px;
-
-line-height:2;
-
-}
-
-.price-box{
-
-margin-top:20px;
-
-display:flex;
-
-gap:15px;
-
-align-items:center;
-
-}
-
-.old{
-
-text-decoration:line-through;
-
-color:#888;
-
-}
-
-.new{
-
-font-size:30px;
-
-font-weight:900;
-
-color:#6b1f27;
-
-}
-
-.product-buttons{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:10px;
-
-margin-top:20px;
-
-}
-
-.product-buttons button{
-
-border:none;
-
-padding:14px;
-
-border-radius:15px;
-
-font-weight:900;
-
-cursor:pointer;
-
-}
-
-.product-buttons button:first-child{
-
-background:#e8dbc0;
-
-color:#6b1f27;
-
-}
-
-.product-buttons button:last-child{
-
-background:#6b1f27;
-
-color:white;
-
-}
-
-@media(max-width:900px){
-
-.products-grid{
-
-grid-template-columns:1fr 1fr;
-
-gap:12px;
-
-}
-
-.product-card img{
-
-height:190px;
-
-}
-
-.product-content{
-
-padding:15px;
-
-}
-
-.product-content h3{
-
-font-size:18px;
-
-}
-
-.new{
-
-font-size:22px;
-
-}
-
-.product-buttons{
-
-grid-template-columns:1fr;
-
-}
-
-}
-
-</style> 
- <!-- =========================
-     من شجرة العود تبدأ الحكاية
-========================= -->
-
-<section class="section" id="story">
+<div style="max-width:1200px;margin:auto;">
 
 <div class="story-box">
 
@@ -1159,7 +1097,13 @@ grid-template-columns:1fr;
 
 </div>
 
-<div class="story-content">
+<div class="story-content-new">
+
+<span class="story-tag">
+
+من غابات إندونيسيا
+
+</span>
 
 <h2>
 
@@ -1170,9 +1114,59 @@ grid-template-columns:1fr;
 
 <p>
 
-في أعماق غابات إندونيسيا تبدأ رحلة العود، حيث تحتاج الأشجار لسنوات طويلة حتى تتكون مادة العود الطبيعية داخلها.
+تبدأ رحلة العود من غابات إندونيسيا حيث تحتاج الأشجار لسنوات طويلة حتى تتكون مادة العود الطبيعية داخلها.
 
-ثم تمر بمراحل دقيقة من الاستخراج والفرز والاختيار والمعالجة حتى تصل إليك مختارات جلاغ العود بأفضل جودة وسعر وبضغطة زر فقط.
+</p>
+
+<p>
+
+ثم تمر بمراحل دقيقة من الاستخراج والفرز والاختيار حتى تصل إليك مختارات جلاغ العود بأفضل جودة وسعر وبضغطة زر فقط.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div class="najdi-line"></div>
+
+<section id="meaning" style="padding:80px 20px;">
+
+<div style="max-width:1000px;margin:auto;">
+
+<div class="meaning-box">
+
+<div class="meaning-decoration">
+
+◈ ◈ ◈
+
+</div>
+
+<h2>
+
+ما معنى جلاغ؟
+
+</h2>
+
+<p>
+
+جلاغ كلمة نجدية أصيلة بطابع وموروث أهلنا ومن عاشوا قبلنا على أرض المملكة العربية السعودية 🇸🇦
+
+</p>
+
+<p>
+
+( اللهم احفظ هذا البلد )
+
+</p>
+
+<p>
+
+وتعني جلاغ القشرة الخارجية للشجرة، ومنها استوحينا الاسم على أصلنا وثقافتنا العريقة وجذورنا الممتدة.
 
 </p>
 
@@ -1182,19 +1176,108 @@ grid-template-columns:1fr;
 
 </section>
 
+<div class="najdi-line"></div>
+
 <style>
 
-.story-box{
+.gold-guarantee{
+
+background:
+linear-gradient(
+135deg,
+#6E1D27,
+#4E121B
+);
+
+color:white;
+
+padding:60px;
+
+border-radius:35px;
+
+text-align:center;
+
+box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+.gold-icon{
+
+font-size:70px;
+
+margin-bottom:20px;
+
+}
+
+.gold-guarantee h2{
+
+font-size:50px;
+
+color:#E4C88D;
+
+margin-bottom:20px;
+
+}
+
+.gold-guarantee p{
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+.gold-features{
 
 display:grid;
 
-grid-template-columns:1fr 1fr;
+grid-template-columns:
+repeat(2,1fr);
+
+gap:15px;
+
+margin-top:35px;
+
+}
+
+.gold-features div{
+
+background:rgba(255,255,255,.08);
+
+padding:18px;
+
+border-radius:16px;
+
+font-weight:700;
+
+}
+
+.gold-note{
+
+margin-top:30px;
+
+padding:18px;
+
+background:rgba(255,255,255,.12);
+
+border-radius:16px;
+
+font-weight:800;
+
+}
+
+.story-box{
 
 background:white;
 
 border-radius:35px;
 
 overflow:hidden;
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
 
 box-shadow:0 15px 40px rgba(0,0,0,.08);
 
@@ -1210,33 +1293,87 @@ object-fit:cover;
 
 }
 
-.story-content{
+.story-content-new{
 
 padding:50px;
 
-display:flex;
+}
 
-flex-direction:column;
+.story-tag{
 
-justify-content:center;
+background:#E4C88D;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+font-weight:800;
 
 }
 
-.story-content h2{
+.story-content-new h2{
 
-font-size:42px;
+font-size:46px;
 
-color:#6b1f27;
+color:#6E1D27;
 
-margin-bottom:20px;
+margin:25px 0;
 
 }
 
-.story-content p{
+.story-content-new p{
+
+line-height:2.3;
 
 font-size:18px;
 
+margin-bottom:15px;
+
+}
+
+.meaning-box{
+
+background:white;
+
+padding:60px;
+
+border-radius:35px;
+
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.meaning-decoration{
+
+font-size:28px;
+
+color:#C8A15A;
+
+margin-bottom:20px;
+
+letter-spacing:8px;
+
+}
+
+.meaning-box h2{
+
+font-size:48px;
+
+color:#6E1D27;
+
+margin-bottom:25px;
+
+}
+
+.meaning-box p{
+
+font-size:20px;
+
 line-height:2.3;
+
+margin-bottom:15px;
 
 }
 
@@ -1248,143 +1385,139 @@ grid-template-columns:1fr;
 
 }
 
-}
+.story-content-new{
 
-</style>
-
-<!-- =========================
-     الضمان الذهبي
-========================= -->
-
-<section class="section">
-
-<div class="title">
-
-<h2>
-
-الضمان الذهبي ✨
-
-</h2>
-
-<p>
-
-الجودة أولاً ... والسعر ثانياً
-
-</p>
-
-</div>
-
-<div class="gold-box">
-
-<h3>
-
-ضمان جلاغ العود الذهبي
-
-</h3>
-
-<p>
-
-منتجنا سوف يكسر السوق بالجودة أولاً وبالسعر ثانياً.
-
-يوجد كسرة عود هدية خارجية الرجاء تجربتها أولاً.
-
-إذا لم يناسبك العود أو لم ترضَ عن الجودة فنقبل الاسترجاع خلال يوم واحد من وصول الشحنة.
-
-</p>
-
-<div class="gold-note">
-
-⚠️ ملاحظة مهمة
-
-<br><br>
-
-عند فتح المنتج لا يمكن إرجاعه.
-
-</div>
-
-</div>
-
-</section>
-
-<style>
-
-.gold-box{
-
-background:linear-gradient(
-135deg,
-#6b1f27,
-#4d151b
-);
-
-color:white;
-
-padding:60px;
-
-border-radius:35px;
-
-text-align:center;
-
-box-shadow:0 20px 60px rgba(0,0,0,.15);
+padding:30px;
 
 }
 
-.gold-box h3{
+.gold-features{
 
-font-size:40px;
-
-color:#e7c680;
-
-margin-bottom:20px;
+grid-template-columns:1fr;
 
 }
 
-.gold-box p{
+.gold-guarantee{
 
-font-size:18px;
-
-line-height:2.3;
-
-max-width:900px;
-
-margin:auto;
+padding:35px;
 
 }
 
-.gold-note{
+.meaning-box{
 
-margin-top:30px;
-
-background:rgba(255,255,255,.08);
-
-border:1px solid rgba(255,255,255,.15);
-
-padding:20px;
-
-border-radius:20px;
-
-font-weight:800;
+padding:35px;
 
 }
 
-</style>
+}
 
-<!-- =========================
-     خدمة العملاء الثابتة
+</style> 
+  <!-- =========================
+     زر خدمة العملاء
 ========================= -->
 
 <a
 href="https://wa.me/966539400955"
-target="_blank"
-class="support-btn"
->
+class="support-fixed"
+target="_blank">
 
-خدمة العملاء
+💬 خدمة العملاء
 
 </a>
 
+<!-- =========================
+     أيقونة السلة
+========================= -->
+
+<div class="cart-float" onclick="toggleCart()">
+
+🛒
+
+<span id="cartCount">
+0
+</span>
+
+</div>
+
+<!-- =========================
+     السلة
+========================= -->
+
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<div class="cart-sidebar" id="cartSidebar">
+
+<div class="cart-head">
+
+<h2>سلة جلاغ العود</h2>
+
+<button onclick="toggleCart()">
+✕
+</button>
+
+</div>
+
+<div id="cartItems">
+
+<p class="empty-cart">
+السلة فارغة حالياً
+</p>
+
+</div>
+
+<div class="cart-footer">
+
+<div class="cart-total">
+
+<span>الإجمالي</span>
+
+<strong id="cartTotal">
+0 ر.س
+</strong>
+
+</div>
+
+<button onclick="checkoutWhatsApp()">
+
+إتمام الطلب عبر واتساب
+
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<div class="footer-pattern"></div>
+
+<h2>
+جلاغ العود
+</h2>
+
+<p>
+
+يا مرحبا ترحيبة كلها أطياب
+
+<br>
+
+أحلى من العنبر وأزكى من العود 🤍
+
+</p>
+
+<p style="margin-top:20px">
+
+© 2026 جميع الحقوق محفوظة
+
+</p>
+
+</footer>
+
 <style>
 
-.support-btn{
+/* خدمة العملاء */
+
+.support-fixed{
 
 position:fixed;
 
@@ -1395,61 +1528,236 @@ background:#25D366;
 
 color:white;
 
-padding:15px 22px;
+padding:16px 24px;
 
-border-radius:50px;
+border-radius:999px;
 
 font-weight:900;
 
-z-index:99999;
+text-decoration:none;
 
-box-shadow:0 10px 30px rgba(0,0,0,.25);
+z-index:9999;
 
-}
-
-.support-btn:hover{
-
-transform:translateY(-2px);
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 
 }
 
-</style>
+/* السلة */
 
-<!-- =========================
-     الفوتر
-========================= -->
+.cart-float{
 
-<footer id="contact">
+position:fixed;
 
-<h2>
+left:20px;
+bottom:20px;
 
-جلاغ العود
+width:75px;
+height:75px;
 
-</h2>
+border-radius:50%;
 
-<p>
+background:#6E1D27;
 
-يامرحبا ترحيبة كلها أطياب
+color:white;
 
-<br>
+display:flex;
 
-أحلى من العنبر وأزكى من العود 🤍
+align-items:center;
+justify-content:center;
 
-</p>
+font-size:30px;
 
-<p class="copyright">
+cursor:pointer;
 
-© 2026 جميع الحقوق محفوظة
+z-index:9999;
 
-</p>
+box-shadow:0 10px 30px rgba(0,0,0,.2);
 
-</footer>
+}
 
-<style>
+.cart-float span{
+
+position:absolute;
+
+top:-5px;
+right:-5px;
+
+background:#E4C88D;
+
+color:#6E1D27;
+
+width:30px;
+height:30px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+font-size:13px;
+
+font-weight:900;
+
+}
+
+.cart-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.5);
+
+display:none;
+
+z-index:5000;
+
+}
+
+.cart-sidebar{
+
+position:fixed;
+
+left:-420px;
+
+top:0;
+
+width:400px;
+
+max-width:100%;
+
+height:100vh;
+
+background:white;
+
+z-index:6000;
+
+display:flex;
+
+flex-direction:column;
+
+transition:.35s;
+
+}
+
+.cart-sidebar.active{
+
+left:0;
+
+}
+
+.cart-overlay.active{
+
+display:block;
+
+}
+
+.cart-head{
+
+padding:25px;
+
+display:flex;
+
+justify-content:space-between;
+
+border-bottom:1px solid #eee;
+
+}
+
+.cart-head button{
+
+border:none;
+
+background:#6E1D27;
+
+color:white;
+
+width:40px;
+height:40px;
+
+border-radius:50%;
+
+cursor:pointer;
+
+}
+
+#cartItems{
+
+flex:1;
+
+overflow:auto;
+
+padding:20px;
+
+}
+
+.empty-cart{
+
+text-align:center;
+
+padding-top:60px;
+
+color:#888;
+
+}
+
+.cart-item{
+
+padding:15px 0;
+
+border-bottom:1px solid #eee;
+
+}
+
+.cart-footer{
+
+padding:20px;
+
+border-top:1px solid #eee;
+
+}
+
+.cart-total{
+
+display:flex;
+
+justify-content:space-between;
+
+margin-bottom:15px;
+
+font-size:22px;
+
+font-weight:900;
+
+}
+
+.cart-footer button{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+background:#6E1D27;
+
+color:white;
+
+font-weight:900;
+
+border-radius:14px;
+
+cursor:pointer;
+
+}
+
+/* الفوتر */
 
 footer{
 
-background:#2b1c18;
+background:#1F1A17;
 
 color:white;
 
@@ -1461,11 +1769,30 @@ margin-top:80px;
 
 }
 
+.footer-pattern{
+
+height:12px;
+
+margin-bottom:35px;
+
+background:
+repeating-linear-gradient(
+90deg,
+#C8A15A 0,
+#C8A15A 35px,
+transparent 35px,
+transparent 70px
+);
+
+opacity:.5;
+
+}
+
 footer h2{
 
 font-size:42px;
 
-color:#e7c680;
+color:#E4C88D;
 
 margin-bottom:15px;
 
@@ -1475,411 +1802,108 @@ footer p{
 
 line-height:2;
 
-opacity:.9;
-
-}
-
-.copyright{
-
-margin-top:20px;
-
-font-size:14px;
-
-opacity:.7;
-
-}
-
-</style> 
-  <!-- =========================
-     نافذة تفاصيل المنتجات
-========================= -->
-
-<div class="modal" id="productModal">
-
-<div class="modal-content">
-
-<button class="close-btn" onclick="closeProduct()">
-✕
-</button>
-
-<h2 id="productName"></h2>
-
-<div id="productDetails"></div>
-
-<button class="modal-cart-btn" onclick="addCurrentProduct()">
-إضافة للسلة
-</button>
-
-</div>
-
-</div>
-
-<style>
-
-.modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.75);
-display:none;
-align-items:center;
-justify-content:center;
-z-index:999999;
-padding:20px;
-}
-
-.modal.active{
-display:flex;
-}
-
-.modal-content{
-background:white;
-width:min(700px,100%);
-border-radius:30px;
-padding:35px;
-position:relative;
-}
-
-.close-btn{
-position:absolute;
-left:15px;
-top:15px;
-width:40px;
-height:40px;
-border:none;
-border-radius:50%;
-background:#6b1f27;
-color:white;
-cursor:pointer;
-}
-
-.modal-cart-btn{
-width:100%;
-margin-top:20px;
-padding:15px;
-border:none;
-border-radius:15px;
-background:#6b1f27;
-color:white;
-font-weight:900;
-cursor:pointer;
-}
-
-</style>
-
-<!-- =========================
-     السلة
-========================= -->
-
-<div class="cart-floating" onclick="openCart()">
-
-🛒
-
-<span id="cartCount">
-0
-</span>
-
-</div>
-
-<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
-
-<div class="cart-sidebar" id="cartSidebar">
-
-<div class="cart-header">
-
-<h2>
-سلة جلاغ العود
-</h2>
-
-<button onclick="closeCart()">
-✕
-</button>
-
-</div>
-
-<div id="cartItems" class="cart-items">
-
-<p class="empty-cart">
-السلة فارغة حالياً 🤍
-</p>
-
-</div>
-
-<div class="cart-footer">
-
-<div class="cart-total">
-
-<span>
-الإجمالي
-</span>
-
-<strong id="cartTotal">
-0 ر.س
-</strong>
-
-</div>
-
-<button class="checkout-btn" onclick="sendOrder()">
-
-إرسال الطلب
-
-</button>
-
-</div>
-
-</div>
-
-<style>
-
-.cart-floating{
-position:fixed;
-left:20px;
-bottom:20px;
-width:70px;
-height:70px;
-border-radius:50%;
-background:#6b1f27;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-cursor:pointer;
-z-index:9999;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
-}
-
-.cart-floating span{
-position:absolute;
-top:-5px;
-right:-5px;
-background:#e7c680;
-color:#6b1f27;
-width:28px;
-height:28px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:12px;
-font-weight:900;
-}
-
-.cart-overlay{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.5);
-display:none;
-z-index:9998;
-}
-
-.cart-overlay.active{
-display:block;
-}
-
-.cart-sidebar{
-position:fixed;
-left:-450px;
-top:0;
-width:420px;
-max-width:100%;
-height:100vh;
-background:white;
-z-index:99999;
-transition:.3s;
-display:flex;
-flex-direction:column;
-}
-
-.cart-sidebar.active{
-left:0;
-}
-
-.cart-header{
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-border-bottom:1px solid #eee;
-}
-
-.cart-header button{
-width:40px;
-height:40px;
-border:none;
-border-radius:50%;
-background:#6b1f27;
-color:white;
-cursor:pointer;
-}
-
-.cart-items{
-flex:1;
-overflow:auto;
-padding:20px;
-}
-
-.cart-row{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-border-bottom:1px solid #eee;
-}
-
-.cart-footer{
-padding:20px;
-border-top:1px solid #eee;
-}
-
-.cart-total{
-display:flex;
-justify-content:space-between;
-font-weight:900;
-font-size:20px;
-margin-bottom:15px;
-}
-
-.checkout-btn{
-width:100%;
-padding:15px;
-border:none;
-border-radius:15px;
-background:#6b1f27;
-color:white;
-font-weight:900;
-cursor:pointer;
 }
 
 </style>
 
 <script>
 
+/* بيانات المنتجات */
+
 const products = [
 
 {
-id:0,
 name:"عود دقة مروكي",
 price:100
 },
 
 {
-id:1,
 name:"عود مروكي سيوفي",
 price:130
 },
 
 {
-id:2,
 name:"عود أزرق كلمنتان",
 price:150
 }
 
 ];
 
-let cart=[];
-let currentProduct=null;
+let cart = [];
 
-function openProduct(id){
+/* فتح السلة */
 
-currentProduct=products[id];
+function toggleCart(){
 
-const details=[
+document
+.getElementById("cartSidebar")
+.classList.toggle("active");
 
-`
-<h3>عود دقة مروكي</h3>
-<p>
-الاستخدام: شخصي - منزلي<br><br>
-المصدر: غابات إندونيسيا 🌳<br><br>
-الوزن: أوقية 28 جرام<br><br>
-السعر بعد الخصم: 100 ر.س
-</p>
-`,
-
-`
-<h3>عود مروكي سيوفي</h3>
-<p>
-الاستخدام: يومي - مجالس<br><br>
-المصدر: غابات إندونيسيا 🌳<br><br>
-الوزن: أوقية 28 جرام<br><br>
-السعر بعد الخصم: 130 ر.س
-</p>
-`,
-
-`
-<h3>عود أزرق كلمنتان</h3>
-<p>
-الاستخدام: مناسبات - مجالس<br><br>
-المصدر: غابات إندونيسيا 🌳<br><br>
-الوزن: أوقية 28 جرام<br><br>
-السعر بعد الخصم: 150 ر.س
-</p>
-`
-
-];
-
-document.getElementById("productName").innerHTML=currentProduct.name;
-document.getElementById("productDetails").innerHTML=details[id];
-
-document.getElementById("productModal").classList.add("active");
+document
+.getElementById("cartOverlay")
+.classList.toggle("active");
 
 }
 
-function closeProduct(){
-document.getElementById("productModal").classList.remove("active");
-}
+/* إضافة منتج */
 
-function quickAdd(id){
+function addProductCart(id){
 
-currentProduct=products[id];
-
-addCurrentProduct();
-
-}
-
-function addCurrentProduct(){
-
-let found=cart.find(i=>i.id===currentProduct.id);
-
-if(found){
-
-found.qty++;
-
-}else{
-
-cart.push({
-...currentProduct,
-qty:1
-});
-
-}
+cart.push(products[id]);
 
 renderCart();
 
+showToast("تمت الإضافة للسلة ✓");
+
 }
+
+/* إضافة العرض */
+
+function addOfferToCart(){
+
+cart.push(
+products[2]
+);
+
+cart.push(
+products[1]
+);
+
+cart.push({
+
+name:"دقة مروكي (هدية)",
+
+price:0
+
+});
+
+renderCart();
+
+showToast("تمت إضافة العرض ✓");
+
+}
+
+/* تحديث السلة */
 
 function renderCart(){
 
-const items=document.getElementById("cartItems");
+let total = 0;
 
-let total=0;
+let html = "";
 
-if(cart.length===0){
+cart.forEach(item=>{
 
-items.innerHTML='<p class="empty-cart">السلة فارغة حالياً 🤍</p>';
+total += item.price;
 
-}else{
+html += `
 
-items.innerHTML=cart.map(item=>{
+<div class="cart-item">
 
-total+=item.price*item.qty;
+<strong>
 
-return `
+${item.name}
 
-<div class="cart-row">
-
-<div>
-
-<strong>${item.name}</strong>
+</strong>
 
 <br>
 
@@ -1887,42 +1911,41 @@ ${item.price} ر.س
 
 </div>
 
-<div>
-
-${item.qty}
-
-</div>
-
-</div>
-
 `;
 
-}).join("");
+});
+
+if(cart.length===0){
+
+html=`
+<p class="empty-cart">
+
+السلة فارغة حالياً
+
+</p>
+`;
 
 }
 
-document.getElementById("cartTotal").innerHTML=total+' ر.س';
+document.getElementById(
+"cartItems"
+).innerHTML = html;
 
-document.getElementById("cartCount").innerHTML=
-cart.reduce((a,b)=>a+b.qty,0);
+document.getElementById(
+"cartTotal"
+).innerText =
+total + " ر.س";
 
-}
-
-function openCart(){
-
-document.getElementById("cartSidebar").classList.add("active");
-document.getElementById("cartOverlay").classList.add("active");
-
-}
-
-function closeCart(){
-
-document.getElementById("cartSidebar").classList.remove("active");
-document.getElementById("cartOverlay").classList.remove("active");
+document.getElementById(
+"cartCount"
+).innerText =
+cart.length;
 
 }
 
-function sendOrder(){
+/* الطلب واتساب */
+
+function checkoutWhatsApp(){
 
 if(cart.length===0){
 
@@ -1932,326 +1955,40 @@ return;
 
 }
 
-let total=0;
+let total = 0;
 
-let msg="السلام عليكم%0Aطلب جديد من جلاغ العود%0A%0A";
+let message =
+"السلام عليكم\n\nطلب جديد من جلاغ العود\n\n";
 
 cart.forEach(item=>{
 
-total+=item.price*item.qty;
+total += item.price;
 
-msg+=item.name+" × "+item.qty+"%0A";
+message +=
 
-});
+`${item.name}
+${item.price} ر.س
 
-msg+="%0Aالإجمالي: "+total+" ر.س";
-
-window.open(
-"https://wa.me/966539400955?text="+msg,
-"_blank"
-);
-
-}
-
-renderCart();
-
-</script>
-<style>
-
-/* ===== الهوية الجديدة ===== */
-
-body{
-background:#f5efe6 !important;
-}
-
-/* زخرفة نجدية */
-
-.najdi-pattern{
-height:12px;
-background:
-repeating-linear-gradient(
-90deg,
-#b6945a 0px,
-#b6945a 30px,
-transparent 30px,
-transparent 60px
-);
-opacity:.25;
-}
-
-/* ===== المنتجات ===== */
-
-.products-grid{
-
-display:grid !important;
-
-grid-template-columns:
-repeat(2,minmax(0,1fr));
-
-gap:18px;
-
-}
-
-@media(max-width:700px){
-
-.products-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:12px;
-
-}
-
-}
-
-.product-card{
-
-background:#fffdf9;
-
-border:1px solid #eee3d0;
-
-border-radius:22px;
-
-overflow:hidden;
-
-box-shadow:
-0 8px 25px rgba(0,0,0,.06);
-
-transition:.3s;
-
-}
-
-.product-card:hover{
-
-transform:translateY(-4px);
-
-}
-
-.product-card img{
-
-height:230px;
-
-object-fit:cover;
-
-}
-
-.product-content{
-
-padding:18px;
-
-}
-
-.product-content h3{
-
-font-size:20px;
-
-margin-bottom:8px;
-
-}
-
-.product-content p{
-
-font-size:14px;
-
-line-height:1.9;
-
-color:#555;
-
-}
-
-.product-buttons{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:10px;
-
-margin-top:15px;
-
-}
-
-.details-btn{
-
-background:#b6945a;
-
-color:white;
-
-border:none;
-
-padding:12px;
-
-border-radius:12px;
-
-font-weight:800;
-
-cursor:pointer;
-
-}
-
-.cart-direct{
-
-background:#651d24;
-
-color:white;
-
-border:none;
-
-padding:12px;
-
-border-radius:12px;
-
-font-weight:800;
-
-cursor:pointer;
-
-}
-
-/* ===== العرض ===== */
-
-.offer{
-
-background:
-linear-gradient(
-135deg,
-#651d24,
-#4a171d
-);
-
-}
-
-.offer-content p{
-
-line-height:2.2;
-
-font-size:18px;
-
-}
-
-/* ===== خدمة العملاء ===== */
-
-.support-btn{
-
-display:flex;
-
-align-items:center;
-
-gap:8px;
-
-font-size:15px;
-
-}
-
-.support-btn::before{
-
-content:"💬";
-
-}
-
-/* ===== الضمان ===== */
-
-.gold-box{
-
-background:
-linear-gradient(
-135deg,
-#6f2028,
-#3e1418
-);
-
-}
-
-/* ===== قسم القصة ===== */
-
-.story-content{
-
-background:#fffdf9;
-
-}
-
-.story-content p{
-
-color:#444;
-
-}
-
-/* ===== فوتر ===== */
-
-footer{
-
-background:#241714;
-
-}
-
-</style>
-
-<script>
-
-/* زر إضافة مباشر للسلة */
-
-function addToCartDirect(id){
-
-currentProduct = products[id];
-
-addCurrentProduct();
-
-}
-
-/* استبدال أزرار المنتجات */
-
-window.addEventListener("load",()=>{
-
-document.querySelectorAll(".product-card")
-.forEach((card,index)=>{
-
-let oldBtn =
-card.querySelector("button");
-
-if(oldBtn){
-
-oldBtn.remove();
-
-}
-
-let actions =
-document.createElement("div");
-
-actions.className =
-"product-buttons";
-
-actions.innerHTML =
-
-`
-<button
-class="details-btn"
-onclick="openProduct(${index})"
->
-
-التفاصيل
-
-</button>
-
-<button
-class="cart-direct"
-onclick="addToCartDirect(${index})"
->
-
-أضف للسلة
-
-</button>
 `;
 
-card
-.querySelector(".product-content")
-.appendChild(actions);
-
 });
 
-});
+message +=
+
+`\nالإجمالي:
+${total} ر.س`;
+
+window.open(
+
+`https://wa.me/966539400955?text=${encodeURIComponent(message)}`,
+
+"_blank"
+
+);
+
+}
 
 </script>
 
-<div class="najdi-pattern"></div>
 </body>
-</html>
+</html> 

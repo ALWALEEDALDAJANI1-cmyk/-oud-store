@@ -1956,6 +1956,302 @@ window.open(
 renderCart();
 
 </script>
+<style>
 
+/* ===== الهوية الجديدة ===== */
+
+body{
+background:#f5efe6 !important;
+}
+
+/* زخرفة نجدية */
+
+.najdi-pattern{
+height:12px;
+background:
+repeating-linear-gradient(
+90deg,
+#b6945a 0px,
+#b6945a 30px,
+transparent 30px,
+transparent 60px
+);
+opacity:.25;
+}
+
+/* ===== المنتجات ===== */
+
+.products-grid{
+
+display:grid !important;
+
+grid-template-columns:
+repeat(2,minmax(0,1fr));
+
+gap:18px;
+
+}
+
+@media(max-width:700px){
+
+.products-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:12px;
+
+}
+
+}
+
+.product-card{
+
+background:#fffdf9;
+
+border:1px solid #eee3d0;
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:
+0 8px 25px rgba(0,0,0,.06);
+
+transition:.3s;
+
+}
+
+.product-card:hover{
+
+transform:translateY(-4px);
+
+}
+
+.product-card img{
+
+height:230px;
+
+object-fit:cover;
+
+}
+
+.product-content{
+
+padding:18px;
+
+}
+
+.product-content h3{
+
+font-size:20px;
+
+margin-bottom:8px;
+
+}
+
+.product-content p{
+
+font-size:14px;
+
+line-height:1.9;
+
+color:#555;
+
+}
+
+.product-buttons{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:10px;
+
+margin-top:15px;
+
+}
+
+.details-btn{
+
+background:#b6945a;
+
+color:white;
+
+border:none;
+
+padding:12px;
+
+border-radius:12px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+.cart-direct{
+
+background:#651d24;
+
+color:white;
+
+border:none;
+
+padding:12px;
+
+border-radius:12px;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+/* ===== العرض ===== */
+
+.offer{
+
+background:
+linear-gradient(
+135deg,
+#651d24,
+#4a171d
+);
+
+}
+
+.offer-content p{
+
+line-height:2.2;
+
+font-size:18px;
+
+}
+
+/* ===== خدمة العملاء ===== */
+
+.support-btn{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-size:15px;
+
+}
+
+.support-btn::before{
+
+content:"💬";
+
+}
+
+/* ===== الضمان ===== */
+
+.gold-box{
+
+background:
+linear-gradient(
+135deg,
+#6f2028,
+#3e1418
+);
+
+}
+
+/* ===== قسم القصة ===== */
+
+.story-content{
+
+background:#fffdf9;
+
+}
+
+.story-content p{
+
+color:#444;
+
+}
+
+/* ===== فوتر ===== */
+
+footer{
+
+background:#241714;
+
+}
+
+</style>
+
+<script>
+
+/* زر إضافة مباشر للسلة */
+
+function addToCartDirect(id){
+
+currentProduct = products[id];
+
+addCurrentProduct();
+
+}
+
+/* استبدال أزرار المنتجات */
+
+window.addEventListener("load",()=>{
+
+document.querySelectorAll(".product-card")
+.forEach((card,index)=>{
+
+let oldBtn =
+card.querySelector("button");
+
+if(oldBtn){
+
+oldBtn.remove();
+
+}
+
+let actions =
+document.createElement("div");
+
+actions.className =
+"product-buttons";
+
+actions.innerHTML =
+
+`
+<button
+class="details-btn"
+onclick="openProduct(${index})"
+>
+
+التفاصيل
+
+</button>
+
+<button
+class="cart-direct"
+onclick="addToCartDirect(${index})"
+>
+
+أضف للسلة
+
+</button>
+`;
+
+card
+.querySelector(".product-content")
+.appendChild(actions);
+
+});
+
+});
+
+</script>
+
+<div class="najdi-pattern"></div>
 </body>
 </html>

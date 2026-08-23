@@ -58,15 +58,19 @@ display:block;
 
 header{
 
-background:rgba(244,239,230,.97);
+background:rgba(255,255,255,.08);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(14px);
 
-border-bottom:1px solid rgba(0,0,0,.08);
+border-bottom:1px solid rgba(255,255,255,.12);
 
-position:sticky;
+position:fixed;
 
-top:0;
+top:38px;
+
+left:0;
+
+width:100%;
 
 z-index:999;
 
@@ -160,7 +164,7 @@ color:var(--jamr);
 
 .hero{
 
-height:88vh;
+height:100vh;
 
 position:relative;
 
@@ -172,14 +176,14 @@ justify-content:center;
 
 background:
 linear-gradient(
-rgba(0,0,0,.40),
-rgba(0,0,0,.40)
+rgba(0,0,0,.18),
+rgba(0,0,0,.18)
 ),
 url("E283F998-94B2-4DE4-AF0A-C6802DDF8FAB.png");
 
 background-size:cover;
 
-background-position:center;
+background-position:center center;
 
 background-repeat:no-repeat;
 
@@ -298,7 +302,61 @@ transform:translateY(-2px);
 /* =========================
 الجوال
 ========================= */
+.trust-section{
 
+padding:30px 12px;
+
+background:var(--cream);
+
+display:flex;
+
+justify-content:center;
+
+gap:12px;
+
+}
+
+.trust-card{
+
+flex:1;
+
+background:white;
+
+border:2px solid var(--jamr);
+
+border-radius:18px;
+
+padding:16px 8px;
+
+text-align:center;
+
+}
+
+.trust-icon{
+
+font-size:24px;
+
+margin-bottom:8px;
+
+}
+
+.trust-card h3{
+
+font-size:16px;
+
+color:var(--jamr);
+
+margin-bottom:5px;
+
+}
+
+.trust-card p{
+
+font-size:12px;
+
+color:#666;
+
+}
 @media(max-width:900px){
 
 .navbar{
@@ -418,10 +476,7 @@ max-width:260px;
 
 <div class="hero-content">
 
-<img
-src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png"
-class="hero-logo"
->
+
 
 <h2>جلاغ العود</h2>
 
@@ -454,7 +509,45 @@ class="hero-logo"
 </div>
 
 </section>
+<section class="trust-section">
 
+<div class="trust-card">
+
+<div class="trust-icon">🛡️</div>
+
+<h3>الضمان الذهبي</h3>
+
+<p>رضاك أولويتنا</p>
+
+</div>
+
+<div class="trust-card">
+
+<div class="trust-icon">⭐</div>
+
+<h3>جودة مضمونة</h3>
+
+<p>مختارات فاخرة بعناية</p>
+
+</div>
+
+<div class="trust-card">
+
+<div class="trust-icon">🚚</div>
+
+<h3>شحن سريع</h3>
+
+<p>لكافة مناطق المملكة</p>
+
+</div>
+
+</section>
+
+<div class="top-pattern">
+
+<img src="342A87DA-4B8D-400A-A3C7-5105ECBF07E6.png">
+
+</div>
 </body>
 
 </html> 

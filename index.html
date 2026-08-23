@@ -4,22 +4,19 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>جلاغ العود | للعود مقام وللطيب جلاغ</title>
+<title>جلاغ العود | للعود مقام .. وللطيب جلاغ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-
---jamr:#5c0f18;
+--jamr:#65111d;
 --oud:#6b4b2a;
 --cream:#f4efe6;
---black:#151515;
-
+--dark:#161616;
 }
 
 *{
@@ -34,53 +31,38 @@ scroll-behavior:smooth;
 }
 
 body{
-
 background:var(--cream);
-
-color:var(--black);
-
 overflow-x:hidden;
-
 }
 
-a{
-text-decoration:none;
-color:inherit;
+/* =========================
+الشريط النجدي
+========================= */
+
+.top-pattern{
+width:100%;
+height:38px;
+overflow:hidden;
 }
 
-img{
+.top-pattern img{
+width:100%;
+height:100%;
+object-fit:cover;
 display:block;
-max-width:100%;
 }
 
-/* ======================
-   النقش النجدي العلوي
-====================== */
-
-.najdi-bar{
-
-height:18px;
-
-background:
-repeating-linear-gradient(
-90deg,
-#5c0f18 0px,
-#5c0f18 25px,
-#6b4b2a 25px,
-#6b4b2a 50px,
-#f4efe6 50px,
-#f4efe6 75px
-);
-
-border-bottom:2px solid #151515;
-
-}
-
-/* ======================
-   الهيدر
-====================== */
+/* =========================
+الهيدر
+========================= */
 
 header{
+
+background:rgba(244,239,230,.97);
+
+backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(0,0,0,.08);
 
 position:sticky;
 
@@ -88,21 +70,15 @@ top:0;
 
 z-index:999;
 
-background:rgba(244,239,230,.97);
-
-backdrop-filter:blur(12px);
-
-border-bottom:1px solid rgba(0,0,0,.08);
-
 }
 
-.nav{
+.navbar{
 
-max-width:1300px;
+max-width:1400px;
 
 margin:auto;
 
-padding:15px 25px;
+padding:16px 30px;
 
 display:flex;
 
@@ -112,7 +88,7 @@ justify-content:space-between;
 
 }
 
-.logo{
+.logo-area{
 
 display:flex;
 
@@ -122,7 +98,7 @@ gap:15px;
 
 }
 
-.logo img{
+.logo-area img{
 
 width:80px;
 
@@ -134,7 +110,7 @@ object-fit:contain;
 
 .brand h1{
 
-font-size:28px;
+font-size:30px;
 
 font-weight:900;
 
@@ -142,7 +118,7 @@ color:var(--jamr);
 
 }
 
-.brand span{
+.brand p{
 
 font-size:13px;
 
@@ -156,9 +132,19 @@ color:#777;
 
 display:flex;
 
-gap:25px;
+gap:28px;
+
+}
+
+.menu a{
+
+text-decoration:none;
 
 font-weight:800;
+
+color:#222;
+
+transition:.3s;
 
 }
 
@@ -168,13 +154,15 @@ color:var(--jamr);
 
 }
 
-/* ======================
-   الواجهة الرئيسية
-====================== */
+/* =========================
+الصورة الافتتاحية
+========================= */
 
 .hero{
 
-min-height:90vh;
+height:88vh;
+
+position:relative;
 
 display:flex;
 
@@ -182,67 +170,72 @@ align-items:center;
 
 justify-content:center;
 
-text-align:center;
-
-position:relative;
-
 background:
 linear-gradient(
-rgba(0,0,0,.55),
-rgba(0,0,0,.55)
+rgba(0,0,0,.50),
+rgba(0,0,0,.50)
 ),
-url('IMG_1763.jpeg');
+url("IMG_1763.jpeg");
 
 background-size:cover;
 
 background-position:center;
 
+background-repeat:no-repeat;
+
 }
 
 .hero-content{
 
-max-width:900px;
+position:relative;
 
-padding:20px;
+z-index:2;
+
+text-align:center;
 
 color:white;
+
+max-width:950px;
+
+padding:20px;
 
 }
 
 .hero-logo{
 
-width:220px;
+width:190px;
 
 margin:auto;
 
 margin-bottom:25px;
 
-filter:
-drop-shadow(0 10px 25px rgba(0,0,0,.4));
+filter:drop-shadow(0 10px 20px rgba(0,0,0,.35));
 
 }
 
 .hero h2{
 
-font-size:78px;
+font-size:82px;
 
 font-weight:900;
+
+line-height:1.1;
+
+margin-bottom:20px;
 
 }
 
 .hero p{
 
-margin-top:15px;
-
-font-size:22px;
+font-size:24px;
 
 line-height:2;
 
+margin-bottom:35px;
+
 }
 
-.hero-buttons{
-
-margin-top:35px;
+.buttons{
 
 display:flex;
 
@@ -260,11 +253,21 @@ background:var(--jamr);
 
 color:white;
 
-padding:18px 35px;
+padding:18px 34px;
 
-border-radius:16px;
+border-radius:14px;
 
 font-weight:900;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-2px);
 
 }
 
@@ -274,19 +277,35 @@ background:var(--oud);
 
 color:white;
 
-padding:18px 35px;
+padding:18px 34px;
 
-border-radius:16px;
+border-radius:14px;
 
 font-weight:900;
 
+text-decoration:none;
+
+transition:.3s;
+
 }
 
-/* ======================
-   الجوال
-====================== */
+.btn-secondary:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* =========================
+الجوال
+========================= */
 
 @media(max-width:900px){
+
+.navbar{
+
+padding:14px;
+
+}
 
 .menu{
 
@@ -294,10 +313,11 @@ display:none;
 
 }
 
-.logo img{
+.logo-area img{
 
-width:60px;
-height:60px;
+width:58px;
+
+height:58px;
 
 }
 
@@ -307,21 +327,38 @@ font-size:22px;
 
 }
 
+.hero{
+
+height:75vh;
+
+}
+
 .hero-logo{
 
-width:150px;
+width:130px;
 
 }
 
 .hero h2{
 
-font-size:46px;
+font-size:42px;
 
 }
 
 .hero p{
 
 font-size:18px;
+
+line-height:1.9;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+width:100%;
+
+max-width:260px;
 
 }
 
@@ -333,13 +370,19 @@ font-size:18px;
 
 <body>
 
-<div class="najdi-bar"></div>
+<!-- الشريط النجدي -->
+
+<div class="top-pattern">
+
+<img src="342A87DA-4B8D-400A-A3C7-5105ECBF07E6.png">
+
+</div>
 
 <header>
 
-<div class="nav">
+<div class="navbar">
 
-<div class="logo">
+<div class="logo-area">
 
 <img src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png">
 
@@ -347,9 +390,7 @@ font-size:18px;
 
 <h1>جلاغ العود</h1>
 
-<span>
-للعود مقام .. وللطيب جلاغ
-</span>
+<p>للعود مقام .. وللطيب جلاغ</p>
 
 </div>
 
@@ -357,13 +398,15 @@ font-size:18px;
 
 <div class="menu">
 
-<a href="#offer">العرض</a>
+<a href="#">الرئيسية</a>
 
-<a href="#products">المختارات</a>
+<a href="#">المختارات</a>
 
-<a href="#story">الحكاية</a>
+<a href="#">العروض</a>
 
-<a href="#meaning">جلاغ</a>
+<a href="#">عن جلاغ العود</a>
+
+<a href="#">تواصل معنا</a>
 
 </div>
 
@@ -380,11 +423,7 @@ src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png"
 class="hero-logo"
 >
 
-<h2>
-
-جلاغ العود
-
-</h2>
+<h2>جلاغ العود</h2>
 
 <p>
 
@@ -396,15 +435,15 @@ class="hero-logo"
 
 </p>
 
-<div class="hero-buttons">
+<div class="buttons">
 
-<a href="#products" class="btn-primary">
+<a href="#" class="btn-primary">
 
 تصفح المختارات
 
 </a>
 
-<a href="#offer" class="btn-secondary">
+<a href="#" class="btn-secondary">
 
 عرض الافتتاح
 
@@ -414,4 +453,8 @@ class="hero-logo"
 
 </div>
 
-</section> 
+</section>
+
+</body>
+
+</html> 

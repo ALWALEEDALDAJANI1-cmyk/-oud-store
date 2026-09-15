@@ -84,10 +84,11 @@ gap:15px;
 }
 
 .logo-area img{
-width:220px;
-height:auto;
+width:70px;
+height:70px;
 object-fit:contain;
 display:block;
+border-radius:50%;
 } 
 
 .brand h1{
@@ -97,8 +98,9 @@ color:var(--jamr);
 }
 
 .brand p{
-font-size:18px;
-font-weight:800;
+font-size:14px;
+font-weight:700;
+color:#888;
 }
 
 .menu{
@@ -127,16 +129,34 @@ position:relative;
 display:flex;
 align-items:center;
 justify-content:center;
-background:
-linear-gradient(
-rgba(0,0,0,.18),
-rgba(0,0,0,.18)
-),
-url("E283F998-94B2-4DE4-AF0A-C6802DDF8FAB.png");
+background:linear-gradient(135deg,#1a1a1a 0%,#2d1f1f 100%);
 background-size:cover;
 background-position:center center;
 background-repeat:no-repeat;
 margin-top:100px;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:400px;
+height:400px;
+background:radial-gradient(circle,rgba(212,175,55,.1) 0%,transparent 70%);
+top:10%;
+right:10%;
+border-radius:50%;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:300px;
+height:300px;
+background:radial-gradient(circle,rgba(101,17,29,.1) 0%,transparent 70%);
+bottom:15%;
+left:5%;
+border-radius:50%;
 }
 
 .hero-content{
@@ -149,24 +169,37 @@ padding:20px;
 }
 
 .hero-logo{
-width:190px;
+width:140px;
+height:140px;
 margin:auto;
-margin-bottom:25px;
-filter:drop-shadow(0 10px 20px rgba(0,0,0,.35));
+margin-bottom:35px;
+filter:drop-shadow(0 10px 30px rgba(212,175,55,.3));
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
 }
 
 .hero h2{
-font-size:82px;
+font-size:68px;
 font-weight:900;
-line-height:1.1;
+line-height:1.2;
 margin-bottom:20px;
+background:linear-gradient(135deg,#d4af37,#f4efe6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+background-clip:text;
 }
 
 .hero p{
-font-size:24px;
+font-size:22px;
 line-height:2;
 margin-bottom:35px;
-animation:welcomeFade 5s ease forwards;
+color:#d4af37;
+animation:welcomeFade 6s ease forwards;
+font-weight:600;
 }
 
 @keyframes welcomeFade{
@@ -193,48 +226,52 @@ margin-top:40px;
 .btn-primary{
 background:var(--jamr);
 color:white;
-padding:14px 32px;
+padding:16px 40px;
 border-radius:14px;
 font-weight:900;
 text-decoration:none;
-transition:.3s;
+transition:.4s cubic-bezier(.25,.46,.45,.94);
 border:none;
 cursor:pointer;
 font-size:16px;
+box-shadow:0 8px 20px rgba(101,17,29,.3);
 }
 
 .btn-primary:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(101,17,29,.3);
+transform:translateY(-4px);
+box-shadow:0 15px 40px rgba(101,17,29,.5);
+background:#8b1a2a;
 }
 
 .btn-secondary{
 background:var(--oud);
 color:white;
-padding:14px 32px;
+padding:16px 40px;
 border-radius:14px;
 font-weight:900;
 text-decoration:none;
-transition:.3s;
+transition:.4s cubic-bezier(.25,.46,.45,.94);
 border:none;
 cursor:pointer;
 font-size:16px;
+box-shadow:0 8px 20px rgba(107,75,42,.3);
 }
 
 .btn-secondary:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 25px rgba(107,75,42,.3);
+transform:translateY(-4px);
+box-shadow:0 15px 40px rgba(107,75,42,.5);
+background:#5a3a1f;
 }
 
 /* =========================
 قسم الثقة
 ========================= */
 .trust-section{
-padding:50px 12px;
+padding:60px 12px;
 background:var(--cream);
 display:flex;
 justify-content:center;
-gap:12px;
+gap:15px;
 flex-wrap:wrap;
 }
 
@@ -244,19 +281,26 @@ min-width:200px;
 background:white;
 border:2px solid var(--jamr);
 border-radius:18px;
-padding:20px 15px;
+padding:25px 18px;
 text-align:center;
-transition:.3s;
+transition:.4s cubic-bezier(.25,.46,.45,.94);
 }
 
 .trust-card:hover{
-transform:translateY(-5px);
-box-shadow:0 15px 35px rgba(0,0,0,.1);
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(101,17,29,.15);
+border-color:var(--gold);
 }
 
 .trust-icon{
-font-size:32px;
-margin-bottom:12px;
+font-size:42px;
+margin-bottom:15px;
+display:inline-block;
+transition:.3s;
+}
+
+.trust-card:hover .trust-icon{
+transform:scale(1.2);
 }
 
 .trust-card h3{
@@ -277,17 +321,17 @@ color:#666;
 
 .products-section{
 max-width:1400px;
-margin:80px auto;
+margin:100px auto;
 padding:0 20px;
 }
 
 .section-header{
 text-align:center;
-margin-bottom:60px;
+margin-bottom:70px;
 }
 
 .section-header h2{
-font-size:48px;
+font-size:52px;
 color:var(--jamr);
 margin-bottom:15px;
 font-weight:900;
@@ -298,130 +342,151 @@ display:inline-block;
 .section-header h2::after{
 content:'';
 position:absolute;
-bottom:-10px;
+bottom:-12px;
 left:50%;
 transform:translateX(-50%);
-width:80px;
-height:4px;
-background:var(--gold);
-border-radius:2px;
+width:100px;
+height:5px;
+background:linear-gradient(90deg,transparent,var(--gold),transparent);
+border-radius:3px;
 }
 
 .section-header p{
 font-size:18px;
 color:#666;
-margin-top:20px;
+margin-top:25px;
+font-weight:600;
 }
 
 .products-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-margin-bottom:60px;
+gap:35px;
+margin-bottom:70px;
 }
 
 .product-card{
 background:white;
-border-radius:20px;
+border-radius:22px;
 overflow:hidden;
-box-shadow:0 8px 25px rgba(0,0,0,.08);
-transition:.4s cubic-bezier(.25,.46,.45,.94);
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+transition:.5s cubic-bezier(.25,.46,.45,.94);
 position:relative;
+border:1px solid rgba(212,175,55,.1);
 }
 
 .product-card:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(101,17,29,.15);
+transform:translateY(-15px);
+box-shadow:0 25px 60px rgba(101,17,29,.15);
+border-color:var(--gold);
 }
 
 .product-image-wrapper{
 position:relative;
-height:300px;
+height:320px;
 overflow:hidden;
-background:#f5f5f5;
+background:linear-gradient(135deg,#f5f5f5,#efefef);
 }
 
 .product-image-wrapper img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:.5s;
+transition:.6s cubic-bezier(.25,.46,.45,.94);
 }
 
 .product-card:hover .product-image-wrapper img{
-transform:scale(1.08);
+transform:scale(1.12) rotate(2deg);
 }
 
 .product-badge{
 position:absolute;
-top:15px;
-right:15px;
+top:18px;
+right:18px;
 background:var(--jamr);
 color:white;
-padding:8px 16px;
+padding:10px 20px;
 border-radius:50px;
 font-weight:900;
 font-size:12px;
 z-index:10;
+box-shadow:0 5px 15px rgba(101,17,29,.3);
 }
 
 .product-badge.new{
-background:#2ecc71;
+background:linear-gradient(135deg,#2ecc71,#27ae60);
 }
 
 .product-badge.discount{
-background:#e74c3c;
+background:linear-gradient(135deg,#e74c3c,#c0392b);
+}
+
+.product-badge.featured{
+background:linear-gradient(135deg,var(--gold),#c9a227);
+color:var(--jamr);
 }
 
 .product-content{
-padding:25px;
+padding:28px;
 }
 
 .product-content h3{
 color:var(--jamr);
 margin-bottom:12px;
-font-size:24px;
+font-size:26px;
 font-weight:900;
 }
 
 .product-rating{
 display:flex;
 gap:4px;
-margin-bottom:12px;
+margin-bottom:15px;
+letter-spacing:2px;
 }
 
 .star{
 color:var(--gold);
-font-size:16px;
+font-size:18px;
+text-shadow:0 2px 4px rgba(0,0,0,.1);
 }
 
 .product-desc{
 color:#666;
-line-height:1.7;
-margin-bottom:18px;
+line-height:1.8;
+margin-bottom:20px;
 font-size:14px;
-min-height:50px;
+min-height:55px;
+font-weight:500;
 }
 
 .product-features{
 display:flex;
-gap:8px;
+gap:10px;
 flex-wrap:wrap;
-margin-bottom:20px;
+margin-bottom:22px;
 }
 
 .product-features span{
-background:linear-gradient(135deg,#f5e6d3,#f4efe6);
-padding:6px 12px;
-border-radius:20px;
+background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(101,17,29,.05));
+padding:8px 14px;
+border-radius:22px;
 font-size:13px;
 color:#555;
-font-weight:600;
-border:1px solid rgba(101,17,29,.1);
+font-weight:700;
+border:1px solid rgba(212,175,55,.2);
+transition:.3s;
+}
+
+.product-features span:hover{
+background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(101,17,29,.1));
+border-color:var(--gold);
 }
 
 .product-options{
-margin-bottom:22px;
+margin-bottom:25px;
+background:#f9f9f9;
+border-radius:15px;
+padding:15px;
 }
 
 .option{
@@ -439,60 +504,65 @@ border-bottom:none;
 .option span{
 color:#666;
 font-size:14px;
+font-weight:600;
 }
 
 .option strong{
 color:var(--jamr);
-font-size:18px;
+font-size:20px;
 font-weight:900;
 }
 
 .product-buttons{
 display:flex;
-gap:10px;
+gap:12px;
 }
 
 .cart-btn,
 .whatsapp-btn{
 flex:1;
 border:none;
-padding:14px;
+padding:15px;
 border-radius:12px;
 cursor:pointer;
 text-decoration:none;
 text-align:center;
 font-weight:900;
-transition:.3s;
+transition:.4s cubic-bezier(.25,.46,.45,.94);
 font-size:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:6px;
 }
 
 .cart-btn{
 background:var(--jamr);
 color:white;
+box-shadow:0 5px 15px rgba(101,17,29,.2);
 }
 
 .cart-btn:hover{
 background:#8b1a2a;
-transform:translateY(-2px);
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(101,17,29,.3);
 }
 
 .whatsapp-btn{
 background:var(--oud);
 color:white;
+box-shadow:0 5px 15px rgba(107,75,42,.2);
 text-decoration:none;
-display:flex;
-align-items:center;
-justify-content:center;
 }
 
 .whatsapp-btn:hover{
 background:#5a3a1f;
-transform:translateY(-2px);
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(107,75,42,.3);
 }
 
 .whatsapp-icon{
-margin-left:6px;
-font-size:16px;
+font-size:18px;
 }
 
 /* =========================
@@ -500,30 +570,61 @@ font-size:16px;
 ========================= */
 
 .promo-banner{
-background:linear-gradient(135deg,var(--jamr),#8b1a2a);
+background:linear-gradient(135deg,var(--jamr) 0%,#8b1a2a 50%,var(--oud) 100%);
 color:white;
-padding:60px 30px;
+padding:80px 40px;
 text-align:center;
-margin:80px 20px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(101,17,29,.2);
+margin:100px 20px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(101,17,29,.25);
+position:relative;
+overflow:hidden;
+}
+
+.promo-banner::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(212,175,55,.15) 0%,transparent 70%);
+top:-100px;
+right:-100px;
+border-radius:50%;
+}
+
+.promo-banner::after{
+content:'';
+position:absolute;
+width:400px;
+height:400px;
+background:radial-gradient(circle,rgba(212,175,55,.1) 0%,transparent 70%);
+bottom:-80px;
+left:-80px;
+border-radius:50%;
 }
 
 .promo-banner h2{
-font-size:42px;
-margin-bottom:15px;
+font-size:48px;
+margin-bottom:20px;
 font-weight:900;
+position:relative;
+z-index:2;
 }
 
 .promo-banner p{
-font-size:18px;
-margin-bottom:25px;
+font-size:20px;
+margin-bottom:30px;
 opacity:.95;
+position:relative;
+z-index:2;
+font-weight:600;
 }
 
 .promo-banner .btn-primary{
 background:white;
 color:var(--jamr);
+position:relative;
+z-index:2;
 }
 
 .promo-banner .btn-primary:hover{
@@ -537,8 +638,8 @@ background:#f0f0f0;
 footer{
 background:var(--dark);
 color:white;
-padding:50px 30px;
-margin-top:80px;
+padding:60px 30px 30px;
+margin-top:100px;
 }
 
 .footer-content{
@@ -546,13 +647,13 @@ max-width:1400px;
 margin:auto;
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-margin-bottom:40px;
+gap:45px;
+margin-bottom:45px;
 }
 
 .footer-section h3{
 font-size:18px;
-margin-bottom:20px;
+margin-bottom:22px;
 color:var(--gold);
 font-weight:900;
 }
@@ -562,17 +663,19 @@ list-style:none;
 }
 
 .footer-section ul li{
-margin-bottom:12px;
+margin-bottom:14px;
 }
 
 .footer-section ul li a{
 color:#ccc;
 text-decoration:none;
 transition:.3s;
+font-weight:500;
 }
 
 .footer-section ul li a:hover{
 color:var(--gold);
+padding-right:8px;
 }
 
 .footer-bottom{
@@ -580,6 +683,7 @@ border-top:1px solid rgba(255,255,255,.1);
 padding-top:30px;
 text-align:center;
 color:#999;
+font-weight:600;
 }
 
 /* =========================
@@ -588,13 +692,18 @@ color:#999;
 @media(max-width:1024px){
 .products-grid{
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:28px;
+}
+
+.promo-banner{
+padding:60px 30px;
 }
 }
 
 @media(max-width:900px){
 
 .navbar{
-padding:14px;
+padding:12px 15px;
 }
 
 .menu{
@@ -602,12 +711,16 @@ display:none;
 }
 
 .logo-area img{
-width:58px;
-height:58px;
+width:55px;
+height:55px;
 }
 
 .brand h1{
-font-size:22px;
+font-size:20px;
+}
+
+.brand p{
+font-size:12px;
 }
 
 .hero{
@@ -615,12 +728,17 @@ height:70vh;
 }
 
 .hero h2{
-font-size:48px;
+font-size:42px;
 }
 
 .hero p{
-font-size:18px;
+font-size:17px;
 line-height:1.8;
+}
+
+.hero-logo{
+width:110px;
+height:110px;
 }
 
 .section-header h2{
@@ -629,7 +747,7 @@ font-size:36px;
 
 .products-grid{
 grid-template-columns:1fr;
-gap:25px;
+gap:22px;
 }
 
 .product-image-wrapper{
@@ -640,9 +758,14 @@ height:250px;
 border-radius:16px;
 }
 
+.product-content h3{
+font-size:22px;
+}
+
 .trust-section{
 flex-direction:column;
-padding:30px 15px;
+padding:40px 15px;
+gap:18px;
 }
 
 .trust-card{
@@ -651,11 +774,11 @@ min-width:auto;
 
 .promo-banner{
 padding:40px 20px;
-margin:50px 0;
+margin:60px 0;
 }
 
 .promo-banner h2{
-font-size:28px;
+font-size:32px;
 }
 
 .promo-banner p{
@@ -672,6 +795,53 @@ max-width:100%;
 flex-direction:column;
 align-items:center;
 }
+
+.product-buttons{
+flex-direction:column;
+}
+
+.cart-btn,
+.whatsapp-btn{
+width:100%;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h2{
+font-size:32px;
+}
+
+.section-header h2{
+font-size:28px;
+}
+
+.product-card{
+border-radius:14px;
+}
+
+.product-content{
+padding:18px;
+}
+
+.product-options{
+padding:12px;
+}
+
+.option{
+padding:10px 0;
+}
+
+.promo-banner{
+padding:30px 15px;
+margin:40px 0;
+}
+
+.products-section{
+margin:70px auto;
+}
+
 }
 
 </style>
@@ -689,7 +859,7 @@ align-items:center;
 <header>
 <div class="navbar">
 <div class="logo-area">
-<img src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png" alt="شعار جلاغ العود">
+<img src="https://raw.githubusercontent.com/ALWALEEDALDAJANI1-cmyk/-oud-store/main/logo.png" alt="شعار جلاغ العود">
 <div class="brand">
 <h1>جلاغ العود</h1>
 <p>للعود مقام .. وللطيب جلاغ</p>
@@ -709,6 +879,10 @@ align-items:center;
 <!-- قسم البطل -->
 <section class="hero" id="home">
 <div class="hero-content">
+<img src="https://raw.githubusercontent.com/ALWALEEDALDAJANI1-cmyk/-oud-store/main/logo.png" alt="شعار" class="hero-logo">
+
+<h2>جلاغ العود</h2>
+
 <p>يا مرحبا ترحيبة كلها أطياب<br>أحلى من العنبر وأزكى من العود</p>
 
 <div class="hero-buttons">
@@ -723,19 +897,19 @@ align-items:center;
 <div class="trust-card">
 <div class="trust-icon">🛡️</div>
 <h3>الضمان الذهبي</h3>
-<p>رضاك أولويتنا</p>
+<p>رضاك أولويتنا الأولى</p>
 </div>
 
 <div class="trust-card">
 <div class="trust-icon">⭐</div>
 <h3>جودة مضمونة</h3>
-<p>مختارات فاخرة بعناية</p>
+<p>أفخر الأعواد المختارة بعناية</p>
 </div>
 
 <div class="trust-card">
 <div class="trust-icon">🚚</div>
 <h3>شحن سريع</h3>
-<p>لكافة مناطق المملكة</p>
+<p>لكافة أنحاء المملكة</p>
 </div>
 
 <div class="trust-card">
@@ -761,7 +935,7 @@ align-items:center;
 <!-- المنتج 1 -->
 <div class="product-card">
 <div class="product-image-wrapper">
-<img src="https://via.placeholder.com/400x300?text=عود+أزرق+تربل" alt="عود أزرق تربل">
+<img src="https://raw.githubusercontent.com/ALWALEEDALDAJANI1-cmyk/-oud-store/main/product1.jpg" alt="عود أزرق تربل">
 <div class="product-badge new">جديد</div>
 </div>
 <div class="product-content">
@@ -793,8 +967,8 @@ align-items:center;
 </div>
 
 <div class="product-buttons">
-<button class="cart-btn">أضف للسلة</button>
-<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود أزرق تربل" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+<button class="cart-btn">🛒 إضافة</button>
+<a href="https://wa.me/966539400955?text=أرغب بطلب عود أزرق تربل" class="whatsapp-btn" target="_blank"><span class="whatsapp-icon">💬</span> واتس</a>
 </div>
 </div>
 </div>
@@ -802,7 +976,7 @@ align-items:center;
 <!-- المنتج 2 -->
 <div class="product-card">
 <div class="product-image-wrapper">
-<img src="https://via.placeholder.com/400x300?text=عود+ملكي+داكن" alt="عود ملكي داكن">
+<img src="https://raw.githubusercontent.com/ALWALEEDALDAJANI1-cmyk/-oud-store/main/product2.jpg" alt="عود ملكي داكن">
 <div class="product-badge discount">خصم 15%</div>
 </div>
 <div class="product-content">
@@ -834,8 +1008,8 @@ align-items:center;
 </div>
 
 <div class="product-buttons">
-<button class="cart-btn">أضف للسلة</button>
-<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود ملكي داكن" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+<button class="cart-btn">🛒 إضافة</button>
+<a href="https://wa.me/966539400955?text=أرغب بطلب عود ملكي داكن" class="whatsapp-btn" target="_blank"><span class="whatsapp-icon">💬</span> واتس</a>
 </div>
 </div>
 </div>
@@ -843,8 +1017,8 @@ align-items:center;
 <!-- المنتج 3 -->
 <div class="product-card">
 <div class="product-image-wrapper">
-<img src="https://via.placeholder.com/400x300?text=عود+الخيال+الذهبي" alt="عود الخيال الذهبي">
-<div class="product-badge">مختار</div>
+<img src="https://raw.githubusercontent.com/ALWALEEDALDAJANI1-cmyk/-oud-store/main/product3.jpg" alt="عود الخيال الذهبي">
+<div class="product-badge featured">مختار</div>
 </div>
 <div class="product-content">
 <h3>عود الخيال الذهبي</h3>
@@ -875,8 +1049,8 @@ align-items:center;
 </div>
 
 <div class="product-buttons">
-<button class="cart-btn">أضف للسلة</button>
-<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود الخيال الذهبي" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+<button class="cart-btn">🛒 إضافة</button>
+<a href="https://wa.me/966539400955?text=أرغب بطلب عود الخيال الذهبي" class="whatsapp-btn" target="_blank"><span class="whatsapp-icon">💬</span> واتس</a>
 </div>
 </div>
 </div>
@@ -884,7 +1058,7 @@ align-items:center;
 <!-- المنتج 4 -->
 <div class="product-card">
 <div class="product-image-wrapper">
-<img src="https://via.placeholder.com/400x300?text=عود+الفردوس" alt="عود الفردوس">
+<img src="https://raw.githubusercontent.com/ALWALEEDALDAJANI1-cmyk/-oud-store/main/product4.jpg" alt="عود الفردوس">
 <div class="product-badge new">جديد</div>
 </div>
 <div class="product-content">
@@ -916,8 +1090,8 @@ align-items:center;
 </div>
 
 <div class="product-buttons">
-<button class="cart-btn">أضف للسلة</button>
-<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود الفردوس" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+<button class="cart-btn">🛒 إضافة</button>
+<a href="https://wa.me/966539400955?text=أرغب بطلب عود الفردوس" class="whatsapp-btn" target="_blank"><span class="whatsapp-icon">💬</span> واتس</a>
 </div>
 </div>
 </div>
@@ -927,9 +1101,9 @@ align-items:center;
 
 <!-- قسم العروض المميزة -->
 <section class="promo-banner" id="offers">
-<h2>عرض الافتتاح المميز!</h2>
+<h2>عرض الافتتاح المميز! 🎁</h2>
 <p>اشتر أي منتجين واحصل على خصم إضافي 10% على كل الطلب</p>
-<button class="btn-primary">اطلب الآن</button>
+<a href="https://wa.me/966539400955?text=أرغب بطلب من جلاغ العود" class="btn-primary">اطلب الآن</a>
 </section>
 
 <!-- الفوتر -->
@@ -968,7 +1142,7 @@ align-items:center;
 <div class="footer-section">
 <h3>تابعنا</h3>
 <ul>
-<li><a href="#">واتساب</a></li>
+<li><a href="https://wa.me/966539400955">واتساب</a></li>
 <li><a href="#">انستجرام</a></li>
 <li><a href="#">تويتر</a></li>
 <li><a href="#">سناب شات</a></li>
@@ -982,20 +1156,27 @@ align-items:center;
 </footer>
 
 <script>
-// إضافة حركة سلسة للأزرار
+// إضافة تأثير للأزرار
 document.querySelectorAll('.cart-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    alert('تم إضافة المنتج للسلة ✓');
+    btn.textContent = '✓ تمت الإضافة';
+    btn.style.background = '#27ae60';
+    setTimeout(() => {
+      btn.textContent = '🛒 إضافة';
+      btn.style.background = 'var(--jamr)';
+    }, 1500);
   });
 });
 
-// إضافة حركة للعنوان عند التمرير
+// تأثير الهيدر عند التمرير
 window.addEventListener('scroll', () => {
   const header = document.querySelector('header');
   if (window.scrollY > 100) {
     header.style.background = 'rgba(255,255,255,.12)';
+    header.style.boxShadow = '0 5px 20px rgba(0,0,0,.1)';
   } else {
     header.style.background = 'rgba(255,255,255,.08)';
+    header.style.boxShadow = 'none';
   }
 });
 </script>

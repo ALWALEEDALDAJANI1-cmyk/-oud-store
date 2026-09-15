@@ -17,6 +17,7 @@
 --oud:#6b4b2a;
 --cream:#f4efe6;
 --dark:#161616;
+--gold:#d4af37;
 }
 
 *{
@@ -57,49 +58,29 @@ display:block;
 ========================= */
 
 header{
-
 background:rgba(255,255,255,.08);
-
 backdrop-filter:blur(14px);
-
 border-bottom:1px solid rgba(255,255,255,.12);
-
 position:fixed;
-
 top:38px;
-
 left:0;
-
 width:100%;
-
 z-index:999;
-
 }
 
 .navbar{
-
 max-width:1400px;
-
 margin:auto;
-
 padding:8px 30px;
-
 display:flex;
-
 align-items:center;
-
 justify-content:space-between;
-
 }
 
 .logo-area{
-
 display:flex;
-
 align-items:center;
-
 gap:15px;
-
 }
 
 .logo-area img{
@@ -110,13 +91,9 @@ display:block;
 } 
 
 .brand h1{
-
 font-size:30px;
-
 font-weight:900;
-
 color:var(--jamr);
-
 }
 
 .brand p{
@@ -125,29 +102,19 @@ font-weight:800;
 }
 
 .menu{
-
 display:flex;
-
 gap:28px;
-
 }
 
 .menu a{
-
 text-decoration:none;
-
 font-weight:800;
-
 color:#222;
-
 transition:.3s;
-
 }
 
 .menu a:hover{
-
 color:var(--jamr);
-
 }
 
 /* =========================
@@ -155,70 +122,44 @@ color:var(--jamr);
 ========================= */
 
 .hero{
-
 height:100vh;
-
 position:relative;
-
 display:flex;
-
 align-items:center;
-
 justify-content:center;
-
 background:
 linear-gradient(
 rgba(0,0,0,.18),
 rgba(0,0,0,.18)
 ),
 url("E283F998-94B2-4DE4-AF0A-C6802DDF8FAB.png");
-
 background-size:cover;
-
 background-position:center center;
-
 background-repeat:no-repeat;
-
+margin-top:100px;
 }
 
 .hero-content{
-
 position:relative;
-
 z-index:2;
-
 text-align:center;
-
 color:white;
-
 max-width:950px;
-
 padding:20px;
-
 }
 
 .hero-logo{
-
 width:190px;
-
 margin:auto;
-
 margin-bottom:25px;
-
 filter:drop-shadow(0 10px 20px rgba(0,0,0,.35));
-
 }
 
 .hero h2{
-
 font-size:82px;
-
 font-weight:900;
-
 line-height:1.1;
-
 margin-bottom:20px;
-
 }
 
 .hero p{
@@ -229,209 +170,508 @@ animation:welcomeFade 5s ease forwards;
 }
 
 @keyframes welcomeFade{
-
 0%{
 opacity:1;
 }
-
 70%{
 opacity:1;
 }
-
 100%{
 opacity:0;
 visibility:hidden;
 }
-
 }
 
-.buttons{
-
-position:absolute;
-
-bottom: -90px;
-
-left:40px;
-
-right:40px;
-
+.hero-buttons{
 display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:40px;
 }
 
 .btn-primary{
-
 background:var(--jamr);
-
 color:white;
-
-padding:12px 24px;
-
+padding:14px 32px;
 border-radius:14px;
-
 font-weight:900;
-
 text-decoration:none;
-
 transition:.3s;
-
+border:none;
+cursor:pointer;
+font-size:16px;
 }
 
 .btn-primary:hover{
-
-transform:translateY(-2px);
-
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(101,17,29,.3);
 }
 
 .btn-secondary{
-
 background:var(--oud);
-
 color:white;
-
-padding:12px 24px;
-
+padding:14px 32px;
 border-radius:14px;
-
 font-weight:900;
-
 text-decoration:none;
-
 transition:.3s;
-
+border:none;
+cursor:pointer;
+font-size:16px;
 }
 
 .btn-secondary:hover{
-
-transform:translateY(-2px);
-
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(107,75,42,.3);
 }
 
 /* =========================
-الجوال
+قسم الثقة
 ========================= */
 .trust-section{
-
-padding:30px 12px;
-
+padding:50px 12px;
 background:var(--cream);
-
 display:flex;
-
 justify-content:center;
-
 gap:12px;
-
+flex-wrap:wrap;
 }
 
 .trust-card{
-
 flex:1;
-
+min-width:200px;
 background:white;
-
 border:2px solid var(--jamr);
-
 border-radius:18px;
-
-padding:16px 8px;
-
+padding:20px 15px;
 text-align:center;
+transition:.3s;
+}
 
+.trust-card:hover{
+transform:translateY(-5px);
+box-shadow:0 15px 35px rgba(0,0,0,.1);
 }
 
 .trust-icon{
-
-font-size:24px;
-
-margin-bottom:8px;
-
+font-size:32px;
+margin-bottom:12px;
 }
 
 .trust-card h3{
-
-font-size:16px;
-
+font-size:18px;
 color:var(--jamr);
-
-margin-bottom:5px;
-
+margin-bottom:8px;
+font-weight:900;
 }
 
 .trust-card p{
-
-font-size:12px;
-
+font-size:14px;
 color:#666;
-
 }
+
+/* =========================
+قسم المنتجات
+========================= */
+
+.products-section{
+max-width:1400px;
+margin:80px auto;
+padding:0 20px;
+}
+
+.section-header{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-header h2{
+font-size:48px;
+color:var(--jamr);
+margin-bottom:15px;
+font-weight:900;
+position:relative;
+display:inline-block;
+}
+
+.section-header h2::after{
+content:'';
+position:absolute;
+bottom:-10px;
+left:50%;
+transform:translateX(-50%);
+width:80px;
+height:4px;
+background:var(--gold);
+border-radius:2px;
+}
+
+.section-header p{
+font-size:18px;
+color:#666;
+margin-top:20px;
+}
+
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-bottom:60px;
+}
+
+.product-card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.4s cubic-bezier(.25,.46,.45,.94);
+position:relative;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 50px rgba(101,17,29,.15);
+}
+
+.product-image-wrapper{
+position:relative;
+height:300px;
+overflow:hidden;
+background:#f5f5f5;
+}
+
+.product-image-wrapper img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:.5s;
+}
+
+.product-card:hover .product-image-wrapper img{
+transform:scale(1.08);
+}
+
+.product-badge{
+position:absolute;
+top:15px;
+right:15px;
+background:var(--jamr);
+color:white;
+padding:8px 16px;
+border-radius:50px;
+font-weight:900;
+font-size:12px;
+z-index:10;
+}
+
+.product-badge.new{
+background:#2ecc71;
+}
+
+.product-badge.discount{
+background:#e74c3c;
+}
+
+.product-content{
+padding:25px;
+}
+
+.product-content h3{
+color:var(--jamr);
+margin-bottom:12px;
+font-size:24px;
+font-weight:900;
+}
+
+.product-rating{
+display:flex;
+gap:4px;
+margin-bottom:12px;
+}
+
+.star{
+color:var(--gold);
+font-size:16px;
+}
+
+.product-desc{
+color:#666;
+line-height:1.7;
+margin-bottom:18px;
+font-size:14px;
+min-height:50px;
+}
+
+.product-features{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.product-features span{
+background:linear-gradient(135deg,#f5e6d3,#f4efe6);
+padding:6px 12px;
+border-radius:20px;
+font-size:13px;
+color:#555;
+font-weight:600;
+border:1px solid rgba(101,17,29,.1);
+}
+
+.product-options{
+margin-bottom:22px;
+}
+
+.option{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 0;
+border-bottom:1px solid #eee;
+}
+
+.option:last-child{
+border-bottom:none;
+}
+
+.option span{
+color:#666;
+font-size:14px;
+}
+
+.option strong{
+color:var(--jamr);
+font-size:18px;
+font-weight:900;
+}
+
+.product-buttons{
+display:flex;
+gap:10px;
+}
+
+.cart-btn,
+.whatsapp-btn{
+flex:1;
+border:none;
+padding:14px;
+border-radius:12px;
+cursor:pointer;
+text-decoration:none;
+text-align:center;
+font-weight:900;
+transition:.3s;
+font-size:14px;
+}
+
+.cart-btn{
+background:var(--jamr);
+color:white;
+}
+
+.cart-btn:hover{
+background:#8b1a2a;
+transform:translateY(-2px);
+}
+
+.whatsapp-btn{
+background:var(--oud);
+color:white;
+text-decoration:none;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.whatsapp-btn:hover{
+background:#5a3a1f;
+transform:translateY(-2px);
+}
+
+.whatsapp-icon{
+margin-left:6px;
+font-size:16px;
+}
+
+/* =========================
+قسم العروض المميزة
+========================= */
+
+.promo-banner{
+background:linear-gradient(135deg,var(--jamr),#8b1a2a);
+color:white;
+padding:60px 30px;
+text-align:center;
+margin:80px 20px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(101,17,29,.2);
+}
+
+.promo-banner h2{
+font-size:42px;
+margin-bottom:15px;
+font-weight:900;
+}
+
+.promo-banner p{
+font-size:18px;
+margin-bottom:25px;
+opacity:.95;
+}
+
+.promo-banner .btn-primary{
+background:white;
+color:var(--jamr);
+}
+
+.promo-banner .btn-primary:hover{
+background:#f0f0f0;
+}
+
+/* =========================
+الفوتر
+========================= */
+
+footer{
+background:var(--dark);
+color:white;
+padding:50px 30px;
+margin-top:80px;
+}
+
+.footer-content{
+max-width:1400px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-bottom:40px;
+}
+
+.footer-section h3{
+font-size:18px;
+margin-bottom:20px;
+color:var(--gold);
+font-weight:900;
+}
+
+.footer-section ul{
+list-style:none;
+}
+
+.footer-section ul li{
+margin-bottom:12px;
+}
+
+.footer-section ul li a{
+color:#ccc;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-section ul li a:hover{
+color:var(--gold);
+}
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,.1);
+padding-top:30px;
+text-align:center;
+color:#999;
+}
+
+/* =========================
+التجاوب
+========================= */
+@media(max-width:1024px){
+.products-grid{
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+}
+
 @media(max-width:900px){
 
 .navbar{
-
 padding:14px;
-
 }
 
 .menu{
-
 display:none;
-
 }
 
 .logo-area img{
-
 width:58px;
-
 height:58px;
-
 }
 
 .brand h1{
-
 font-size:22px;
-
 }
 
 .hero{
-
-height:75vh;
-
-}
-
-.hero-logo{
-
-width:130px;
-
+height:70vh;
 }
 
 .hero h2{
-
-font-size:42px;
-
+font-size:48px;
 }
 
 .hero p{
-
 font-size:18px;
+line-height:1.8;
+}
 
-line-height:1.9;
+.section-header h2{
+font-size:36px;
+}
 
+.products-grid{
+grid-template-columns:1fr;
+gap:25px;
+}
+
+.product-image-wrapper{
+height:250px;
+}
+
+.product-card{
+border-radius:16px;
+}
+
+.trust-section{
+flex-direction:column;
+padding:30px 15px;
+}
+
+.trust-card{
+min-width:auto;
+}
+
+.promo-banner{
+padding:40px 20px;
+margin:50px 0;
+}
+
+.promo-banner h2{
+font-size:28px;
+}
+
+.promo-banner p{
+font-size:16px;
 }
 
 .btn-primary,
 .btn-secondary{
-
 width:100%;
-
-max-width:260px;
-
+max-width:100%;
 }
 
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
 }
 
 </style>
@@ -441,127 +681,325 @@ max-width:260px;
 <body>
 
 <!-- الشريط النجدي -->
-
 <div class="top-pattern">
-
-<img src="DDE88921-6661-4FF8-AB49-97B33A30342D.png">
-
+<img src="DDE88921-6661-4FF8-AB49-97B33A30342D.png" alt="نمط">
 </div>
 
+<!-- الهيدر -->
 <header>
-
 <div class="navbar">
-
 <div class="logo-area">
-
-<img src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png">
-
+<img src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png" alt="شعار جلاغ العود">
 <div class="brand">
-
 <h1>جلاغ العود</h1>
-
 <p>للعود مقام .. وللطيب جلاغ</p>
-
 </div>
-
 </div>
 
 <div class="menu">
-
-<a href="#">الرئيسية</a>
-
-<a href="#">المختارات</a>
-
-<a href="#">العروض</a>
-
-<a href="#">عن جلاغ العود</a>
-
-<a href="#">تواصل معنا</a>
-
+<a href="#home">الرئيسية</a>
+<a href="#products">المنتجات</a>
+<a href="#offers">العروض</a>
+<a href="#about">عن جلاغ</a>
+<a href="#contact">تواصل</a>
 </div>
-
 </div>
-
 </header>
 
-<section class="hero">
-
+<!-- قسم البطل -->
+<section class="hero" id="home">
 <div class="hero-content">
+<p>يا مرحبا ترحيبة كلها أطياب<br>أحلى من العنبر وأزكى من العود</p>
 
-
-
-
-
-<p>
-
-يا مرحبا ترحيبة كلها أطياب
-
-<br>
-
-أحلى من العنبر وأزكى من العود
-
-</p>
-
-<div class="buttons">
-...
+<div class="hero-buttons">
+<a href="#products" class="btn-primary">تصفح المختارات</a>
+<a href="#offers" class="btn-secondary">عرض الافتتاح</a>
 </div>
-
-<a href="#" class="btn-primary">
-
-تصفح المختارات
-
-</a>
-
-<a href="#" class="btn-secondary">
-
-عرض الافتتاح
-
-</a>
-
 </div>
-
-</div>
-
 </section>
+
+<!-- قسم الثقة -->
 <section class="trust-section">
-
 <div class="trust-card">
-
 <div class="trust-icon">🛡️</div>
-
 <h3>الضمان الذهبي</h3>
-
 <p>رضاك أولويتنا</p>
-
 </div>
 
 <div class="trust-card">
-
 <div class="trust-icon">⭐</div>
-
 <h3>جودة مضمونة</h3>
-
 <p>مختارات فاخرة بعناية</p>
-
 </div>
 
 <div class="trust-card">
-
 <div class="trust-icon">🚚</div>
-
 <h3>شحن سريع</h3>
-
 <p>لكافة مناطق المملكة</p>
-
 </div>
 
+<div class="trust-card">
+<div class="trust-icon">💎</div>
+<h3>أسعار منافسة</h3>
+<p>أفضل قيمة بأقل سعر</p>
+</div>
 </section>
 
 <div class="top-pattern">
+<img src="342A87DA-4B8D-400A-A3C7-5105ECBF07E6.png" alt="نمط">
+</div>
 
-<img src="342A87DA-4B8D-400A-A3C7-5105ECBF07E6.png">
+<!-- قسم المنتجات -->
+<section class="products-section" id="products">
+<div class="section-header">
+<h2>مختاراتنا الفاخرة</h2>
+<p>أرقى الأعواد المختارة بعناية فائقة من أفضل المزارع العالمية</p>
+</div>
+
+<div class="products-grid">
+
+<!-- المنتج 1 -->
+<div class="product-card">
+<div class="product-image-wrapper">
+<img src="https://via.placeholder.com/400x300?text=عود+أزرق+تربل" alt="عود أزرق تربل">
+<div class="product-badge new">جديد</div>
+</div>
+<div class="product-content">
+<h3>عود أزرق تربل</h3>
+<div class="product-rating">
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+</div>
+<p class="product-desc">عود فاخر من مزارع إندونيسيا، مختار بعناية ليمنحك رائحة مميزة وثباتاً عالياً.</p>
+
+<div class="product-features">
+<span>🇮🇩 إندونيسيا</span>
+<span>✓ طبيعي 100%</span>
+<span>✓ ثبات ممتاز</span>
+</div>
+
+<div class="product-options">
+<div class="option">
+<span>14 جرام (نصف أوقية)</span>
+<strong>90 ريال</strong>
+</div>
+<div class="option">
+<span>28 جرام (أوقية كاملة)</span>
+<strong>170 ريال</strong>
+</div>
+</div>
+
+<div class="product-buttons">
+<button class="cart-btn">أضف للسلة</button>
+<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود أزرق تربل" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+</div>
+</div>
+</div>
+
+<!-- المنتج 2 -->
+<div class="product-card">
+<div class="product-image-wrapper">
+<img src="https://via.placeholder.com/400x300?text=عود+ملكي+داكن" alt="عود ملكي داكن">
+<div class="product-badge discount">خصم 15%</div>
+</div>
+<div class="product-content">
+<h3>عود ملكي داكن</h3>
+<div class="product-rating">
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+</div>
+<p class="product-desc">عود ملكي من الخشب الداكن، برائحة عميقة وثابتة تدوم طوال اليوم بكل فخامة.</p>
+
+<div class="product-features">
+<span>🇮🇩 إندونيسيا</span>
+<span>✓ طبيعي 100%</span>
+<span>✓ رائحة عميقة</span>
+</div>
+
+<div class="product-options">
+<div class="option">
+<span>10 جرام</span>
+<strong>120 ريال</strong>
+</div>
+<div class="option">
+<span>25 جرام</span>
+<strong>280 ريال</strong>
+</div>
+</div>
+
+<div class="product-buttons">
+<button class="cart-btn">أضف للسلة</button>
+<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود ملكي داكن" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+</div>
+</div>
+</div>
+
+<!-- المنتج 3 -->
+<div class="product-card">
+<div class="product-image-wrapper">
+<img src="https://via.placeholder.com/400x300?text=عود+الخيال+الذهبي" alt="عود الخيال الذهبي">
+<div class="product-badge">مختار</div>
+</div>
+<div class="product-content">
+<h3>عود الخيال الذهبي</h3>
+<div class="product-rating">
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+</div>
+<p class="product-desc">عود نادر من أجود الأنواع، برائحة ذهبية فريدة تجمع بين الفخامة والرقة والدفء.</p>
+
+<div class="product-features">
+<span>🇰🇭 كمبوديا</span>
+<span>✓ نادر وفاخر</span>
+<span>✓ ثبات 12+ ساعة</span>
+</div>
+
+<div class="product-options">
+<div class="option">
+<span>5 جرام</span>
+<strong>150 ريال</strong>
+</div>
+<div class="option">
+<span>15 جرام</span>
+<strong>420 ريال</strong>
+</div>
+</div>
+
+<div class="product-buttons">
+<button class="cart-btn">أضف للسلة</button>
+<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود الخيال الذهبي" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+</div>
+</div>
+</div>
+
+<!-- المنتج 4 -->
+<div class="product-card">
+<div class="product-image-wrapper">
+<img src="https://via.placeholder.com/400x300?text=عود+الفردوس" alt="عود الفردوس">
+<div class="product-badge new">جديد</div>
+</div>
+<div class="product-content">
+<h3>عود الفردوس</h3>
+<div class="product-rating">
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+<span class="star">⭐</span>
+</div>
+<p class="product-desc">عود آسيوي فريد من نوعه، برائحة عطرة ناعمة تجمع بين الزهور والخشب بتناسق رائع.</p>
+
+<div class="product-features">
+<span>🇻🇳 فيتنام</span>
+<span>✓ طبيعي 100%</span>
+<span>✓ رائحة ناعمة</span>
+</div>
+
+<div class="product-options">
+<div class="option">
+<span>12 جرام</span>
+<strong>95 ريال</strong>
+</div>
+<div class="option">
+<span>30 جرام</span>
+<strong>220 ريال</strong>
+</div>
+</div>
+
+<div class="product-buttons">
+<button class="cart-btn">أضف للسلة</button>
+<a href="https://wa.me/966XXXXXXXXX?text=أرغب بطلب عود الفردوس" class="whatsapp-btn" target="_blank">واتس <span class="whatsapp-icon">📱</span></a>
+</div>
+</div>
+</div>
 
 </div>
+</section>
+
+<!-- قسم العروض المميزة -->
+<section class="promo-banner" id="offers">
+<h2>عرض الافتتاح المميز!</h2>
+<p>اشتر أي منتجين واحصل على خصم إضافي 10% على كل الطلب</p>
+<button class="btn-primary">اطلب الآن</button>
+</section>
+
+<!-- الفوتر -->
+<footer>
+<div class="footer-content">
+<div class="footer-section">
+<h3>عن جلاغ العود</h3>
+<ul>
+<li><a href="#">من نحن</a></li>
+<li><a href="#">رسالتنا</a></li>
+<li><a href="#">رؤيتنا</a></li>
+<li><a href="#">قيمنا</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>المنتجات</h3>
+<ul>
+<li><a href="#">جميع المنتجات</a></li>
+<li><a href="#">الأعواد الفاخرة</a></li>
+<li><a href="#">العروض والتخفيفات</a></li>
+<li><a href="#">الأصناف النادرة</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>خدمات العملاء</h3>
+<ul>
+<li><a href="#">اتصل بنا</a></li>
+<li><a href="#">الشحن والتوصيل</a></li>
+<li><a href="#">الضمان والاسترجاع</a></li>
+<li><a href="#">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>تابعنا</h3>
+<ul>
+<li><a href="#">واتساب</a></li>
+<li><a href="#">انستجرام</a></li>
+<li><a href="#">تويتر</a></li>
+<li><a href="#">سناب شات</a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2024 جلاغ العود | للعود مقام وللطيب جلاغ | جميع الحقوق محفوظة</p>
+</div>
+</footer>
+
+<script>
+// إضافة حركة سلسة للأزرار
+document.querySelectorAll('.cart-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    alert('تم إضافة المنتج للسلة ✓');
+  });
+});
+
+// إضافة حركة للعنوان عند التمرير
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 100) {
+    header.style.background = 'rgba(255,255,255,.12)';
+  } else {
+    header.style.background = 'rgba(255,255,255,.08)';
+  }
+});
+</script>
+
 </body>
 
-</html> 
+</html>

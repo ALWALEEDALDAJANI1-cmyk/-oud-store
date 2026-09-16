@@ -1,1 +1,579 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جلاغ العود | نفحات أصيلة تليق بالمجالس</title>
 
+<style>
+
+:root{
+--primary:#4b2417;
+--gold:#caa56a;
+--dark:#0f0f0f;
+--card:#171717;
+--light:#f5f0e8;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Tahoma,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:var(--dark);
+color:white;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+right:0;
+left:0;
+z-index:1000;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(12px);
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:60px;
+height:60px;
+object-fit:contain;
+}
+
+.logo h1{
+font-size:24px;
+color:white;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:15px;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--gold);
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url('25486493-BF5B-4F45-AB7D-E4C52159A546.jpeg');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:850px;
+}
+
+.hero img{
+width:180px;
+margin-bottom:25px;
+}
+
+.hero h2{
+font-size:58px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:22px;
+color:#ddd;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:var(--gold);
+color:black;
+font-weight:bold;
+border-radius:50px;
+text-decoration:none;
+}
+
+.section{
+padding:110px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+color:var(--gold);
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.product-card{
+background:var(--card);
+border-radius:25px;
+overflow:hidden;
+transition:.4s;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.product-card:hover{
+transform:translateY(-8px);
+}
+
+.product-card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.product-content{
+padding:25px;
+}
+
+.product-content h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.product-content p{
+color:#cfcfcf;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.product-content select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+margin-bottom:15px;
+font-size:15px;
+}
+
+.order-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:var(--gold);
+font-weight:bold;
+cursor:pointer;
+font-size:16px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.feature{
+background:var(--card);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.feature h3{
+margin-bottom:10px;
+color:var(--gold);
+}
+
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:2;
+font-size:20px;
+color:#ddd;
+}
+
+footer{
+background:black;
+padding:40px;
+text-align:center;
+margin-top:60px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+text-decoration:none;
+color:white;
+z-index:999;
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero h2{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.section-title{
+font-size:32px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<img src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png">
+<h1>جلاغ العود</h1>
+</div>
+
+<nav>
+<ul>
+<li><a href="#">الرئيسية</a></li>
+<li><a href="#products">المنتجات</a></li>
+<li><a href="#about">من نحن</a></li>
+<li><a href="#contact">تواصل</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<img src="1532CBD5-CDE3-46F1-8619-22130CBAEC34.png.png">
+
+<h2>للعود مقام .. وللطيب جلاغ</h2>
+
+<p>نفحات أصيلة تليق بالمجالس</p>
+
+<a href="#products" class="btn">
+تصفح المنتجات
+</a>
+
+</div>
+
+</section>
+
+<section class="section" id="products">
+
+<h2 class="section-title">منتجاتنا</h2>
+
+<div class="products">
+
+<!-- أزرق تربل -->
+
+<div class="product-card">
+
+<img src="25486493-BF5B-4F45-AB7D-E4C52159A546.jpeg">
+
+<div class="product-content">
+
+<h3>أزرق تربل</h3>
+
+<p>عود فاخر بدهن مرتفع وثبات مميز للمجالس والمناسبات.</p>
+
+<select id="blue">
+
+<option value="90|نصف أوقية">نصف أوقية - 90 ريال</option>
+<option value="170|أوقية">أوقية - 170 ريال</option>
+
+</select>
+
+<button class="order-btn"
+onclick="orderProduct('أزرق تربل','blue')">
+اطلب عبر واتساب
+</button>
+
+</div>
+</div>
+<!-- تايقر -->
+
+<div class="product-card">
+
+<img src="9CDCC11B-F9B9-45A8-8691-2354F1DD323D.jpeg">
+
+<div class="product-content">
+
+<h3>تايقر</h3>
+
+<p>
+عود طبيعي بتعرقات مميزة ورائحة دافئة مناسبة للاستخدام اليومي.
+</p>
+
+<select id="tiger">
+
+<option value="50|نصف أوقية">
+نصف أوقية - 50 ريال
+</option>
+
+<option value="80|أوقية">
+أوقية - 80 ريال
+</option>
+
+</select>
+
+<button class="order-btn"
+onclick="orderProduct('تايقر','tiger')">
+
+اطلب عبر واتساب
+
+</button>
+
+</div>
+</div>
+
+<!-- مروكي رسمي -->
+
+<div class="product-card">
+
+<img src="307308ED-C159-48E1-806E-80BBD579DEDA.jpeg">
+
+<div class="product-content">
+
+<h3>مروكي رسمي</h3>
+
+<p>
+عود مروكي مختار بعناية بثبات جيد ورائحة متوازنة.
+</p>
+
+<select id="maroki">
+
+<option value="80|نصف أوقية">
+نصف أوقية - 80 ريال
+</option>
+
+<option value="140|أوقية">
+أوقية - 140 ريال
+</option>
+
+</select>
+
+<button class="order-btn"
+onclick="orderProduct('مروكي رسمي','maroki')">
+
+اطلب عبر واتساب
+
+</button>
+
+</div>
+</div>
+
+<!-- دقة مروكي VIP -->
+
+<div class="product-card">
+
+<img src="F7430AF6-F198-45A8-A4AF-741B58A8BD78.jpeg">
+
+<div class="product-content">
+
+<h3>دقة مروكي VIP</h3>
+
+<p>
+قطع مروكية مختارة بعناية للمناسبات والضيافات الفاخرة.
+</p>
+
+<select id="vip">
+
+<option value="85|نصف أوقية">
+نصف أوقية - 85 ريال
+</option>
+
+<option value="150|أوقية">
+أوقية - 150 ريال
+</option>
+
+</select>
+
+<button class="order-btn"
+onclick="orderProduct('دقة مروكي VIP','vip')">
+
+اطلب عبر واتساب
+
+</button>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+لماذا جلاغ العود
+</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>عود طبيعي</h3>
+<p>منتجات مختارة بعناية</p>
+</div>
+
+<div class="feature">
+<h3>شحن للمملكة</h3>
+<p>توصيل لجميع المناطق</p>
+</div>
+
+<div class="feature">
+<h3>خدمة مباشرة</h3>
+<p>طلب سريع عبر الواتساب</p>
+</div>
+
+<div class="feature">
+<h3>تغليف أنيق</h3>
+<p>جاهز للإهداء والمناسبات</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="about">
+
+<h2 class="section-title">
+من نحن
+</h2>
+
+<div class="about">
+
+<p>
+
+في جلاغ العود ننتقي أجود أنواع العود الطبيعي
+بعناية لنقدم نفحات أصيلة تليق بالمجالس
+وتناسب محبي الطيب والفخامة.
+
+</p>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<h2>جلاغ العود</h2>
+
+<br>
+
+<p>
+نفحات أصيلة تليق بالمجالس
+</p>
+
+<br>
+
+<p>
+واتساب الطلبات:
+0539400955
+</p>
+
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/966539400955"
+target="_blank">
+
+✆
+
+</a>
+
+<script>
+
+function orderProduct(product,selectId){
+
+const selected =
+document.getElementById(selectId).value;
+
+const parts =
+selected.split('|');
+
+const price =
+parts[0];
+
+const weight =
+parts[1];
+
+const message =
+
+`السلام عليكم
+
+أرغب بطلب:
+
+المنتج: ${product}
+
+الوزن: ${weight}
+
+السعر: ${price} ريال
+
+الاسم:
+
+المدينة:
+`;
+
+window.open(
+`https://wa.me/966539400955?text=${encodeURIComponent(message)}`,
+'_blank'
+);
+
+}
+
+</script>
+
+</body>
+</html>

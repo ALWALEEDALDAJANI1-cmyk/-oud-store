@@ -65,13 +65,14 @@ gap:12px;
 }
 
 .logo img{
-width:55px;
-height:55px;
+width:85px;
+height:85px;
 object-fit:contain;
 }
 
 .logo h1{
-font-size:22px;
+font-size:30px;
+font-weight:900;
 }
 
 nav ul{
@@ -85,7 +86,7 @@ color:white;
 }
 
 .hero{
-height:100vh;
+height:60vh;
 
 background:
 linear-gradient(
@@ -171,7 +172,52 @@ padding:20px;
 .product-content h3{
 margin-bottom:10px;
 }
+.popup-overlay{
+position:fixed;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,.75);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99999;
+}
 
+.popup-box{
+background:#171717;
+width:90%;
+max-width:420px;
+padding:35px 25px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(202,165,106,.3);
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.popup-box h2{
+font-size:26px;
+margin-bottom:15px;
+color:#caa56a;
+}
+
+.popup-box p{
+line-height:2;
+margin-bottom:25px;
+color:#ddd;
+}
+
+.popup-box button{
+border:none;
+background:#caa56a;
+color:black;
+padding:14px 30px;
+border-radius:50px;
+font-weight:bold;
+cursor:pointer;
+font-size:15px;
+}
 .product-content p{
 color:#ccc;
 margin-bottom:15px;
@@ -222,9 +268,55 @@ font-size:18px;
 .section-title{
 font-size:30px;
 }
-
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+color:white;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+z-index:9999;
+transition:.3s;
 }
 
+.whatsapp:hover{
+transform:scale(1.1);
+}
+ <a class="whatsapp"
+href="https://wa.me/966539400955"
+target="_blank">
+
+💬
+
+</a> 
+}
+<div id="welcomePopup" class="popup-overlay">
+
+<div class="popup-box">
+
+<h2>
+يامرحبا ترحيبة كلها أطياب
+</h2>
+
+<p>
+أحلى من العنبر وأزكى من العود 🤍
+</p>
+
+<button onclick="closePopup()">
+دخول المتجر
+</button>
+
+</div>
+
+</div>
 </style>
 
 </head>
@@ -658,7 +750,11 @@ window.open(
 );
 
 }
+function closePopup(){
 
+document.getElementById('welcomePopup').style.display='none';
+
+}
 </script>
 
 </body>

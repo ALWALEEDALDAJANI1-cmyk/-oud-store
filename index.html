@@ -12,8 +12,8 @@
 :root{
 --primary:#4b2417;
 --gold:#caa56a;
---dark:#0b0b0b;
---card:#171717;
+--dark:#050505;
+--card:#111;
 --light:#f5f0e8;
 }
 
@@ -92,17 +92,13 @@ text-shadow:
 nav ul{
 display:flex;
 list-style:none;
-gap:20px;
+gap:25px;
 }
 
 nav a{
 color:#fff;
 font-weight:bold;
-transition:.3s;
-}
-
-nav a:hover{
-color:var(--gold);
+font-size:20px;
 }
 
 .hero{
@@ -124,7 +120,7 @@ align-items:center;
 text-align:center;
 
 padding:20px;
-padding-top:170px;
+padding-top:180px;
 }
 
 .hero-content{
@@ -138,14 +134,14 @@ margin-bottom:25px;
 }
 
 .hero-content h2{
-font-size:58px;
+font-size:60px;
 margin-bottom:15px;
 }
 
 .hero-content p{
-font-size:22px;
+font-size:24px;
 color:#ddd;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 .btn{
@@ -155,15 +151,10 @@ border-radius:50px;
 background:var(--gold);
 color:#000;
 font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
 }
 
 .section{
-padding:110px 7%;
+padding:100px 7%;
 }
 
 .section-title{
@@ -172,11 +163,63 @@ font-size:42px;
 margin-bottom:50px;
 color:var(--gold);
 }
+
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.product-card{
+background:var(--card);
+border-radius:20px;
+overflow:hidden;
+}
+
+.product-card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.product-content{
+padding:20px;
+}
+
+.product-content h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.product-content p{
+color:#ccc;
+line-height:1.8;
+margin-bottom:15px;
+}
+
+.product-content select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.order-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:var(--gold);
+color:#000;
+font-weight:bold;
+cursor:pointer;
+}
+
 footer{
 background:#111;
 padding:70px 20px;
 text-align:center;
-border-top:1px solid rgba(255,255,255,.08);
 }
 
 footer h2{
@@ -192,8 +235,8 @@ line-height:2;
 
 .whatsapp{
 position:fixed;
-bottom:20px;
 left:20px;
+bottom:20px;
 width:65px;
 height:65px;
 background:#25D366;
@@ -202,23 +245,17 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-size:30px;
-color:#fff;
-box-shadow:0 10px 25px rgba(0,0,0,.3);
+color:white;
 z-index:9999;
-transition:.3s;
-}
-
-.whatsapp:hover{
-transform:scale(1.1);
 }
 
 .popup-overlay{
 position:fixed;
 top:0;
-left:0;
 right:0;
+left:0;
 bottom:0;
-background:rgba(0,0,0,.8);
+background:rgba(0,0,0,.85);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -238,13 +275,12 @@ border:1px solid rgba(202,165,106,.3);
 .popup-box h2{
 color:var(--gold);
 margin-bottom:15px;
-font-size:28px;
 }
 
 .popup-box p{
 line-height:2;
+margin-bottom:20px;
 color:#ddd;
-margin-bottom:25px;
 }
 
 .popup-box button{
@@ -256,82 +292,60 @@ border-radius:50px;
 font-weight:bold;
 cursor:pointer;
 }
+
+@media(max-width:768px){
+
+header{
+height:120px;
+background-size:100% 120px;
+}
+
+.logo img{
+width:65px;
+height:65px;
+}
+
+.logo h1{
+font-size:28px;
+}
+
+nav ul{
+gap:15px;
+}
+
+nav a{
+font-size:16px;
+}
+
+.hero{
+padding-top:130px;
+}
+
+.hero-content h2{
+font-size:36px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+.section-title{
+font-size:30px;
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.product-card img{
+height:180px;
+}
+
+}
+
 </style>
 </head>
-<script>
-
-function orderProduct(product,selectId){
-
-const selected =
-document.getElementById(selectId).value;
-
-const parts =
-selected.split('|');
-
-const price =
-parts[0];
-
-const weight =
-parts[1];
-
-const message =
-
-`السلام عليكم
-
-أرغب بطلب:
-
-المنتج: ${product}
-
-الوزن: ${weight}
-
-السعر: ${price} ريال
-
-الاسم:
-
-المدينة:
-`;
-
-window.open(
-`https://wa.me/966539400955?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
-}
-
-function orderOffer(){
-
-const message =
-
-`السلام عليكم
-
-أرغب بطلب العرض الخاص باليوم الوطني 96
-
-14 جرام من كل نوع
-
-السعر 196 ريال
-
-الاسم:
-
-المدينة:
-`;
-
-window.open(
-`https://wa.me/966539400955?text=${encodeURIComponent(message)}`,
-'_blank'
-);
-
-}
-
-function closePopup(){
-
-document.getElementById('welcomePopup').style.display='none';
-
-}
-
-</script>
-
-</body>
-</html>
 <body>
 
 <header>
@@ -360,9 +374,7 @@ document.getElementById('welcomePopup').style.display='none';
 
 <h2>للعود مقام .. وللطيب جلاغ</h2>
 
-<p>
-نفحات أصيلة تليق بالمجالس
-</p>
+<p>نفحات أصيلة تليق بالمجالس</p>
 
 <a href="#products" class="btn">
 تصفح المنتجات
@@ -371,106 +383,11 @@ document.getElementById('welcomePopup').style.display='none';
 </div>
 
 </section>
-.products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-}
 
-.product-card{
-background:var(--card);
-border-radius:20px;
-overflow:hidden;
-transition:.3s;
-}
-
-.product-card:hover{
-transform:translateY(-8px);
-}
-
-.product-card img{
-width:100%;
-height:280px;
-object-fit:cover;
-}
-
-.product-content{
-padding:20px;
-}
-
-.product-content h3{
-font-size:22px;
-margin-bottom:10px;
-}
-
-.product-content p{
-color:#ccc;
-line-height:1.8;
-margin-bottom:15px;
-}
-
-.product-content select{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-margin-bottom:15px;
-font-size:15px;
-}
-
-.order-btn{
-width:100%;
-padding:14px;
-border:none;
-border-radius:10px;
-background:var(--gold);
-color:#000;
-font-weight:bold;
-cursor:pointer;
-transition:.3s;
-}
-
-.order-btn:hover{
-opacity:.9;
-}
-
-@media(max-width:768px){
-
-.products{
-grid-template-columns:repeat(2,1fr);
-gap:15px;
-}
-
-.product-card img{
-height:170px;
-}
-
-.hero-content h2{
-font-size:34px;
-}
-
-.hero-content p{
-font-size:18px;
-}
-
-.section-title{
-font-size:30px;
-}
-
-.logo h1{
-font-size:30px;
-}
-
-.logo img{
-width:70px;
-height:70px;
-}
-
-}
- <section class="section">
+<section class="section">
 
 <h2 class="section-title">
-العرض الخاص باليوم الوطني 96
+العرض الخاص
 </h2>
 
 <div style="
@@ -521,6 +438,7 @@ color:#caa56a;
 </div>
 
 </section>
+
 <section class="section" id="products">
 
 <h2 class="section-title">
@@ -528,12 +446,11 @@ color:#caa56a;
 </h2>
 
 <div class="products">
- <div class="product-card">
 
+<div class="product-card">
 <img src="25486493-BF5B-4F45-AB7D-E4C52159A546.jpeg">
 
 <div class="product-content">
-
 <h3>عود أزرق تربل</h3>
 
 <p>
@@ -549,15 +466,13 @@ color:#caa56a;
 onclick="orderProduct('عود أزرق تربل','blue')">
 اطلب عبر واتساب
 </button>
+</div>
+</div>
 
-</div>
-</div>
 <div class="product-card">
-
 <img src="9CDCC11B-F9B9-45A8-8691-2354F1DD323D.jpeg">
 
 <div class="product-content">
-
 <h3>تايقر</h3>
 
 <p>
@@ -573,15 +488,13 @@ onclick="orderProduct('عود أزرق تربل','blue')">
 onclick="orderProduct('تايقر','tiger')">
 اطلب عبر واتساب
 </button>
+</div>
+</div>
 
-</div>
-</div>
 <div class="product-card">
-
 <img src="307308ED-C159-48E1-806E-80BBD579DEDA.jpeg">
 
 <div class="product-content">
-
 <h3>مروكي رسمي</h3>
 
 <p>
@@ -597,15 +510,13 @@ onclick="orderProduct('تايقر','tiger')">
 onclick="orderProduct('مروكي رسمي','maroki')">
 اطلب عبر واتساب
 </button>
+</div>
+</div>
 
-</div>
-</div>
 <div class="product-card">
-
 <img src="F7430AF6-F198-45A8-A4AF-741B58A8BD78.jpeg">
 
 <div class="product-content">
-
 <h3>دقة مروكي VIP</h3>
 
 <p>
@@ -621,11 +532,11 @@ onclick="orderProduct('مروكي رسمي','maroki')">
 onclick="orderProduct('دقة مروكي VIP','vip')">
 اطلب عبر واتساب
 </button>
-
 </div>
 </div>
 
 </div>
+
 </section>
 <section class="section" id="about">
 
@@ -646,11 +557,12 @@ font-size:18px;
 
 <br><br>
 
-نسعى لتوفير منتجات مختارة بعناية وجودة تليق بذائقة عملائنا مع أسعار منافسة وخدمة سريعة.
+نسعى لتوفير منتجات مختارة بعناية وجودة تليق بذائقة عملائنا مع أسعار منافسة وخدمة سريعة لجميع مناطق المملكة.
 
 </div>
 
 </section>
+
 <footer id="contact">
 
 <h2>جلاغ العود</h2>
@@ -695,3 +607,76 @@ target="_blank">
 </div>
 
 </div>
+
+<script>
+
+function orderProduct(product,selectId){
+
+const selected =
+document.getElementById(selectId).value;
+
+const parts =
+selected.split('|');
+
+const price =
+parts[0];
+
+const weight =
+parts[1];
+
+const message =
+
+`السلام عليكم
+
+أرغب بطلب:
+
+المنتج: ${product}
+
+الوزن: ${weight}
+
+السعر: ${price} ريال
+
+الاسم:
+
+المدينة:
+`;
+
+window.open(
+`https://wa.me/966539400955?text=${encodeURIComponent(message)}`,
+'_blank'
+);
+
+}
+
+function orderOffer(){
+
+const message =
+
+`السلام عليكم
+
+أرغب بطلب باقة جلاغ الخاصة
+
+14 جرام من كل نوع
+
+السعر 196 ريال
+
+الاسم:
+
+المدينة:
+`;
+
+window.open(
+`https://wa.me/966539400955?text=${encodeURIComponent(message)}`,
+'_blank'
+);
+
+}
+
+function closePopup(){
+document.getElementById('welcomePopup').style.display='none';
+}
+
+</script>
+
+</body>
+</html>
